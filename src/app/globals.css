@@ -316,3 +316,113 @@
   background-color: rgba(27, 94, 59, 0.2);
   color: #0D3B22;
 }
+
+/* Section Divider */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, #1B5E3B 20%, #C5963A 50%, #1B5E3B 80%, transparent 100%);
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-divider-thin {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #1B5E3B40 30%, #C5963A40 50%, #1B5E3B40 70%, transparent 100%);
+  border: none;
+}
+
+/* Premium Button Hover Ripple */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Subtle texture overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231B5E3B' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Premium focus ring */
+.premium-focus:focus-visible {
+  outline: 2px solid #C5963A;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Custom scrollbar for inner containers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1B5E3B40;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #1B5E3B80;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(27, 94, 59, 0.12), 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Gold accent underline animation */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #C5963A, #E8C877);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.gold-underline:hover::after {
+  width: 100%;
+}

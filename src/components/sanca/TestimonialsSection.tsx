@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Quote, ChevronLeft, ChevronRight, Star, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import AnimatedCounter from './AnimatedCounter';
 
 const testimonials = [
   {
@@ -52,10 +53,10 @@ const testimonials = [
 ];
 
 const stats = [
-  { label: 'Years of Service', value: '68+', icon: '🏥' },
-  { label: 'SANCA Societies Nationwide', value: '32', icon: '🇿🇦' },
-  { label: 'Provinces Covered', value: '9', icon: '🗺️' },
-  { label: 'Patients Helped Annually', value: '1000+', icon: '💚' },
+  { label: 'Years of Service', value: 68, suffix: '+', icon: '🏥' },
+  { label: 'SANCA Societies Nationwide', value: 32, suffix: '', icon: '🇿🇦' },
+  { label: 'Provinces Covered', value: 9, suffix: '', icon: '🗺️' },
+  { label: 'Patients Helped Annually', value: 1000, suffix: '+', icon: '💚' },
 ];
 
 export default function TestimonialsSection() {
@@ -110,7 +111,7 @@ export default function TestimonialsSection() {
               <Card className="p-5 text-center shadow-premium-md hover:shadow-premium-lg transition-all duration-300 border-0 group hover:-translate-y-1">
                 <span className="text-2xl mb-2 block">{stat.icon}</span>
                 <p className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark group-hover:text-sanca-green transition-colors">
-                  {stat.value}
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2000} />
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
               </Card>

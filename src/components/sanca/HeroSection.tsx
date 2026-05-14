@@ -51,9 +51,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
           >
-            Your Journey to{' '}
-            <span className="text-gradient-gold">Healing</span>{' '}
-            Starts Here
+            <span>Your Journey to </span>
+            <span className="text-gradient-gold">Healing</span>
+            <span> Starts Here</span>
           </motion.h1>
 
           {/* Subtitle */}

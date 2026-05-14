@@ -8,12 +8,11 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/s
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
-  { label: 'Self-Assessment', href: '#assessment' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Assessment', href: '#assessment' },
   { label: 'Programmes', href: '#programmes' },
-  { label: 'Facilities', href: '#facilities' },
   { label: 'Admissions', href: '#admissions' },
   { label: 'Drug Info', href: '#drug-info' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
