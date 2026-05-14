@@ -139,7 +139,7 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 40, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="fixed bottom-0 left-0 sm:bottom-6 sm:left-6 z-50 w-full sm:w-[380px] flex flex-col rounded-t-2xl sm:rounded-2xl shadow-premium-xl overflow-hidden bg-white"
+            className="fixed bottom-0 left-0 sm:bottom-6 sm:left-6 z-50 w-full sm:w-[380px] flex flex-col rounded-t-2xl sm:rounded-2xl shadow-premium-xl overflow-hidden bg-white safe-bottom"
             style={{ maxHeight: '520px' }}
           >
             {/* Header */}

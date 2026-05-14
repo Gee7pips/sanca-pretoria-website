@@ -23,7 +23,7 @@ export default function FloatingActions() {
 
   return (
     <TooltipProvider delayDuration={200}>
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col-reverse gap-3 items-center">
+      <div className="fixed bottom-6 right-4 sm:right-6 z-50 flex flex-col-reverse gap-3 items-center pb-safe">
         {/* WhatsApp */}
         <Tooltip>
           <TooltipTrigger asChild>

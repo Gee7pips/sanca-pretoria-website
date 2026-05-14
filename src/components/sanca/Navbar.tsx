@@ -55,12 +55,12 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'glass shadow-premium-md border-b border-white/20'
+          ? 'glass dark:bg-sanca-green-dark/90 dark:border-white/10 shadow-premium-md border-b border-white/20'
           : 'bg-transparent'
       }`}
     >
       {/* Top Emergency Bar */}
-      <div className="bg-sanca-green-dark text-white/90">
+      <div className="bg-sanca-green-dark dark:bg-sanca-green-dark/95 text-white/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-1.5 text-xs sm:text-sm">
           <div className="flex items-center gap-4 sm:gap-6">
             <a
@@ -102,22 +102,22 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-sanca-green rounded-xl flex items-center justify-center shadow-premium-sm group-hover:shadow-premium-md transition-shadow">
-              <span className="text-white font-serif font-bold text-lg sm:text-xl">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-sanca-green rounded-xl flex items-center justify-center shadow-premium-sm group-hover:shadow-premium-md transition-shadow card-animated-border">
+              <span className="text-white font-serif font-bold text-lg sm:text-xl relative z-10">
                 S
               </span>
             </div>
             <div className="hidden sm:block">
               <p
                 className={`font-serif font-bold leading-tight transition-colors ${
-                  scrolled ? 'text-sanca-green-dark' : 'text-white'
+                  scrolled ? 'text-sanca-green-dark dark:text-white' : 'text-white'
                 }`}
               >
                 SANCA
               </p>
               <p
                 className={`text-[10px] tracking-wider uppercase transition-colors ${
-                  scrolled ? 'text-sanca-green/70' : 'text-white/70'
+                  scrolled ? 'text-sanca-green/70 dark:text-white/60' : 'text-white/70'
                 }`}
               >
                 Pretoria
@@ -134,10 +134,10 @@ export default function Navbar() {
                 className={`relative px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                   activeSection === link.href.replace('#', '')
                     ? scrolled
-                      ? 'text-sanca-green bg-sanca-green/5'
+                      ? 'text-sanca-green dark:text-sanca-gold bg-sanca-green/5 dark:bg-sanca-gold/10'
                       : 'text-white bg-white/10'
                     : scrolled
-                    ? 'text-foreground/70 hover:text-sanca-green hover:bg-sanca-green/5'
+                    ? 'text-foreground/70 hover:text-sanca-green dark:hover:text-sanca-gold hover:bg-sanca-green/5 dark:hover:bg-sanca-gold/5'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
               >
@@ -179,7 +179,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-[300px] bg-white p-0"
+                className="w-[300px] bg-white dark:bg-sanca-green-dark p-0"
               >
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col h-full">

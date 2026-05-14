@@ -1069,3 +1069,465 @@
   background: linear-gradient(90deg, #2D8B57, #E8C877, #059669, #C5963A, #2D8B57);
   background-size: 200% auto;
 }
+
+/* ==========================================
+   PREMIUM SECTION TRANSITIONS — Task 4-a
+   ========================================== */
+
+/* SVG wave shape at top of section (cream colored, organic curve) */
+.section-wave-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C180 0 360 50 540 25C720 0 900 50 1080 25C1260 0 1440 50 1440 25V50H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* SVG wave shape at bottom of section (white colored, organic curve) */
+.section-wave-bottom {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0Z' fill='%23FFFFFF'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* CSS clip-path angled section divider (3 degrees) */
+.section-angled {
+  clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+}
+
+/* ==========================================
+   PREMIUM CARD EFFECTS — Task 4-a
+   ========================================== */
+
+/* White card with subtle green tint shadow, 16px radius, top-left gold accent dot */
+.card-premium {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(27, 94, 59, 0.06), 0 10px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.card-premium:hover {
+  box-shadow: 0 8px 16px rgba(27, 94, 59, 0.1), 0 20px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Small gold circle accent (8px) at top-left corner */
+.card-premium::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C5963A, #E8C877);
+  z-index: 2;
+}
+
+/* Green-tinted frosted glass card */
+.card-glass-green {
+  background: rgba(27, 94, 59, 0.05);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(27, 94, 59, 0.15);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.card-glass-green:hover {
+  background: rgba(27, 94, 59, 0.08);
+  border-color: rgba(27, 94, 59, 0.25);
+  box-shadow: 0 8px 24px rgba(27, 94, 59, 0.1);
+}
+
+/* Gold-tinted frosted glass card */
+.card-glass-gold {
+  background: rgba(197, 150, 58, 0.05);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(197, 150, 58, 0.15);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.card-glass-gold:hover {
+  background: rgba(197, 150, 58, 0.08);
+  border-color: rgba(197, 150, 58, 0.25);
+  box-shadow: 0 8px 24px rgba(197, 150, 58, 0.1);
+}
+
+/* ==========================================
+   INTERACTIVE INPUT STYLES — Task 4-a
+   ========================================== */
+
+/* Premium input with cream bg, green border on focus, gold glow */
+.input-sanca {
+  width: 100%;
+  padding: 12px 16px;
+  background: #FAF6ED;
+  border: 2px solid #E8F0E8;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0D3B22;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-sanca::placeholder {
+  color: #9CA3AF;
+}
+
+.input-sanca:focus {
+  border-color: #1B5E3B;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.1), 0 0 12px rgba(197, 150, 58, 0.1);
+  background: white;
+}
+
+/* Same as input-sanca but for textarea with resize-y */
+.textarea-sanca {
+  width: 100%;
+  padding: 12px 16px;
+  background: #FAF6ED;
+  border: 2px solid #E8F0E8;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0D3B22;
+  transition: all 0.3s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.textarea-sanca::placeholder {
+  color: #9CA3AF;
+}
+
+.textarea-sanca:focus {
+  border-color: #1B5E3B;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.1), 0 0 12px rgba(197, 150, 58, 0.1);
+  background: white;
+}
+
+/* Same as input-sanca but for select with custom dropdown arrow */
+.select-sanca {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  background: #FAF6ED;
+  border: 2px solid #E8F0E8;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0D3B22;
+  transition: all 0.3s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231B5E3B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.select-sanca:focus {
+  border-color: #1B5E3B;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.1), 0 0 12px rgba(197, 150, 58, 0.1);
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231B5E3B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* ==========================================
+   MICRO-INTERACTION UTILITIES — Task 4-a
+   ========================================== */
+
+/* Scale to 1.05 on hover with smooth transition */
+.hover-scale-105 {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Brightness to 1.1 on hover */
+.hover-brightness-110 {
+  transition: filter 0.3s ease;
+}
+
+.hover-brightness-110:hover {
+  filter: brightness(1.1);
+}
+
+/* Scale to 0.95 on active */
+.tap-scale-95 {
+  transition: transform 0.15s ease;
+}
+
+.tap-scale-95:active {
+  transform: scale(0.95);
+}
+
+/* Transition with cubic-bezier bounce effect */
+.transition-bounce {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================
+   PREMIUM BADGE STYLES — Task 4-a
+   ========================================== */
+
+/* Green badge (pill shape, small) */
+.badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(27, 94, 59, 0.1);
+  color: #1B5E3B;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Gold badge (pill shape, small) */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(197, 150, 58, 0.1);
+  color: #9B7429;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Emerald badge (pill shape, small) */
+.badge-emerald {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Outline badge (border-2 border-sanca-green, transparent bg) */
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: transparent;
+  color: #1B5E3B;
+  border: 2px solid #1B5E3B;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   COMPREHENSIVE DARK MODE — Task 4-a
+   ========================================== */
+
+/* Dark mode card-premium */
+.dark .card-premium {
+  background: #0D3B22;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark .card-premium:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode card-glass-green */
+.dark .card-glass-green {
+  background: rgba(27, 94, 59, 0.15);
+  border: 1px solid rgba(27, 94, 59, 0.25);
+}
+
+.dark .card-glass-green:hover {
+  background: rgba(27, 94, 59, 0.2);
+  border-color: rgba(27, 94, 59, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode card-glass-gold */
+.dark .card-glass-gold {
+  background: rgba(197, 150, 58, 0.1);
+  border: 1px solid rgba(197, 150, 58, 0.2);
+}
+
+.dark .card-glass-gold:hover {
+  background: rgba(197, 150, 58, 0.15);
+  border-color: rgba(197, 150, 58, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode input-sanca */
+.dark .input-sanca {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E8F0E8;
+}
+
+.dark .input-sanca::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .input-sanca:focus {
+  border-color: #2D8B57;
+  box-shadow: 0 0 0 3px rgba(45, 139, 87, 0.2), 0 0 12px rgba(197, 150, 58, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode textarea-sanca */
+.dark .textarea-sanca {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E8F0E8;
+}
+
+.dark .textarea-sanca::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .textarea-sanca:focus {
+  border-color: #2D8B57;
+  box-shadow: 0 0 0 3px rgba(45, 139, 87, 0.2), 0 0 12px rgba(197, 150, 58, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode select-sanca */
+.dark .select-sanca {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E8F0E8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232D8B57' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.dark .select-sanca:focus {
+  border-color: #2D8B57;
+  box-shadow: 0 0 0 3px rgba(45, 139, 87, 0.2), 0 0 12px rgba(197, 150, 58, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232D8B57' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Dark mode badge-green (brighter colors) */
+.dark .badge-green {
+  background: rgba(45, 139, 87, 0.2);
+  color: #5BDBA0;
+}
+
+/* Dark mode badge-gold (brighter colors) */
+.dark .badge-gold {
+  background: rgba(232, 200, 119, 0.15);
+  color: #E8C877;
+}
+
+/* Dark mode badge-emerald (brighter colors) */
+.dark .badge-emerald {
+  background: rgba(5, 150, 105, 0.2);
+  color: #34D399;
+}
+
+/* Dark mode badge-outline */
+.dark .badge-outline {
+  color: #2D8B57;
+  border-color: #2D8B57;
+}
+
+/* Dark mode section-wave-top (darker green fill) */
+.dark .section-wave-top::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C180 0 360 50 540 25C720 0 900 50 1080 25C1260 0 1440 50 1440 25V50H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+}
+
+/* Dark mode section-wave-bottom (darker green fill) */
+.dark .section-wave-bottom::after {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0Z' fill='%230a2a18'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+}
+
+/* Dark mode hover-lift (adjusted shadow for dark bg) */
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode text-gradient-gold (brighter) */
+.dark .text-gradient-gold {
+  background: linear-gradient(135deg, #E8C877 0%, #FAE6A0 50%, #E8C877 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark mode text-gradient-green (brighter) */
+.dark .text-gradient-green {
+  background: linear-gradient(135deg, #2D8B57 0%, #34D399 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================
+   PREMIUM DARK MODE SCROLLBAR — Task 4-a
+   ========================================== */
+
+/* Gold-tinted scrollbar thumb for dark mode custom containers */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 150, 58, 0.3);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 150, 58, 0.5);
+}
+
+/* ==========================================
+   SAFE AREA UTILITIES — Task 4-a
+   ========================================== */
+
+/* iOS safe area bottom padding */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Shorthand for safe-bottom */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}

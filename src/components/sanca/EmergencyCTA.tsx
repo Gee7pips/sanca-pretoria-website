@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 
 export default function EmergencyCTA() {
   return (
-    <section id="contact" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="emergency" className="py-20 sm:py-28 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-sanca-green-dark via-sanca-green to-sanca-emerald" />
       <div className="absolute inset-0 opacity-10" style={{

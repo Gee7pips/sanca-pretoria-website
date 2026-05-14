@@ -3,6 +3,7 @@
 import Navbar from '@/components/sanca/Navbar';
 import HeroSection from '@/components/sanca/HeroSection';
 import SelfAssessment from '@/components/sanca/SelfAssessment';
+import RecoveryVisualizer from '@/components/sanca/RecoveryVisualizer';
 import DiagnosisTips from '@/components/sanca/DiagnosisTips';
 import MedicalAidSection from '@/components/sanca/MedicalAidSection';
 import AboutSection from '@/components/sanca/AboutSection';
@@ -22,6 +23,7 @@ import SuccessStories from '@/components/sanca/SuccessStories';
 import SobrietyCalculator from '@/components/sanca/SobrietyCalculator';
 import VolunteerSection from '@/components/sanca/VolunteerSection';
 import NewsletterSection from '@/components/sanca/NewsletterSection';
+import ContactSection from '@/components/sanca/ContactSection';
 import EmergencyCTA from '@/components/sanca/EmergencyCTA';
 import FloatingActions from '@/components/sanca/FloatingActions';
 import ChatBot from '@/components/sanca/ChatBot';
@@ -40,6 +42,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <SelfAssessment />
+        <RecoveryVisualizer />
         <div className="section-divider-thin" />
         <DiagnosisTips />
         <MedicalAidSection />
@@ -69,6 +72,7 @@ export default function Home() {
         <div className="section-divider-thin" />
         <VolunteerSection />
         <NewsletterSection />
+        <ContactSection />
         <EmergencyCTA />
       </main>
       <Footer />
