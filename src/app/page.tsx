@@ -32,6 +32,7 @@ import ResourceLibrary from '@/components/sanca/ResourceLibrary';
 import EventsSection from '@/components/sanca/EventsSection';
 import DrugTrendsSection from '@/components/sanca/DrugTrendsSection';
 import PreventionProgrammesSection from '@/components/sanca/PreventionProgrammesSection';
+import VideoSection from '@/components/sanca/VideoSection';
 import PageLoader from '@/components/sanca/PageLoader';
 import ScrollProgress from '@/components/sanca/ScrollProgress';
 import Footer from '@/components/sanca/Footer';
@@ -69,6 +70,7 @@ export default function Home() {
         <AddictionCostCalculator />
         <div className="parallax-divider" />
         <FamiliesSection />
+        <VideoSection />
         <PreventionProgrammesSection />
         <ResourceLibrary />
         <EventsSection />
