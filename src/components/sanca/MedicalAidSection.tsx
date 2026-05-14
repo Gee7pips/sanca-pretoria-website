@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CreditCard, Shield, CheckCircle2, AlertCircle, Heart, ArrowRight, Info, Scale, Banknote } from 'lucide-react';
+import { CreditCard, Shield, CheckCircle2, AlertCircle, Heart, ArrowRight, Info, Scale, Banknote, HandHeart, Building2, FileText } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -218,6 +218,100 @@ export default function MedicalAidSection() {
             </Card>
           </motion.div>
         </div>
+
+        {/* SANCA Financial Model — From Research */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12"
+        >
+          <div className="text-center mb-8">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark dark:text-white tracking-tight">
+              How <span className="text-gradient-gold">SANCA</span> Is Funded
+            </h3>
+            <p className="text-muted-foreground dark:text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              As a registered Public Benefit Organisation (PBO) under Section 18A of the Income Tax Act, your donations to SANCA are tax-deductible — and every rand goes directly toward restoring lives.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                icon: Building2,
+                title: 'State Subsidies',
+                desc: 'The Department of Social Development provides grants covering social worker salaries and administrative costs — but only a fraction of total operational needs.',
+                color: 'text-sanca-green',
+                bg: 'bg-sanca-green/10',
+              },
+              {
+                icon: CreditCard,
+                title: 'Service Fees',
+                desc: 'Inpatient fees are often covered by medical aid. For the uninsured, SANCA offers sliding-scale rates — making quality treatment accessible to all income levels.',
+                color: 'text-sanca-gold-dark',
+                bg: 'bg-sanca-gold/10',
+              },
+              {
+                icon: HandHeart,
+                title: 'Corporate & Philanthropic Grants',
+                desc: 'National projects are funded by partners like the ABInBev Foundation and AWARE.org, enabling large-scale prevention and responsible-service initiatives.',
+                color: 'text-sanca-emerald',
+                bg: 'bg-sanca-emerald/10',
+              },
+              {
+                icon: FileText,
+                title: 'Trust Funds & Bequests',
+                desc: 'Historic centres benefit from endowment funds and donations from the families of successfully recovered individuals — a legacy of gratitude that sustains future healing.',
+                color: 'text-sanca-green-light',
+                bg: 'bg-sanca-green-light/10',
+              },
+            ].map((source, i) => {
+              const Icon = source.icon;
+              return (
+                <motion.div
+                  key={source.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  whileHover={{ y: -4 }}
+                >
+                  <Card className="p-5 shadow-premium-md hover:shadow-premium-lg transition-all duration-300 border-0 h-full">
+                    <div className={`w-10 h-10 rounded-xl ${source.bg} flex items-center justify-center mb-3`}>
+                      <Icon className={`h-5 w-5 ${source.color}`} />
+                    </div>
+                    <h5 className="font-serif font-bold text-sanca-green-dark dark:text-white text-sm tracking-tight mb-1">{source.title}</h5>
+                    <p className="text-xs text-muted-foreground dark:text-white/60 leading-relaxed">{source.desc}</p>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Sliding Scale Note */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-6"
+          >
+            <Card className="p-5 shadow-premium-md border-0 bg-gradient-to-r from-sanca-green/5 via-sanca-gold/5 to-sanca-emerald/5">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full bg-sanca-gold/15 flex items-center justify-center flex-shrink-0">
+                  <Banknote className="h-5 w-5 text-sanca-gold-dark" />
+                </div>
+                <div>
+                  <h5 className="font-serif font-bold text-sanca-green-dark dark:text-white text-sm tracking-tight mb-1">Sliding-Scale Fees — Because Everyone Deserves Care</h5>
+                  <p className="text-xs text-muted-foreground dark:text-white/60 leading-relaxed">
+                    SANCA is known for providing sliding-scale fees for those who are uninsured or from low-income households. No one is ever turned away because they cannot pay. As a non-profit Public Benefit Organisation, our mission is to heal — not to profit.
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

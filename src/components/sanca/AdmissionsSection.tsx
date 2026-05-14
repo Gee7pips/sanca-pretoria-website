@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, ClipboardCheck, UserCheck, FileText, CalendarCheck, HeartPulse, ArrowRight, CheckCircle2, AlertCircle, CreditCard, Clock, Shield } from 'lucide-react';
+import { Phone, MessageCircle, ClipboardCheck, UserCheck, FileText, CalendarCheck, HeartPulse, ArrowRight, CheckCircle2, AlertCircle, CreditCard, Clock, Shield, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -355,6 +355,56 @@ export default function AdmissionsSection() {
             </Card>
           </motion.div>
         </div>
+
+        {/* Clinical Rationale — From Research */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-12"
+        >
+          <div className="text-center mb-8">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark dark:text-white tracking-tight">
+              Why These <span className="text-gradient-gold">Rules</span> Exist
+            </h3>
+            <p className="text-muted-foreground dark:text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              Every rule at Castle Carey is grounded in clinical evidence and designed to give you the strongest possible foundation for lasting recovery.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { rule: 'First 7-Day Communication Ban', rationale: 'To facilitate neurological stabilisation and minimise external triggers during the most vulnerable phase of detoxification.', icon: Phone },
+              { rule: '14-Day No-Visitation Period', rationale: 'To allow the patient to bond with the therapeutic group and adjust to the clinical routine — building the internal motivation that sustains recovery.', icon: Users },
+              { rule: '4–6 Week Programme Duration', rationale: 'Aligns with behavioural change models and the physical time required for brain recovery from substance-induced neuroadaptation.', icon: Clock },
+              { rule: 'Medical Aid Navigation', rationale: 'Castle Carey covers the final 7 days if the insurer only pays for 21 or 24 days — ensuring you complete the full curriculum regardless of cover limits.', icon: CreditCard },
+              { rule: '60+ Medical Certification', rationale: 'Prevents medical complications in patients with co-morbidities like hypertension or diabetes, where withdrawal stress can be life-threatening.', icon: HeartPulse },
+              { rule: 'DSD Quarterly Compliance', rationale: 'The Department of Social Development conducts quarterly monitoring to ensure adherence to Minimum Norms and Standards — your guarantee of quality care.', icon: Shield },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.rule}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                >
+                  <Card className="p-5 shadow-premium-md hover:shadow-premium-lg transition-all duration-300 border-0 h-full">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 rounded-lg bg-sanca-green/10 flex items-center justify-center flex-shrink-0">
+                        <Icon className="h-4 w-4 text-sanca-green" />
+                      </div>
+                      <h5 className="font-serif font-bold text-sanca-green-dark dark:text-white text-sm tracking-tight leading-snug">{item.rule}</h5>
+                    </div>
+                    <p className="text-xs text-muted-foreground dark:text-white/60 leading-relaxed">{item.rationale}</p>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

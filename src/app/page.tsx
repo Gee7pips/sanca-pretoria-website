@@ -10,6 +10,7 @@ import MythsSection from '@/components/sanca/MythsSection';
 import MedicalAidSection from '@/components/sanca/MedicalAidSection';
 import AboutSection from '@/components/sanca/AboutSection';
 import TeamSection from '@/components/sanca/TeamSection';
+import NationalFootprintSection from '@/components/sanca/NationalFootprintSection';
 import RecoveryJourney from '@/components/sanca/RecoveryJourney';
 import ProgrammesSection from '@/components/sanca/ProgrammesSection';
 import TreatmentComparison from '@/components/sanca/TreatmentComparison';
@@ -29,6 +30,8 @@ import FloatingActions from '@/components/sanca/FloatingActions';
 import ChatBot from '@/components/sanca/ChatBot';
 import ResourceLibrary from '@/components/sanca/ResourceLibrary';
 import EventsSection from '@/components/sanca/EventsSection';
+import DrugTrendsSection from '@/components/sanca/DrugTrendsSection';
+import PreventionProgrammesSection from '@/components/sanca/PreventionProgrammesSection';
 import PageLoader from '@/components/sanca/PageLoader';
 import ScrollProgress from '@/components/sanca/ScrollProgress';
 import Footer from '@/components/sanca/Footer';
@@ -52,6 +55,7 @@ export default function Home() {
         <div className="parallax-divider" />
         <AboutSection />
         <TeamSection />
+        <NationalFootprintSection />
         <RecoveryJourney />
         <div className="parallax-divider" />
         <ProgrammesSection />
@@ -61,9 +65,11 @@ export default function Home() {
         <AdmissionsSection />
         <DrugSeverityMeter />
         <DrugInfoSection />
+        <DrugTrendsSection />
         <AddictionCostCalculator />
         <div className="parallax-divider" />
         <FamiliesSection />
+        <PreventionProgrammesSection />
         <ResourceLibrary />
         <EventsSection />
         <div className="parallax-divider" />
