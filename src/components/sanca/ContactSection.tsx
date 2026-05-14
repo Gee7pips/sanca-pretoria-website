@@ -220,7 +220,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="mt-4 text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed"
           >
-            Whether you need help, have questions, or want to support our mission — we&apos;re here for you. Reach out and SANCA will respond.
+            Whether you need help for yourself or a loved one, have questions about our programmes, or want to support our mission — we&apos;re here for you with open arms and a listening ear. Every conversation starts with compassion.
           </motion.p>
         </motion.div>
 

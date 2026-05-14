@@ -16,9 +16,9 @@ const programmes = [
     duration: '4–6 Weeks',
     capacity: '52 Patients',
     target: 'Adults',
-    image: '/team-image.png',
+    image: '/images/sanca/castle-carey-welcome.jpg',
     description:
-      'When you need the deepest level of support, our flagship residential programme is here for you. Set in the tranquil surroundings of a peaceful Pretoria suburb, Castle Carey Clinic offers detoxification under careful medical supervision and round-the-clock compassionate care — so you can focus entirely on your healing, knowing you are safe and never alone.',
+      'When you need the deepest level of support, our flagship residential programme is here for you. Nestled within tranquil, landscaped gardens in the peaceful suburb of Ninapark, Castle Carey Clinic offers medically supervised detoxification and round-the-clock compassionate care. Here, surrounded by the quiet beauty of nature, you can focus entirely on your healing — knowing you are safe, supported, and never alone on this journey.',
     features: [
       'Medical Detoxification with Compassionate Support',
       'Personalised Individual Treatment Plan',
@@ -47,9 +47,9 @@ const programmes = [
     duration: 'Tailored',
     capacity: '8 Males',
     target: 'Ages 13–18',
-    image: '/hope-image.png',
+    image: '/images/sanca/clinic-entrance.jpg',
     description:
-      'We know how deeply it hurts to watch your child struggle. Lapalamé is a dedicated inpatient facility designed specifically for adolescent males aged 13–18, offering age-appropriate therapeutic care in a nurturing environment. Parents are not just included — they are essential partners in their child\'s recovery journey, because healing young lives means healing families together.',
+      'We know how deeply it hurts to watch your child struggle. Lapalamé is a dedicated inpatient facility designed specifically for adolescent males aged 13–18, offering age-appropriate therapeutic care in a nurturing, structured environment. With its distinctive stone archway entrance and welcoming grounds, Lapalamé provides a safe space where young people can begin to rebuild. Parents are not just included — they are essential partners in their child\'s recovery journey, because healing young lives means healing families together.',
     features: [
       'Rehabilitation Programmes Tailored to Each Young Person',
       'Age-Appropriate Therapeutic Interventions',
@@ -76,9 +76,9 @@ const programmes = [
     duration: 'Flexible',
     capacity: 'Open',
     target: 'All Ages',
-    image: '/pattern-bg.png',
+    image: '/images/sanca/facility-building.jpg',
     description:
-      'Recovery should not mean putting your life on hold. Our outpatient programme offers flexible, part-time treatment that fits around your work, school, and daily responsibilities. Led by dedicated social workers who understand the realities of community life, sessions are designed to give you the tools and support you need — while keeping your world turning.',
+      'Recovery should never mean putting your life on hold. Our outpatient programme offers flexible, part-time treatment that fits around your work, school, and daily responsibilities. Led by dedicated social workers who understand the realities of community life, sessions are designed to give you the tools and support you need — while keeping your world turning. With clinics in Soshanguve and Hammanskraal, quality care is never far from home.',
     features: [
       'Thorough Assessment & Motivational Support',
       'Personalised Individual Counselling',
@@ -107,9 +107,9 @@ const programmes = [
     duration: 'Ongoing',
     capacity: 'Open',
     target: 'Graduates',
-    image: '/hope-image.png',
+    image: '/images/sanca/garden-courtyard.jpg',
     description:
-      'Leaving treatment is not the end of your journey — it is the beginning of a new chapter. Our aftercare programme equips you with the practical skills, confidence, and ongoing support to maintain your sobriety and navigate the challenges of daily life. We begin planning your aftercare early, so that when the time comes, you step forward with a clear plan and a community that stands behind you.',
+      'Leaving treatment is not the end of your journey — it is the beginning of a beautiful new chapter. Our aftercare programme equips you with the practical skills, confidence, and ongoing support to maintain your sobriety and navigate the challenges of daily life with grace. We begin planning your aftercare early, so that when the time comes, you step forward with a clear plan, inner strength, and a community that stands behind you — today, tomorrow, and always.',
     features: [
       'Practical Relapse Prevention Skills Training',
       'Self-Help Group Integration (AA & NA)',
@@ -154,7 +154,7 @@ export default function ProgrammesSection() {
             Care That Meets You <span className="text-gradient-gold">Where You Are</span>
           </h2>
           <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-            Every person who walks through our doors has a different story, and we honour that. Whether you need full residential care, flexible outpatient support, or ongoing aftercare, our programmes are designed to meet you exactly where you are — with warmth, understanding, and a genuine commitment to your recovery.
+            Every person who walks through our doors carries a unique story, and we honour that with personalised care. Whether you need full residential care in our tranquil clinic, flexible outpatient support close to home, or ongoing aftercare to maintain your hard-won progress, our programmes are designed to meet you exactly where you are — with warmth, understanding, and an unwavering commitment to your recovery.
           </p>
         </motion.div>
 

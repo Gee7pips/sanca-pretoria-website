@@ -69,6 +69,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-sanca-gold/40 text-white text-sm mb-8 badge-pulse shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),inset_0_1px_2px_rgba(197,150,58,0.1)]"
           >
+            <img src="/images/sanca/sanca-logo.jpeg" alt="" className="h-5 w-5 object-contain rounded-sm" />
             <Shield className="h-4 w-4 text-sanca-gold" />
             <span>Est. 1957 — Nearly Seven Decades of Restoring Lives and Rebuilding Futures</span>
           </motion.div>
@@ -93,8 +94,10 @@ export default function HeroSection() {
             className="text-lg sm:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed"
           >
             Where heartfelt compassion meets world-class clinical care — accessible, affordable recovery
-            for Pretoria, Soshanguve, Hammanskraal, and the greater Tshwane area. Because every person
-            deserves the dignity of a fresh start and the hope of a brighter tomorrow.
+            for Pretoria, Soshanguve, Hammanskraal, and the greater Tshwane area. Set within
+            tranquil, landscaped grounds that nurture the soul, we offer a sanctuary where healing
+            begins the moment you arrive. Because every person deserves the dignity of a fresh start
+            and the hope of a brighter tomorrow.
           </motion.p>
 
           {/* CTAs */}
@@ -110,7 +113,7 @@ export default function HeroSection() {
               className="bg-sanca-gold hover:bg-sanca-gold-dark text-white font-semibold text-base px-8 py-6 shadow-gold hover:shadow-xl transition-all duration-300 rounded-xl group btn-ripple"
             >
               <Heart className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Check Your Wellbeing
+              Take the First Step
             </Button>
             <Button
               onClick={() => document.getElementById('admissions')?.scrollIntoView({ behavior: 'smooth' })}
@@ -119,7 +122,7 @@ export default function HeroSection() {
               className="border-2 border-white/40 text-white hover:bg-white/15 hover:border-white/70 font-semibold text-base px-8 py-6 bg-white/10 backdrop-blur-md transition-all duration-300 rounded-xl group shadow-lg shadow-black/10"
             >
               <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              How Admissions Work
+              Start Admissions
             </Button>
           </motion.div>
 
@@ -132,15 +135,15 @@ export default function HeroSection() {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-sanca-emerald animate-pulse" />
-              <span>DSD Registered</span>
+              <span>DSD Registered & Accredited</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-sanca-gold animate-pulse" />
-              <span>Medical Aid Accepted</span>
+              <span>Medical Aid & PMB Covered</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-sanca-emerald animate-pulse" />
-              <span>No Co-Payment for Extra Days</span>
+              <span>No Co-Payment for Extended Stay</span>
             </div>
           </motion.div>
 

@@ -143,15 +143,15 @@ export default function AdmissionsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 text-sanca-green text-sm font-medium mb-4 border border-sanca-gold/20 shadow-[inset_0_1px_2px_rgba(197,150,58,0.1)]">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 dark:bg-sanca-gold/15 text-sanca-green dark:text-sanca-gold text-sm font-medium mb-4 border border-sanca-gold/20 shadow-[inset_0_1px_2px_rgba(197,150,58,0.1)]">
             <CalendarCheck className="h-4 w-4" />
             Getting Started
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-sanca-green-dark mb-4">
             Your Pathway to <span className="text-gradient-gold">Recovery</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-            We&apos;ve made getting help as straightforward as possible — because the decision to reach out is brave enough without unnecessary barriers.
+          <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
+            We&apos;ve made getting help as straightforward and welcoming as possible — because the decision to reach out is brave enough without unnecessary barriers. From your very first phone call, you&apos;ll find a warm, compassionate voice ready to guide you every step of the way.
           </p>
         </motion.div>
 

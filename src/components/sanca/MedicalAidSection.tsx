@@ -80,11 +80,11 @@ export default function MedicalAidSection() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sanca-green-dark mb-4 tracking-tight">
             Healing You Can <span className="text-gradient-gold">Afford</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-3xl mx-auto">
             Don&apos;t let worries about cost keep you from getting the help you deserve. The true price
             of waiting is far greater — lost workdays, strained relationships, and mounting medical
-            emergencies. We&apos;re here to make the financial side simple, so you can focus entirely on
-            healing.
+            emergencies. We&apos;re here to make the financial side simple and transparent, so you can focus entirely on
+            what matters most: your healing and wellbeing.
           </p>
         </motion.div>
 

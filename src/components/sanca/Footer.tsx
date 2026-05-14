@@ -61,9 +61,9 @@ export default function Footer() {
             className="sm:col-span-2 lg:col-span-2"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-12 h-12 rounded-full border-[1.5px] border-sanca-gold/25 bg-gradient-to-br from-sanca-green/8 to-sanca-cream/5 flex items-center justify-center shadow-gold">
+              <div className="relative w-12 h-12 rounded-full border-[1.5px] border-sanca-gold/25 bg-gradient-to-br from-sanca-green/8 to-sanca-cream/5 flex items-center justify-center shadow-gold overflow-hidden">
                 <div className="absolute -top-[1.5px] left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
-                <span className="text-sanca-gold font-serif font-bold text-xl">S</span>
+                <img src="/images/sanca/sanca-logo.jpeg" alt="SANCA Pretoria Logo" className="w-full h-full object-contain p-1" />
               </div>
               <div>
                 <p className="font-serif font-bold text-xl tracking-tight">SANCA Pretoria</p>
@@ -71,9 +71,10 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
-              South African National Council on Alcoholism and Drug Dependence — Pretoria,
-              Soshanguve &amp; Hammanskraal. Accessible, affordable, medically sound addiction
-              recovery for all communities.
+              The South African National Council on Alcoholism and Drug Dependence — proudly
+              serving Pretoria, Soshanguve &amp; Hammanskraal since 1957. We offer compassionate,
+              accessible, and medically sound addiction recovery — because everyone deserves
+              a path to hope and healing.
             </p>
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm mb-4">
               <p className="text-sm text-white/50 italic leading-relaxed">
@@ -260,7 +261,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-4">
             <p className="text-xs text-white/30 flex items-center gap-1">
-              Made with <Heart className="h-3 w-3 text-sanca-gold fill-sanca-gold" /> for healing
+              Made with <Heart className="h-3 w-3 text-sanca-gold fill-sanca-gold" /> for South Africa&#39;s healing
             </p>
             <button
               onClick={scrollToTop}

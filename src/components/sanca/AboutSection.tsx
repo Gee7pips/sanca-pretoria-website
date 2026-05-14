@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Heart, Eye, Target, Sparkles, Users, Shield, Award, Leaf } from 'lucide-react';
+import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 
@@ -16,8 +17,8 @@ const values = [
 
 const timeline = [
   { year: '1956', title: 'SANCA National Founded', desc: 'A bold vision took root when the first national conference was opened by the Mayor of Johannesburg. SANCA was officially registered as a Welfare Organisation, igniting a movement of hope across South Africa.' },
-  { year: '1957', title: 'Pretoria Society Established', desc: 'Our story began as one of just eight founding affiliated societies of SANCA National — a small team with an enormous heart, determined to bring healing to the people of Pretoria and beyond.' },
-  { year: '1970', title: 'Expanded Mandate', desc: 'Recognising the growing challenges facing our communities, SANCA courageously expanded its mission beyond alcoholism to address all forms of substance misuse — meeting people where they were, with no judgement.' },
+  { year: '1957', title: 'Pretoria Society Established', desc: 'Our story began as one of just eight founding affiliated societies of SANCA National — a small team with an enormous heart, determined to bring healing to the people of Pretoria and beyond.', hasImage: true, imageSrc: '/images/sanca/pienaar-bust.jpg', imageAlt: 'Bronze bust of A.J. Pienaar, founder member of SANRA National', imageCaption: 'A.J. Pienaar — Founder Member, SANRA National (1957–1978)' },
+  { year: '1970', title: 'Expanded Mandate', desc: 'Recognising the growing challenges facing our communities, SANCA courageously expanded its mission beyond alcoholism to address all forms of substance misuse — meeting people where they were, with no judgement and no turning away.' },
   { year: 'Present', title: '32 Societies Nationwide', desc: 'Today, SANCA Pretoria operates three welcoming clinics across Pretoria, Soshanguve, and Hammanskraal — each one a beacon of hope, serving the greater Tshwane area with the same compassion that sparked our founding.' },
 ];
 
@@ -168,6 +169,24 @@ function HeritageTimeline() {
                   {item.title}
                 </h4>
                 <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
+
+                {/* Pienaar bust image for 1957 entry */}
+                {item.hasImage && (
+                  <div className="mt-3 flex items-center gap-3">
+                    <div className="relative flex-shrink-0">
+                      <Image
+                        src={item.imageSrc!}
+                        alt={item.imageAlt!}
+                        width={96}
+                        height={96}
+                        className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover shadow-premium-md border-2 border-sanca-gold/30 hover:scale-105 transition-transform cursor-pointer"
+                      />
+                    </div>
+                    <p className="text-[10px] sm:text-xs text-sanca-gold-dark dark:text-sanca-gold/80 font-medium leading-snug italic">
+                      {item.imageCaption}
+                    </p>
+                  </div>
+                )}
               </Card>
             </div>
 
@@ -181,6 +200,88 @@ function HeritageTimeline() {
         ))}
       </div>
     </div>
+  );
+}
+
+function PosterShowcase() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      className="grid md:grid-cols-5 gap-6 items-center mb-20"
+    >
+      {/* Poster image */}
+      <div className="md:col-span-2">
+        <div className="relative rounded-2xl overflow-hidden shadow-premium-xl border-4 border-sanca-gold/20 hover-lift group">
+          {/* Gold accent corners */}
+          <div className="absolute top-0 left-0 w-8 h-8 z-10 pointer-events-none">
+            <div className="absolute top-2 left-2 w-5 h-[2px] bg-sanca-gold/50 rounded-full" />
+            <div className="absolute top-2 left-2 w-[2px] h-5 bg-sanca-gold/50 rounded-full" />
+          </div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 z-10 pointer-events-none">
+            <div className="absolute bottom-2 right-2 w-5 h-[2px] bg-sanca-gold/50 rounded-full" />
+            <div className="absolute bottom-2 right-2 w-[2px] h-5 bg-sanca-gold/50 rounded-full" />
+          </div>
+
+          <div className="relative aspect-[3/4] sm:aspect-[3/4]">
+            <Image
+              src="/images/sanca/sanca-poster.png"
+              alt="SANCA Pretoria official promotional poster showcasing services and contact information"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+            {/* Bottom overlay with tagline */}
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pt-16 pb-4 px-5">
+              <p className="text-white text-sm font-serif font-semibold leading-snug">
+                SANCA Pretoria
+              </p>
+              <p className="text-white/80 text-xs mt-0.5">
+                Your Physical &amp; Mental Health Matters
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Description */}
+      <div className="md:col-span-3 space-y-4">
+        <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-sanca-green-dark dark:text-white">
+          More Than a Clinic — <span className="text-gradient-gold">A Community of Care</span>
+        </h3>
+        <p className="text-muted-foreground dark:text-white/70 leading-relaxed text-base sm:text-lg">
+          SANCA Pretoria is not simply a treatment facility — it is a lifeline woven into the
+          fabric of our community. From our tranquil Castle Carey Clinic nestled among healing
+          gardens to our accessible outpatient services in Soshanguve and Hammanskraal, we
+          meet people exactly where they are, with open doors and open hearts.
+        </p>
+        <p className="text-muted-foreground dark:text-white/70 leading-relaxed text-base sm:text-lg">
+          For over sixty-eight years, we have walked alongside thousands of South Africans
+          on their journey to recovery. Each story is different, each path unique — yet every
+          person who enters our gates is greeted with the same unwavering promise: here, you
+          will find hope, you will find help, and you will find a community that believes in
+          your capacity to heal.
+        </p>
+        <div className="flex items-center gap-4 pt-2">
+          <div className="flex items-center gap-2 text-sanca-gold">
+            <Heart className="h-5 w-5" />
+            <span className="text-sm font-semibold">Compassion-First</span>
+          </div>
+          <div className="w-px h-5 bg-sanca-gold/30" />
+          <div className="flex items-center gap-2 text-sanca-green">
+            <Shield className="h-5 w-5" />
+            <span className="text-sm font-semibold">PMB Accredited</span>
+          </div>
+          <div className="w-px h-5 bg-sanca-gold/30" />
+          <div className="flex items-center gap-2 text-sanca-emerald">
+            <Users className="h-5 w-5" />
+            <span className="text-sm font-semibold">Whole-Family Care</span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -207,9 +308,12 @@ export default function AboutSection() {
             A Legacy of <span className="text-gradient-gold">Healing</span>, Hope, and Humanity
           </h2>
           <p className="text-muted-foreground dark:text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
-            Proudly one of the original eight founding affiliates of SANCA National, we have stood alongside our communities through every season of need since 1957. With deep roots in the greater Tshwane area, we bring together heartfelt compassion and clinical excellence to walk the road of recovery with every person who walks through our doors.
+            Proudly one of the original eight founding affiliates of SANCA National, we have stood alongside our communities through every season of need since 1957. With deep roots in the greater Tshwane area, we bring together heartfelt compassion and clinical excellence to walk the road of recovery with every person who walks through our doors — because in the words of ubuntu, <em className="text-sanca-gold dark:text-sanca-gold-light">&ldquo;I am because we are&rdquo;</em>, and no one should face this journey alone.
           </p>
         </motion.div>
+
+        {/* SANCA Poster Showcase */}
+        <PosterShowcase />
 
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">

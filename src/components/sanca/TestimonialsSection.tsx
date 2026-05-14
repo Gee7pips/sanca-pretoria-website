@@ -92,9 +92,10 @@ export default function TestimonialsSection() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sanca-green-dark mb-4 tracking-tight">
             Voices of <span className="text-gradient-gold">Recovery</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-            Real stories from those who walked the path before you — proof that
-            transformation is possible. You&apos;re not alone on this journey.
+          <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
+            Real stories from those who walked the path before you — living proof that
+            transformation is not only possible, but lasting. When you choose SANCA, you join a
+            community of survivors, thrivers, and believers who refused to give up.
           </p>
         </motion.div>
 

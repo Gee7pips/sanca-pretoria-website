@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Quote, Feather } from 'lucide-react';
+import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 
 export default function CEOWelcomeSection() {
@@ -53,6 +54,13 @@ export default function CEOWelcomeSection() {
                         Hammanskraal.
                       </p>
                       <p>
+                        Set within tranquil, landscaped gardens, our facilities provide a serene
+                        sanctuary where healing begins the moment you arrive. The quiet beauty of
+                        our grounds offers a gentle reminder that recovery, like nature, unfolds
+                        one step at a time — and that even in the most difficult seasons, new
+                        growth is always possible.
+                      </p>
+                      <p>
                         We believe that every person — regardless of background, circumstance, or
                         financial means — deserves access to compassionate, evidence-based treatment.
                         Addiction is not a moral failing; it is a treatable medical condition, and
@@ -63,7 +71,7 @@ export default function CEOWelcomeSection() {
                         guidance, I want you to know: <span className="font-semibold text-sanca-green dark:text-sanca-gold">you are not alone, and it is never too
                         late to begin again.</span> Our dedicated team of social workers, medical
                         professionals, and counsellors is here to walk alongside you every step of
-                        the way.
+                        the way — not to judge, but to journey with you toward the life you deserve.
                       </p>
                     </div>
 
@@ -94,13 +102,53 @@ export default function CEOWelcomeSection() {
             </motion.div>
           </div>
 
-          {/* Right: Values & Impact */}
+          {/* Right: Image, Quote & Commitment */}
           <div className="lg:col-span-2 space-y-5">
+            {/* Garden Courtyard Image */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-premium-xl border-4 border-white dark:border-[#0D3B22] hover-lift group">
+                {/* Gold accent corner decorations */}
+                <div className="absolute top-0 left-0 w-10 h-10 z-10 pointer-events-none">
+                  <div className="absolute top-2 left-2 w-6 h-[2px] bg-sanca-gold/60 rounded-full" />
+                  <div className="absolute top-2 left-2 w-[2px] h-6 bg-sanca-gold/60 rounded-full" />
+                </div>
+                <div className="absolute bottom-0 right-0 w-10 h-10 z-10 pointer-events-none">
+                  <div className="absolute bottom-2 right-2 w-6 h-[2px] bg-sanca-gold/60 rounded-full" />
+                  <div className="absolute bottom-2 right-2 w-[2px] h-6 bg-sanca-gold/60 rounded-full" />
+                </div>
+
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src="/images/sanca/garden-courtyard.jpg"
+                    alt="Beautiful garden courtyard at SANCA Pretoria's Castle Carey Clinic with stepping stones and lush greenery"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                  />
+                  {/* Bottom overlay gradient with caption */}
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pt-16 pb-4 px-5">
+                    <p className="text-white text-sm font-serif font-semibold leading-snug">
+                      Our Healing Gardens
+                    </p>
+                    <p className="text-white/80 text-xs mt-0.5">
+                      Castle Carey Clinic, Pretoria North
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Quote Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
             >
               <Card className="p-6 shadow-premium-md border-0 bg-gradient-to-br from-sanca-green-dark to-sanca-green text-white relative overflow-hidden hover-lift">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -118,11 +166,12 @@ export default function CEOWelcomeSection() {
               </Card>
             </motion.div>
 
+            {/* Commitment Card */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.35 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Card className="p-6 shadow-premium-md border-0 hover-lift">
                 <h4 className="font-serif text-lg font-bold text-sanca-green-dark dark:text-white mb-4">
@@ -130,10 +179,10 @@ export default function CEOWelcomeSection() {
                 </h4>
                 <div className="space-y-3">
                   {[
-                    { label: 'Confidential & Judgement-Free', detail: 'Every interaction is treated with the utmost privacy and respect.' },
-                    { label: 'Affordable for Everyone', detail: 'Medical aid accepted, PMB-covered, and subsidised options available.' },
-                    { label: 'Evidence-Based Treatment', detail: 'Clinical programmes grounded in research and professional expertise.' },
-                    { label: 'Whole-Family Approach', detail: 'Healing extends beyond the individual to restore families and communities.' },
+                    { label: 'Confidential & Judgement-Free', detail: 'Every conversation, every consultation is held in the strictest confidence — a safe space where you will never be judged, only heard and helped.' },
+                    { label: 'Affordable for Everyone', detail: 'Medical aid accepted, PMB-covered, and subsidised options available — because the cost of treatment should never stand between you and recovery.' },
+                    { label: 'Evidence-Based Treatment', detail: 'Clinical programmes grounded in the latest research and delivered by experienced professionals who bring both expertise and genuine heart to their work.' },
+                    { label: 'Whole-Family Approach', detail: 'Healing does not happen in isolation. We nurture the bonds that sustain recovery, restoring wholeness to individuals, families, and communities alike.' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <div className="w-2 h-2 rounded-full bg-sanca-gold mt-2 flex-shrink-0" />
@@ -147,11 +196,12 @@ export default function CEOWelcomeSection() {
               </Card>
             </motion.div>
 
+            {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
             >
               <Card className="p-5 shadow-premium-sm border-0 bg-sanca-cream dark:bg-[#0D3B22]">
                 <div className="grid grid-cols-3 gap-4 text-center">

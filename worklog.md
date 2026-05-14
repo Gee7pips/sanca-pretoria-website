@@ -1995,3 +1995,209 @@ Stage Summary:
   3. Add more detailed content to TreatmentComparison section
   4. Consider merging DrugSeverityMeter content into DrugInfoSection for further simplification
   5. Performance optimization (lazy loading, image optimization)
+
+---
+Task ID: 4
+Agent: Navbar + Footer + PageLoader Logo Enhancer
+Task: Integrate official SANCA logo into Navbar, Footer, and PageLoader components
+
+Work Log:
+- Read worklog.md to understand previous agents' work (Tasks 1-11 completed: ultra-premium SANCA website with 21+ sections)
+- Verified SANCA logo exists at /home/z/my-project/public/images/sanca/sanca-logo.jpeg (27KB)
+- Read current Navbar.tsx, Footer.tsx, and PageLoader.tsx components
+- **Navbar.tsx edits**:
+  - Replaced generic "S" letter in main navigation logo (w-10 h-10 sm:w-12 sm:h-12 container) with `<img src="/images/sanca/sanca-logo.jpeg">` using `object-contain p-1` styling, added `overflow-hidden` to parent div
+  - Replaced generic "S" letter in mobile menu logo (w-8 h-8 container) with same logo image using `object-contain p-0.5` styling, added `overflow-hidden` to parent div
+  - Enhanced emergency bar copywriting: "Emergency:" → "Emergency Line:" for warmer, more professional tone
+  - All existing shadow, hover, and animation effects preserved
+- **Footer.tsx edits**:
+  - Replaced generic "S" letter in brand section logo (w-12 h-12 rounded-full container) with `<img src="/images/sanca/sanca-logo.jpeg">` using `object-contain p-1` styling, added `overflow-hidden` to parent div
+  - Preserved gold border, gold dot decoration, shadow-gold, and gradient background effects
+  - Enhanced brand description paragraph: more engaging, warm copy emphasizing compassion and hope ("proudly serving since 1957", "compassionate, accessible, and medically sound", "because everyone deserves a path to hope and healing")
+  - Enhanced footer attribution: "Made with ❤ for healing" → "Made with ❤ for South Africa's healing"
+- **PageLoader.tsx edits**:
+  - Replaced generic "S" letter (font-serif text-4xl sm:text-5xl text-gradient-gold) with `<img src="/images/sanca/sanca-logo.jpeg">` using `object-contain p-2` styling
+  - Updated comment from "SANCA 'S' Logo" to "SANCA Logo"
+  - Added `overflow-hidden` to the logo container div
+  - All existing animations preserved: pulsing scale-in, gold spinner ring, inner glow ring, decorative background rings, loading text
+- Ran ESLint — zero errors
+- Verified dev server log — pages compiling and rendering with 200 status codes
+
+Stage Summary:
+- Official SANCA logo (sanca-logo.jpeg) integrated into all three components: Navbar (2 instances), Footer (1 instance), PageLoader (1 instance)
+- All existing layout structures, CSS classes, animations, and dark mode compatibility preserved
+- Copywriting enhancements: warmer emergency bar text, more engaging footer description, South Africa-specific footer attribution
+- Zero lint errors, dev server rendering successfully
+
+---
+Task ID: 6
+Agent: Facilities Section Image Enhancer
+Task: Integrate official SANCA facility photos into Facilities Section with premium frames and shadow effects
+
+Work Log:
+- Read worklog.md to understand previous agents' work (Tasks 1-11 completed: ultra-premium SANCA website with 21+ sections)
+- Read current FacilitiesSection.tsx (344 lines) to understand structure: 4 facility accordion cards with placeholder images
+- Verified all SANCA images exist in /public/images/sanca/: castle-carey-welcome.jpg, facility-building.jpg, clinic-entrance.jpg, garden-courtyard.jpg
+- Reviewed globals.css for available utility classes (shadow-premium-*, hover-lift, text-gradient-gold, etc.)
+- **Updated facility image references** in the facilities array:
+  - Castle Carey Clinic: `/images/sanca/castle-carey-welcome.jpg` (was `/team-image.png`)
+  - Lapalamé Youth Drug Unit: `/images/sanca/clinic-entrance.jpg` (was `/hope-image.png`)
+  - Soshanguve Clinic: `/images/sanca/facility-building.jpg` (was `/pattern-bg.png`)
+  - Hammanskraal Clinic: `/images/sanca/facility-building.jpg` (was `/pattern-bg.png`)
+- **Added premium framed image to each facility's expanded content**:
+  - Placed prominently at top of expanded area, spanning full width, with mb-6 spacing
+  - Frame styling: `rounded-2xl overflow-hidden shadow-premium-xl border-4 border-white dark:border-[#0D3B22] group`
+  - Gold accent line at top: `absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sanca-gold to-sanca-gold-light`
+  - Image with `object-cover w-full h-48 sm:h-56` and hover scale-105 transition
+  - Gradient overlay at bottom: `bg-gradient-to-t from-sanca-green-dark/60 to-transparent`
+  - Facility name and type as text overlay at bottom of image with drop shadows
+  - Framer Motion entrance animation (opacity + scale) with 0.1s delay
+- **Added Virtual Tour image gallery row**:
+  - Placed after section header, before facility cards
+  - Title: "Step Inside Our Facilities" with Camera icon (lucide-react)
+  - 4 thumbnail images in a flex row (hidden on mobile, visible on md+):
+    - Healing Garden (garden-courtyard.jpg)
+    - Facility Exterior (facility-building.jpg)
+    - Clinic Entrance (clinic-entrance.jpg)
+    - Welcome Area (castle-carey-welcome.jpg)
+  - Each thumbnail: `w-48 h-32 rounded-xl object-cover shadow-premium-md border-2 border-sanca-gold/20 hover-lift`
+  - Gold accent line at top of each thumbnail
+  - Subtle label below each with ImageIcon
+  - Staggered framer-motion entrance animations (0.3s + i * 0.1s delay)
+- **Enhanced copywriting** throughout the section:
+  - Section heading: "Three Clinics" → "Four Facilities" (matches 4 facilities)
+  - Section subtitle: More engaging and warm — "every SANCA door opens to hope, healing, and a fresh start"
+  - Castle Carey features: Emphasized 24-hour care and healing garden environment (e.g., "Round-the-clock compassionate care and nursing support", "Healing garden therapy & enriching occupational therapy")
+  - Lapalame features: Emphasized youth-focused, age-appropriate approach (e.g., "Age-appropriate, youth-centred rehabilitation programmes", "Creative, age-appropriate therapy including art and play")
+  - Soshanguve features: Emphasized community roots and accessibility (e.g., "Deep community roots with trusted resource networking", "Flexible part-time treatment that fits your daily life")
+  - Hammanskraal features: Emphasized community roots and trust (e.g., "Community-based treatment rooted in local trust", "Relapse management with compassionate, non-judgmental support")
+- **Dark mode improvements**:
+  - Added dark: variants for text colors (dark:text-white, dark:text-sanca-gold, dark:text-white/50, dark:text-white/60)
+  - Added dark: border variant for expanded content separator (dark:border-white/10)
+  - Added dark: border variant for map embed (dark:border-white/10)
+  - Added dark: bg variant for special note (dark:bg-sanca-gold/10, dark:text-sanca-gold)
+  - Added dark:border-[#0D3B22] for image frame border
+- Added Camera and Image icon imports from lucide-react
+- Ran ESLint — zero errors
+- Verified dev server log — pages compiling and rendering with 200 status codes
+
+Stage Summary:
+- FacilitiesSection.tsx fully updated with official SANCA facility photos
+- 4 placeholder images replaced with real SANCA photos (castle-carey-welcome, clinic-entrance, facility-building)
+- Premium framed images added to expanded content of each facility card with gold accent lines, gradient overlays, text overlays, and hover effects
+- Virtual Tour gallery row added with 4 thumbnail images (hidden on mobile, visible on md+) with staggered animations
+- Copywriting enhanced: warmer, more engaging language emphasizing each facility's unique strengths
+- Dark mode compatibility improved with explicit dark: variants throughout
+- All existing functionality preserved (accordion/expand behavior, map embeds, contact info, features lists)
+- Zero lint errors, dev server rendering successfully
+
+---
+Task ID: 5
+Agent: CEO Welcome + About Section Image Enhancer
+Task: Integrate official SANCA images into CEO Welcome Section and About Section with premium frames and shadow effects, enhance copywriting
+
+Work Log:
+- Read existing CEOWelcomeSection.tsx (178 lines) and AboutSection.tsx (230 lines)
+- Verified all SANCA images exist: garden-courtyard.jpg, pienaar-bust.jpg, sanca-poster.png
+- Enhanced CEOWelcomeSection.tsx:
+  - Added garden courtyard image to right column (lg:col-span-2) above the quote card
+  - Premium frame: rounded-2xl, shadow-premium-xl, border-4 border-white dark:border-[#0D3B22], hover-lift, group
+  - Gold accent corner decorations (top-left and bottom-right L-shaped gold lines)
+  - Image uses next/image with object-cover, aspect-[4/3], responsive sizes
+  - Bottom gradient overlay with "Our Healing Gardens — Castle Carey Clinic, Pretoria North" caption
+  - framer-motion whileInView entrance animation (opacity + x slide)
+  - Group hover scale-105 on image for subtle zoom effect
+  - Enhanced copywriting: added healing environment paragraph about tranquil gardens and nature metaphor
+  - Enhanced final paragraph with warmer closing: "not to judge, but to journey with you toward the life you deserve"
+  - Enhanced "Our Commitment to You" items with more descriptive, engaging language:
+    - "Confidential & Judgement-Free": added "a safe space where you will never be judged, only heard and helped"
+    - "Affordable for Everyone": added "because the cost of treatment should never stand between you and recovery"
+    - "Evidence-Based Treatment": added "who bring both expertise and genuine heart to their work"
+    - "Whole-Family Approach": added "We nurture the bonds that sustain recovery, restoring wholeness to individuals, families, and communities alike"
+- Enhanced AboutSection.tsx:
+  - Added Pienaar bust image to 1957 timeline entry:
+    - Premium-framed thumbnail (w-20 h-20 sm:w-24 sm:h-24, rounded-xl, shadow-premium-md, border-2 border-sanca-gold/30)
+    - hover:scale-105 transition-transform cursor-pointer
+    - Caption: "A.J. Pienaar — Founder Member, SANRA National (1957–1978)"
+    - Positioned inside timeline card alongside text
+    - next/image with fixed width/height for performance
+  - Added PosterShowcase component between section header and Mission/Vision cards:
+    - Two-column layout: poster image (md:col-span-2) + description (md:col-span-3)
+    - Poster frame: rounded-2xl, shadow-premium-xl, border-4 border-sanca-gold/20, hover-lift, group
+    - Gold accent corners on poster
+    - Bottom gradient overlay: "SANCA Pretoria — Your Physical & Mental Health Matters"
+    - Group hover scale-105 on image
+    - Description side with heading "More Than a Clinic — A Community of Care"
+    - Two rich paragraphs about SANCA's community impact and heritage
+    - Three feature badges: Compassion-First, PMB Accredited, Whole-Family Care
+    - framer-motion whileInView entrance animation
+  - Enhanced section description with ubuntu reference: "because in the words of ubuntu, 'I am because we are', and no one should face this journey alone"
+  - Enhanced 1970 timeline description: added "and no turning away" for emotional impact
+- Ran ESLint — zero errors
+- Verified dev server — pages compiling and rendering with 200 status codes
+
+Stage Summary:
+- CEOWelcomeSection enhanced with garden courtyard image (premium frame, gold corners, caption overlay, hover effects) and warmer, more personal copywriting including healing environment paragraph and enhanced commitment items
+- AboutSection enhanced with Pienaar bust thumbnail in 1957 timeline entry, SANCA poster showcase with two-column layout, and enhanced copywriting throughout (ubuntu reference, richer descriptions, emotional resonance)
+- All images use next/image with proper sizing, alt text, and responsive sizes
+- All premium frame effects applied: rounded corners, premium shadows, gold-tinted borders, hover-lift, caption overlays, entrance animations
+- Dark mode compatibility maintained throughout
+- Zero lint errors, dev server rendering successfully
+
+---
+Task ID: 12
+Agent: Main Agent (Image Integration & Copywriting Enhancement)
+Task: Integrate official SANCA images with premium frames and shadows, enhance copywriting throughout
+
+Work Log:
+- Analyzed all 7 uploaded images using VLM to understand content:
+  - SANCA_Pretoria.png: Official SANCA promotional poster with logo, taglines, facility photos, contact info
+  - images (18).jpeg: SANCA official logo (circular caduceus symbol with "SANCA" and "PRETORIA")
+  - IMG-20240516-WA0059.jpg: Outdoor garden/courtyard with stepping stones and plants
+  - IMG-20240516-WA0027-scaled.jpg: Building exterior with paved walkway and grass
+  - 20220803_100945-scaled.jpg: Bronze bust of A.J. Pienaar (founder of SANRA-National, 1957-1978)
+  - images (17).jpeg: Castle Carey Clinic welcome sign with landscaped path
+  - IMG-20240516-WA0114.jpg: Stone archway entrance to Castle Carey Clinic/Lapalame Drug Unit
+- Copied all images to /home/z/my-project/public/images/sanca/ with SEO-friendly names
+- Launched 3 parallel sub-agents for comprehensive image integration:
+
+**Agent 1 (Task 4): Navbar + Footer + PageLoader Logo Integration**
+- Navbar: Replaced generic "S" letter with actual SANCA logo image in main nav and mobile menu
+- Footer: Replaced "S" letter with SANCA logo image in brand section
+- PageLoader: Replaced "S" letter with SANCA logo image
+- Enhanced copywriting: "Emergency Line" instead of "Emergency", warmer footer description, "Made with ❤ for South Africa's healing"
+
+**Agent 2 (Task 5): CEO Welcome + About Section Images**
+- CEO Welcome: Added garden courtyard image with premium frame (rounded-2xl, shadow-premium-xl, gold accent corners, bottom gradient overlay with caption)
+- CEO Welcome: Enhanced copywriting with healing environment paragraph about tranquil gardens
+- About Section: Added Pienaar bust thumbnail to 1957 heritage timeline entry with caption
+- About Section: Added new PosterShowcase component between section header and Mission/Vision cards
+- About Section: Enhanced copywriting with ubuntu reference and more emotional resonance
+
+**Agent 3 (Task 6): Facilities Section Real Photos**
+- Updated all 4 facility image references to real photos (castle-carey-welcome, clinic-entrance, facility-building)
+- Added premium framed images to each facility's expanded content with gold accent lines, gradient overlays
+- Added "Virtual Tour" gallery row with 4 thumbnail images above facility cards
+- Enhanced copywriting: emphasized 24-hour care for Castle Carey, youth-focused for Lapalame, community roots for Soshanguve/Hammanskraal
+- Added dark mode compatibility throughout
+
+**Main Agent Direct Edits:**
+- Hero Section: Added SANCA logo to badge, enhanced subtitle with healing environment mention, improved CTA text ("Take the First Step", "Start Admissions"), enhanced trust indicators with more detail
+- Programmes Section: Replaced all 4 placeholder images with real facility photos, enhanced all 4 programme descriptions with more vivid, engaging language
+- Admissions Section: Enhanced subtitle with warmer, more welcoming copywriting
+- Testimonials Section: Enhanced subtitle with more inspiring, community-focused language
+- Contact Section: Enhanced subtitle with warmer, more compassionate language
+- Medical Aid Section: Enhanced subtitle with more supportive, transparent tone
+
+Stage Summary:
+- **Official SANCA images integrated** across 8+ sections with premium frames (rounded-2xl, shadow-premium-xl, gold accents, gradient overlays, captions)
+- **SANCA logo** replaces generic "S" in Navbar, Footer, and PageLoader
+- **Real facility photos** replace all placeholder images in Facilities and Programmes sections
+- **Garden courtyard image** added to CEO Welcome section
+- **Pienaar bust** added to About section heritage timeline
+- **SANCA poster** added as new visual showcase in About section
+- **Virtual Tour gallery** added to Facilities section
+- **Copywriting enhanced** across Hero, Programmes, Admissions, Testimonials, Contact, Medical Aid, CEO Welcome, and About sections
+- **Cron task created** for automated 15-minute QA reviews (webDevReview)
+- Zero lint errors, dev server rendering successfully
+

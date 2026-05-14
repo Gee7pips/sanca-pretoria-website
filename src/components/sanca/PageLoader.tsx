@@ -72,7 +72,7 @@ export default function PageLoader() {
             className="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full shadow-[0_0_40px_rgba(197,150,58,0.3)]"
           />
 
-          {/* SANCA "S" Logo */}
+          {/* SANCA Logo */}
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: [0, 1.15, 1], opacity: 1 }}
@@ -81,11 +81,9 @@ export default function PageLoader() {
               ease: 'easeOut',
               scale: { times: [0, 0.7, 1] },
             }}
-            className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-sanca-green to-sanca-green-dark flex items-center justify-center shadow-2xl"
+            className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-sanca-green to-sanca-green-dark flex items-center justify-center shadow-2xl overflow-hidden"
           >
-            <span className="font-serif text-4xl sm:text-5xl font-bold text-gradient-gold select-none">
-              S
-            </span>
+            <img src="/images/sanca/sanca-logo.jpeg" alt="SANCA Pretoria Logo" className="w-full h-full object-contain p-2" />
           </motion.div>
 
           {/* Loading text */}

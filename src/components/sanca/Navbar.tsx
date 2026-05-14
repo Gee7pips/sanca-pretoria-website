@@ -68,7 +68,7 @@ export default function Navbar() {
               className="flex items-center gap-1.5 hover:text-sanca-gold-light transition-colors"
             >
               <Phone className="h-3 w-3" />
-              <span className="hidden sm:inline">Emergency: </span>012 542 1121
+              <span className="hidden sm:inline">Emergency Line: </span>012 542 1121
             </a>
             <a
               href="https://wa.me/27813181511"
@@ -102,10 +102,8 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-sanca-green rounded-xl flex items-center justify-center shadow-premium-sm group-hover:shadow-premium-md transition-shadow card-animated-border">
-              <span className="text-white font-serif font-bold text-lg sm:text-xl relative z-10">
-                S
-              </span>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-sanca-green rounded-xl flex items-center justify-center shadow-premium-sm group-hover:shadow-premium-md transition-shadow card-animated-border overflow-hidden">
+              <img src="/images/sanca/sanca-logo.jpeg" alt="SANCA Pretoria Logo" className="w-full h-full object-contain p-1" />
             </div>
             <div className="hidden sm:block">
               <p
@@ -185,10 +183,8 @@ export default function Navbar() {
                 <div className="flex flex-col h-full">
                   <div className="p-4 border-b flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-sanca-green rounded-lg flex items-center justify-center">
-                        <span className="text-white font-serif font-bold text-sm">
-                          S
-                        </span>
+                      <div className="w-8 h-8 bg-sanca-green rounded-lg flex items-center justify-center overflow-hidden">
+                        <img src="/images/sanca/sanca-logo.jpeg" alt="SANCA Pretoria Logo" className="w-full h-full object-contain p-0.5" />
                       </div>
                       <span className="font-serif font-bold text-sanca-green">
                         SANCA Pretoria

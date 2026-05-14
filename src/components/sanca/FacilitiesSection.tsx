@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Phone, Clock, Users, Building2, TreePine, GraduationCap, ArrowRight, ChevronDown, Mail, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Users, Building2, TreePine, GraduationCap, ArrowRight, ChevronDown, Mail, Navigation, Camera, Image as ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -12,7 +12,7 @@ const facilities = [
     name: 'Castle Carey Clinic',
     type: 'Inpatient Adult Facility',
     icon: Building2,
-    image: '/team-image.png',
+    image: '/images/sanca/castle-carey-welcome.jpg',
     color: 'from-sanca-green-dark to-sanca-green',
     address: 'Corner Rachel De Beer & Waterbok Street, Ninapark, Pretoria North, 0182',
     phone: '012 542 1121 / 012 542 1122',
@@ -28,12 +28,12 @@ const facilities = [
       remotePatients: 'After 14:00 or weekends',
     },
     features: [
-      'Medical detoxification under supervision',
-      '24-hour care and support',
-      'Individual Treatment Plans',
-      'Garden therapy & occupational therapy',
-      'Family-welcoming environment',
-      '7-day-a-week admissions',
+      'Medical detoxification under 24-hour professional supervision',
+      'Round-the-clock compassionate care and nursing support',
+      'Individualised Treatment Plans tailored to your journey',
+      'Healing garden therapy & enriching occupational therapy',
+      'Warm, family-welcoming environment for visits and support',
+      '7-day-a-week admissions — help when you need it most',
     ],
     specialNote: 'Patients above 60 must submit a medical report from a GP.',
   },
@@ -42,7 +42,7 @@ const facilities = [
     name: 'Lapalamé Youth Drug Unit',
     type: 'Inpatient Youth Facility',
     icon: GraduationCap,
-    image: '/hope-image.png',
+    image: '/images/sanca/clinic-entrance.jpg',
     color: 'from-sanca-emerald to-green-700',
     address: '116 Waterbok Street, Ninapark, Akasia, Pretoria',
     phone: '012 542 1121',
@@ -58,12 +58,12 @@ const facilities = [
       remotePatients: 'Contact for details',
     },
     features: [
-      'Specialised for males aged 13–18',
-      'Tailored rehabilitation programmes',
-      'Mandatory parental involvement',
-      'After-care support post-discharge',
-      'Age-appropriate therapy',
-      'School programme integration',
+      'Specialised programme for adolescent males aged 13–18',
+      'Age-appropriate, youth-centred rehabilitation programmes',
+      'Mandatory parental involvement for lasting family healing',
+      'Comprehensive after-care support post-discharge',
+      'Creative, age-appropriate therapy including art and play',
+      'School programme integration to keep education on track',
     ],
     specialNote: '"Do teenagers always grow out of using substances? The answer is FALSE."',
   },
@@ -72,7 +72,7 @@ const facilities = [
     name: 'Soshanguve Clinic',
     type: 'Outpatient Community Clinic',
     icon: TreePine,
-    image: '/pattern-bg.png',
+    image: '/images/sanca/facility-building.jpg',
     color: 'from-sanca-gold-dark to-sanca-gold',
     address: '1631 Block H, Soshanguve, 0152',
     phone: '(012) 799 2553',
@@ -88,12 +88,12 @@ const facilities = [
       remotePatients: 'Walk-ins welcome',
     },
     features: [
-      'Flexible part-time treatment',
-      'Maintain daily routines',
-      'Individual & group counselling',
-      'Drug testing services',
-      'Community resource networking',
-      'Self-help group facilitation',
+      'Flexible part-time treatment that fits your daily life',
+      'Maintain work and family routines while getting help',
+      'Individual & group counselling in a safe, welcoming space',
+      'Confidential drug testing and screening services',
+      'Deep community roots with trusted resource networking',
+      'Self-help group facilitation for ongoing peer support',
     ],
     specialNote: 'Dedicated social workers conduct sessions and address community needs.',
   },
@@ -102,7 +102,7 @@ const facilities = [
     name: 'Hammanskraal Clinic',
     type: 'Outpatient Community Clinic',
     icon: TreePine,
-    image: '/pattern-bg.png',
+    image: '/images/sanca/facility-building.jpg',
     color: 'from-sanca-gold-dark to-sanca-gold',
     address: 'Stand 2025, Jubilee Road, Temba, Hammanskraal, 0407',
     phone: '076 822 4463',
@@ -118,14 +118,33 @@ const facilities = [
       remotePatients: 'Walk-ins welcome',
     },
     features: [
-      'Community-based treatment',
-      'Relapse management',
-      'Family counselling sessions',
-      'Diversion programmes',
-      'Aftercare & ongoing support',
-      'Referral services',
+      'Community-based treatment rooted in local trust',
+      'Relapse management with compassionate, non-judgmental support',
+      'Family counselling sessions for lasting healing together',
+      'Diversion programmes as an alternative to the justice system',
+      'Aftercare & ongoing support to sustain your recovery',
+      'Referral services connecting you to the right resources',
     ],
     specialNote: 'Deep community roots — trusted in Hammanskraal and surrounding areas.',
+  },
+];
+
+const virtualTourImages = [
+  {
+    src: '/images/sanca/garden-courtyard.jpg',
+    label: 'Healing Garden',
+  },
+  {
+    src: '/images/sanca/facility-building.jpg',
+    label: 'Facility Exterior',
+  },
+  {
+    src: '/images/sanca/clinic-entrance.jpg',
+    label: 'Clinic Entrance',
+  },
+  {
+    src: '/images/sanca/castle-carey-welcome.jpg',
+    label: 'Welcome Area',
   },
 ];
 
@@ -154,11 +173,53 @@ export default function FacilitiesSection() {
             Our Clinics
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-sanca-green-dark dark:text-white mb-4">
-            Three Clinics, <span className="text-gradient-gold">One Purpose</span>
+            Four Facilities, <span className="text-gradient-gold">One Purpose</span>
           </h2>
           <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-            From Pretoria North to Soshanguve and Hammanskraal — bringing quality care closer to the communities that need it most.
+            From our serene Pretoria North campus to community-rooted clinics in Soshanguve and Hammanskraal — every SANCA door opens to hope, healing, and a fresh start.
           </p>
+        </motion.div>
+
+        {/* Virtual Tour Gallery Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12"
+        >
+          <div className="flex items-center gap-2 mb-4 justify-center">
+            <Camera className="h-5 w-5 text-sanca-gold" />
+            <h3 className="font-serif text-lg sm:text-xl font-semibold text-sanca-green-dark dark:text-white">
+              Step Inside Our Facilities
+            </h3>
+          </div>
+          <div className="hidden md:flex items-center justify-center gap-4 lg:gap-6">
+            {virtualTourImages.map((img, i) => (
+              <motion.div
+                key={img.label}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                className="flex flex-col items-center gap-2"
+              >
+                <div className="relative w-48 h-32 rounded-xl overflow-hidden shadow-premium-md border-2 border-sanca-gold/20 hover-lift group">
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-sanca-gold to-sanca-gold-light z-10" />
+                  <img
+                    src={img.src}
+                    alt={img.label}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-sanca-green-dark/40 to-transparent" />
+                </div>
+                <span className="text-xs text-muted-foreground dark:text-white/60 font-medium flex items-center gap-1">
+                  <ImageIcon className="h-3 w-3" />
+                  {img.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Facility Cards */}
@@ -188,13 +249,13 @@ export default function FacilitiesSection() {
                           <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-sanca-green" />
                         </div>
                         <div>
-                          <h3 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-sanca-green-dark">
+                          <h3 className="font-serif text-lg sm:text-xl font-bold tracking-tight text-sanca-green-dark dark:text-white">
                             {facility.name}
                           </h3>
-                          <p className="text-sm text-sanca-gold-dark font-medium">
+                          <p className="text-sm text-sanca-gold-dark dark:text-sanca-gold font-medium">
                             {facility.type}
                           </p>
-                          <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                          <div className="flex items-center gap-1 text-xs text-muted-foreground dark:text-white/50 mt-1">
                             <MapPin className="h-3 w-3" />
                             <span className="line-clamp-1">{facility.address}</span>
                           </div>
@@ -203,7 +264,7 @@ export default function FacilitiesSection() {
                       <motion.div
                         animate={{ rotate: isExpanded ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
-                        className="text-muted-foreground flex-shrink-0 ml-4"
+                        className="text-muted-foreground dark:text-white/50 flex-shrink-0 ml-4"
                       >
                         <ChevronDown className="h-5 w-5" />
                       </motion.div>
@@ -220,33 +281,57 @@ export default function FacilitiesSection() {
                         transition={{ duration: 0.4 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-gray-100">
-                          <div className="grid md:grid-cols-2 gap-6 mt-4">
+                        <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-gray-100 dark:border-white/10">
+                          {/* Premium Framed Image */}
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.97 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="relative rounded-2xl overflow-hidden shadow-premium-xl border-4 border-white dark:border-[#0D3B22] group mb-6"
+                          >
+                            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sanca-gold to-sanca-gold-light z-10" />
+                            <img
+                              src={facility.image}
+                              alt={facility.name}
+                              className="object-cover w-full h-48 sm:h-56 transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-sanca-green-dark/60 to-transparent" />
+                            <div className="absolute bottom-0 left-0 right-0 p-4">
+                              <h4 className="font-serif text-white text-lg sm:text-xl font-bold drop-shadow-lg">
+                                {facility.name}
+                              </h4>
+                              <p className="text-white/80 text-sm font-medium drop-shadow-md">
+                                {facility.type}
+                              </p>
+                            </div>
+                          </motion.div>
+
+                          <div className="grid md:grid-cols-2 gap-6">
                             {/* Contact Info */}
                             <div className="space-y-4">
-                              <h4 className="font-semibold text-sm tracking-tight text-sanca-green-dark flex items-center gap-2">
+                              <h4 className="font-semibold text-sm tracking-tight text-sanca-green-dark dark:text-white flex items-center gap-2">
                                 <Phone className="h-4 w-4" />
                                 Contact & Hours
                               </h4>
                               <div className="space-y-3">
                                 <div className="flex items-center gap-3 text-sm">
                                   <Phone className="h-4 w-4 text-sanca-green flex-shrink-0" />
-                                  <a href={`tel:${facility.phone.replace(/\s/g, '')}`} className="text-sanca-green hover:underline">{facility.phone}</a>
+                                  <a href={`tel:${facility.phone.replace(/\s/g, '')}`} className="text-sanca-green dark:text-sanca-gold hover:underline">{facility.phone}</a>
                                 </div>
                                 <div className="flex items-center gap-3 text-sm">
                                   <Mail className="h-4 w-4 text-sanca-green flex-shrink-0" />
-                                  <a href={`mailto:${facility.email}`} className="text-sanca-green hover:underline">{facility.email}</a>
+                                  <a href={`mailto:${facility.email}`} className="text-sanca-green dark:text-sanca-gold hover:underline">{facility.email}</a>
                                 </div>
-                                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                <div className="flex items-center gap-3 text-sm text-muted-foreground dark:text-white/60">
                                   <Users className="h-4 w-4 flex-shrink-0" />
                                   Capacity: {facility.capacity}
                                 </div>
                               </div>
 
-                              <h5 className="font-medium text-xs text-muted-foreground uppercase tracking-wider pt-2">
+                              <h5 className="font-medium text-xs text-muted-foreground dark:text-white/50 uppercase tracking-wider pt-2">
                                 Operating Hours
                               </h5>
-                              <div className="space-y-1.5 text-sm text-muted-foreground">
+                              <div className="space-y-1.5 text-sm text-muted-foreground dark:text-white/60">
                                 <div className="flex items-start gap-2">
                                   <Clock className="h-3.5 w-3.5 mt-0.5 flex-shrink-0" />
                                   <span>Admin: {facility.hours.admin}</span>
@@ -262,7 +347,7 @@ export default function FacilitiesSection() {
                               </div>
 
                               {facility.specialNote && (
-                                <div className="p-3 rounded-lg bg-sanca-gold/5 border border-sanca-gold/20 text-xs text-sanca-gold-dark italic">
+                                <div className="p-3 rounded-lg bg-sanca-gold/5 dark:bg-sanca-gold/10 border border-sanca-gold/20 text-xs text-sanca-gold-dark dark:text-sanca-gold italic">
                                   💡 {facility.specialNote}
                                 </div>
                               )}
@@ -270,20 +355,20 @@ export default function FacilitiesSection() {
 
                             {/* Features & Map */}
                             <div>
-                              <h4 className="font-semibold text-sm tracking-tight text-sanca-green-dark mb-4">
+                              <h4 className="font-semibold text-sm tracking-tight text-sanca-green-dark dark:text-white mb-4">
                                 Services & Features
                               </h4>
                               <div className="grid gap-2">
                                 {facility.features.map((feature, j) => (
-                                  <div key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-sanca-green mt-1.5 flex-shrink-0" />
+                                  <div key={j} className="flex items-start gap-2 text-sm text-muted-foreground dark:text-white/60">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-sanca-green flex-shrink-0 mt-1.5" />
                                     {feature}
                                   </div>
                                 ))}
                               </div>
 
                               {/* Map embed */}
-                              <div className="mt-4 rounded-xl overflow-hidden border border-gray-200 shadow-premium-sm">
+                              <div className="mt-4 rounded-xl overflow-hidden border border-gray-200 dark:border-white/10 shadow-premium-sm">
                                 <iframe
                                   src={facility.mapEmbedUrl}
                                   width="100%"
