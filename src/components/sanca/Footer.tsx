@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock, Heart, Shield, ExternalLink, ArrowUp, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Heart, Shield, ExternalLink, ArrowUp, MessageCircle, Navigation } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Self-Assessment', href: '#assessment' },
@@ -10,7 +10,7 @@ const quickLinks = [
   { label: 'Recovery Journey', href: '#recovery-journey' },
   { label: 'Resource Library', href: '#resources' },
   { label: 'For Families', href: '#families' },
-  { label: 'Volunteer With Us', href: '#volunteer' },
+  { label: 'Cost Calculator', href: '#cost-calculator' },
   { label: 'FAQ', href: '#faq' },
 ];
 
@@ -42,27 +42,31 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-sanca-green-dark dark:bg-[#071a10] text-white relative">
+    <footer className="bg-sanca-green-dark dark:bg-[#071a10] text-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-sanca-gold/3 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-sanca-green-light/3 rounded-full blur-3xl pointer-events-none" />
+
       {/* Top accent line */}
       <div className="h-1 bg-gradient-to-r from-sanca-gold via-sanca-gold-light to-sanca-gold" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="sm:col-span-2 lg:col-span-1"
+            className="sm:col-span-2 lg:col-span-2"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-sanca-gold rounded-xl flex items-center justify-center shadow-gold">
-                <span className="text-white font-serif font-bold text-lg">S</span>
+              <div className="w-12 h-12 bg-sanca-gold rounded-xl flex items-center justify-center shadow-gold">
+                <span className="text-white font-serif font-bold text-xl">S</span>
               </div>
               <div>
-                <p className="font-serif font-bold text-lg">SANCA Pretoria</p>
-                <p className="text-xs text-white/50">Est. 1957</p>
+                <p className="font-serif font-bold text-xl">SANCA Pretoria</p>
+                <p className="text-xs text-white/50 tracking-wider">Est. 1957 — 68 Years of Service</p>
               </div>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-4">
@@ -70,22 +74,22 @@ export default function Footer() {
               Soshanguve &amp; Hammanskraal. Accessible, affordable, medically sound addiction
               recovery for all communities.
             </p>
-            <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-              <p className="text-xs text-white/40 italic">
+            <div className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm mb-4">
+              <p className="text-sm text-white/50 italic leading-relaxed">
                 &ldquo;Everyone deserves a chance at a healthy and fulfilling life, free from
                 the chains of addiction.&rdquo;
               </p>
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-3">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/10 hover:bg-sanca-gold/20 flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-sanca-gold/20 flex items-center justify-center transition-all duration-200 hover:scale-110 border border-white/5 hover:border-sanca-gold/30"
                   aria-label={link.label}
                 >
                   {link.icon === 'facebook' ? (
@@ -110,12 +114,12 @@ export default function Footer() {
             <h4 className="font-serif font-bold text-sm mb-4 text-sanca-gold-light uppercase tracking-wider">
               Quick Links
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-sm text-white/60 hover:text-white hover:pl-1 transition-all duration-200 gold-underline"
+                    className="text-sm text-white/60 hover:text-white hover:pl-2 transition-all duration-200 gold-underline"
                   >
                     {link.label}
                   </button>
@@ -134,12 +138,12 @@ export default function Footer() {
             <h4 className="font-serif font-bold text-sm mb-4 text-sanca-gold-light uppercase tracking-wider">
               Programmes
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {programmes.map((prog) => (
                 <li key={prog}>
                   <button
                     onClick={() => scrollTo('#programmes')}
-                    className="text-sm text-white/60 hover:text-white hover:pl-1 transition-all duration-200"
+                    className="text-sm text-white/60 hover:text-white hover:pl-2 transition-all duration-200"
                   >
                     {prog}
                   </button>
@@ -148,7 +152,7 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Contact */}
+          {/* Contact + Map */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -161,40 +165,63 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="tel:0125421121"
-                className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white transition-colors group"
               >
-                <Phone className="h-4 w-4 text-sanca-gold flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <div className="w-7 h-7 rounded-lg bg-sanca-gold/10 flex items-center justify-center group-hover:bg-sanca-gold/20 transition-colors">
+                  <Phone className="h-3.5 w-3.5 text-sanca-gold" />
+                </div>
                 012 542 1121
               </a>
               <a
                 href="https://wa.me/27813181511"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white transition-colors group"
               >
-                <MessageCircle className="h-4 w-4 text-sanca-emerald flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <div className="w-7 h-7 rounded-lg bg-sanca-emerald/10 flex items-center justify-center group-hover:bg-sanca-emerald/20 transition-colors">
+                  <MessageCircle className="h-3.5 w-3.5 text-sanca-emerald" />
+                </div>
                 WhatsApp: 081 318 1511
               </a>
               <a
                 href="mailto:info@sancapta.co.za"
-                className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white transition-colors group"
               >
-                <Mail className="h-4 w-4 text-sanca-gold flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <div className="w-7 h-7 rounded-lg bg-sanca-gold/10 flex items-center justify-center group-hover:bg-sanca-gold/20 transition-colors">
+                  <Mail className="h-3.5 w-3.5 text-sanca-gold" />
+                </div>
                 info@sancapta.co.za
               </a>
-              <div className="flex items-start gap-2 text-sm text-white/60">
-                <MapPin className="h-4 w-4 text-sanca-gold flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-sm text-white/60">
+                <div className="w-7 h-7 rounded-lg bg-sanca-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="h-3.5 w-3.5 text-sanca-gold" />
+                </div>
                 <span>Corner Rachel De Beer &amp; Waterbok St, Ninapark, Pretoria North, 0182</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-white/60">
-                <Clock className="h-4 w-4 text-sanca-gold flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm text-white/60">
+                <div className="w-7 h-7 rounded-lg bg-sanca-gold/10 flex items-center justify-center">
+                  <Clock className="h-3.5 w-3.5 text-sanca-gold" />
+                </div>
                 Mon–Fri: 08:00–17:00
               </div>
             </div>
 
+            {/* Google Maps Link */}
+            <a
+              href="https://maps.google.com/?q=SANCA+Pretoria+Corner+Rachel+De+Beer+Waterbok+St+Ninapark"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-sanca-gold/10 hover:border-sanca-gold/30 transition-all duration-300 group"
+            >
+              <Navigation className="h-4 w-4 text-sanca-gold group-hover:scale-110 transition-transform" />
+              <span className="text-xs font-medium text-white/70 group-hover:text-white transition-colors">
+                Get Directions on Google Maps
+              </span>
+            </a>
+
             <div className="mt-4 pt-4 border-t border-white/10">
-              <p className="text-xs text-white/40 flex items-center gap-1">
-                <Shield className="h-3 w-3" />
+              <p className="text-xs text-white/40 flex items-center gap-1.5">
+                <Shield className="h-3.5 w-3.5 text-sanca-gold/60" />
                 DSD Registered — Meets Minimum Norms &amp; Standards
               </p>
             </div>

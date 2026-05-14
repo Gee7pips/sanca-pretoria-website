@@ -1676,3 +1676,496 @@
     margin: 2cm;
   }
 }
+
+/* ==========================================
+   PREMIUM SECTION WAVE DIVIDERS — Task 3+4
+   ========================================== */
+
+/* Green wave at top of cream sections */
+.section-wave-green-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-green-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C120 10 240 50 360 30C480 10 600 50 720 30C840 10 960 50 1080 30C1200 10 1320 50 1440 30V60H0Z' fill='%231B5E3B'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Cream wave at top of white sections */
+.section-wave-cream-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-cream-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C160 0 320 60 480 30C640 0 800 60 960 30C1120 0 1280 60 1440 30V60H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gold accent wave at bottom of dark sections */
+.section-wave-gold-bottom {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-gold-bottom::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C180 50 360 0 540 25C720 50 900 0 1080 25C1260 50 1440 0 1440 25V50H0Z' fill='%23C5963A'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==========================================
+   ENHANCED HERO PARTICLE EFFECT — Task 3+4
+   ========================================== */
+
+/* Hero particle base class */
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: particle-drift ease-in-out infinite;
+}
+
+@keyframes particle-drift {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) translateX(20px);
+  }
+}
+
+/* Particle 1 — 2px, top-left area */
+.hero-particle-1 {
+  width: 2px;
+  height: 2px;
+  background: rgba(197, 150, 58, 0.7);
+  top: 20%;
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+/* Particle 2 — 4px, center area */
+.hero-particle-2 {
+  width: 4px;
+  height: 4px;
+  background: rgba(27, 94, 59, 0.6);
+  top: 40%;
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+/* Particle 3 — 3px, right area */
+.hero-particle-3 {
+  width: 3px;
+  height: 3px;
+  background: rgba(232, 200, 119, 0.7);
+  top: 60%;
+  left: 75%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+/* Particle 4 — 6px, bottom-left */
+.hero-particle-4 {
+  width: 6px;
+  height: 6px;
+  background: rgba(5, 150, 105, 0.5);
+  top: 70%;
+  left: 15%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+/* Particle 5 — 2px, top-right */
+.hero-particle-5 {
+  width: 2px;
+  height: 2px;
+  background: rgba(197, 150, 58, 0.8);
+  top: 15%;
+  left: 85%;
+  animation-duration: 9s;
+  animation-delay: 4s;
+}
+
+/* Particle 6 — 5px, center-right */
+.hero-particle-6 {
+  width: 5px;
+  height: 5px;
+  background: rgba(45, 139, 87, 0.5);
+  top: 50%;
+  left: 65%;
+  animation-duration: 11s;
+  animation-delay: 5s;
+}
+
+/* ==========================================
+   PREMIUM TOOLTIP STYLING — Task 3+4
+   ========================================== */
+
+.sanca-tooltip {
+  position: relative;
+  display: inline-block;
+  background: #FAF6ED;
+  color: #1B5E3B;
+  border-left: 3px solid #C5963A;
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 0 2px 4px rgba(27, 94, 59, 0.06), 0 4px 6px rgba(0, 0, 0, 0.07);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 280px;
+  z-index: 50;
+}
+
+.sanca-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 16px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #FAF6ED;
+}
+
+/* ==========================================
+   ANIMATED GRADIENT BORDER CARDS — Task 3+4
+   ========================================== */
+
+@property --card-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes card-angle-rotate {
+  to { --card-angle: 360deg; }
+}
+
+.card-gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--card-angle, 0deg),
+    #1B5E3B,
+    #C5963A,
+    #059669,
+    #E8C877,
+    #1B5E3B
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: card-angle-rotate 4s linear infinite;
+  pointer-events: none;
+}
+
+/* ==========================================
+   SECTION DECORATIVE CORNER ORNAMENTS — Task 3+4
+   ========================================== */
+
+/* Base corner ornament */
+.corner-ornament {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.corner-ornament::before,
+.corner-ornament::after {
+  content: '';
+  position: absolute;
+  background: rgba(197, 150, 58, 0.3);
+}
+
+/* Top-left corner ornament */
+.corner-ornament-tl {
+  top: 16px;
+  left: 16px;
+}
+
+.corner-ornament-tl::before {
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 1.5px;
+}
+
+.corner-ornament-tl::after {
+  top: 0;
+  left: 0;
+  width: 1.5px;
+  height: 40px;
+}
+
+/* Top-right corner ornament */
+.corner-ornament-tr {
+  top: 16px;
+  right: 16px;
+}
+
+.corner-ornament-tr::before {
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 1.5px;
+}
+
+.corner-ornament-tr::after {
+  top: 0;
+  right: 0;
+  width: 1.5px;
+  height: 40px;
+}
+
+/* ==========================================
+   ENHANCED FOCUS STATES FOR ACCESSIBILITY — Task 3+4
+   ========================================== */
+
+.a11y-focus:focus-visible {
+  outline: 3px solid #1B5E3B;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(197, 150, 58, 0.25);
+  border-radius: 4px;
+}
+
+/* Global focus-visible for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #1B5E3B;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(197, 150, 58, 0.2);
+  border-radius: 4px;
+}
+
+/* ==========================================
+   PRINT STYLES — Task 3+4
+   ========================================== */
+
+@media print {
+  /* Hide navbar */
+  nav,
+  [data-nav],
+  .navbar,
+  header nav {
+    display: none !important;
+  }
+
+  /* Hide floating actions */
+  .floating-actions,
+  [data-floating-actions],
+  [class*="FloatingActions"] {
+    display: none !important;
+  }
+
+  /* Hide chatbot */
+  [data-chat-widget],
+  .chat-widget,
+  [class*="ChatBot"] {
+    display: none !important;
+  }
+
+  /* Hide crisis banner */
+  .crisis-banner,
+  [data-crisis-banner] {
+    display: none !important;
+  }
+
+  /* Hide scroll progress */
+  [data-scroll-progress],
+  .scroll-progress-bar,
+  [class*="ScrollProgress"] {
+    display: none !important;
+  }
+
+  /* Hide page loader */
+  [data-page-loader],
+  [class*="PageLoader"] {
+    display: none !important;
+  }
+
+  /* Body reset for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Remove shadows and animations */
+  * {
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Sections: break inside avoid */
+  section,
+  article,
+  [class*="Section"] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Remove decorative pseudo-elements */
+  .section-wave-green-top::before,
+  .section-wave-cream-top::before,
+  .section-wave-gold-bottom::before,
+  .section-top-gradient::before,
+  .card-animated-border::before,
+  .card-gradient-border::before,
+  .premium-border::before,
+  .animated-border::before,
+  .gold-shimmer::after,
+  .noise-texture::after,
+  .texture-overlay::before,
+  .card-spotlight::before,
+  .corner-ornament::before,
+  .corner-ornament::after,
+  .hero-particle {
+    display: none !important;
+  }
+
+  /* Links show URL */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  /* Margins */
+  @page {
+    margin: 1.5cm;
+  }
+}
+
+/* ==========================================
+   DARK MODE ENHANCEMENTS — Task 3+4
+   ========================================== */
+
+/* Dark mode section-wave-green-top — darker green fill */
+.dark .section-wave-green-top::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C120 10 240 50 360 30C480 10 600 50 720 30C840 10 960 50 1080 30C1200 10 1320 50 1440 30V60H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+}
+
+/* Dark mode section-wave-cream-top — dark green fill */
+.dark .section-wave-cream-top::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C160 0 320 60 480 30C640 0 800 60 960 30C1120 0 1280 60 1440 30V60H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+}
+
+/* Dark mode corner ornament — adjusted opacity */
+.dark .corner-ornament::before,
+.dark .corner-ornament::after {
+  background: rgba(197, 150, 58, 0.15);
+}
+
+/* Dark mode card-gradient-border — dark background */
+.dark .card-gradient-border {
+  background: #0D3B22;
+}
+
+.dark .card-gradient-border::before {
+  background: conic-gradient(
+    from var(--card-angle, 0deg),
+    #2D8B57,
+    #E8C877,
+    #059669,
+    #C5963A,
+    #2D8B57
+  );
+}
+
+/* Dark mode sanca-tooltip — dark background, light text, adjusted border */
+.dark .sanca-tooltip {
+  background: #0D3B22;
+  color: #E8F0E8;
+  border-left-color: #C5963A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .sanca-tooltip::after {
+  border-top-color: #0D3B22;
+}
+
+/* ==========================================
+   ENHANCED PAGE TRANSITION — Task 3+4
+   ========================================== */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(180deg, #1B5E3B 0%, rgba(27, 94, 59, 0) 100%);
+  pointer-events: none;
+}
+
+@keyframes page-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-page-in {
+  animation: page-slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

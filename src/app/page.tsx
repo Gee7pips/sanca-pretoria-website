@@ -3,6 +3,7 @@
 import Navbar from '@/components/sanca/Navbar';
 import HeroSection from '@/components/sanca/HeroSection';
 import SelfAssessment from '@/components/sanca/SelfAssessment';
+import MoodTracker from '@/components/sanca/MoodTracker';
 import RecoveryVisualizer from '@/components/sanca/RecoveryVisualizer';
 import DiagnosisTips from '@/components/sanca/DiagnosisTips';
 import MythsSection from '@/components/sanca/MythsSection';
@@ -15,6 +16,7 @@ import PackingListSection from '@/components/sanca/PackingListSection';
 import DrugSeverityMeter from '@/components/sanca/DrugSeverityMeter';
 import DrugInfoSection from '@/components/sanca/DrugInfoSection';
 import DrugStatsSection from '@/components/sanca/DrugStatsSection';
+import AddictionCostCalculator from '@/components/sanca/AddictionCostCalculator';
 import FamiliesSection from '@/components/sanca/FamiliesSection';
 import RecoveryJourney from '@/components/sanca/RecoveryJourney';
 import TeamSection from '@/components/sanca/TeamSection';
@@ -44,35 +46,37 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <SelfAssessment />
+        <MoodTracker />
         <RecoveryVisualizer />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <DiagnosisTips />
         <MythsSection />
         <MedicalAidSection />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <AboutSection />
         <TeamSection />
         <RecoveryJourney />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <ProgrammesSection />
         <FacilitiesSection />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <AdmissionsSection />
         <PackingListSection />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <DrugSeverityMeter />
         <DrugInfoSection />
         <DrugStatsSection />
-        <div className="section-divider-thin" />
+        <AddictionCostCalculator />
+        <div className="parallax-divider" />
         <FamiliesSection />
         <ResourceLibrary />
         <EventsSection />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <FAQSection />
         <TestimonialsSection />
         <SuccessStories />
         <SobrietyCalculator />
-        <div className="section-divider-thin" />
+        <div className="parallax-divider" />
         <VolunteerSection />
         <NewsletterSection />
         <ContactSection />

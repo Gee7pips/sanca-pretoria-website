@@ -51,6 +51,14 @@ export default function HeroSection() {
       <div className="absolute bottom-1/4 left-10 w-96 h-96 bg-sanca-green-light/8 rounded-full blur-3xl animate-parallax-float" style={{ animationDelay: '3s' }} />
       <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-sanca-emerald/5 rounded-full blur-3xl animate-parallax-float" style={{ animationDelay: '5s' }} />
 
+      {/* Hero particles - subtle floating dots */}
+      <div className="hero-particle hero-particle-1 bg-sanca-gold/40" />
+      <div className="hero-particle hero-particle-2 bg-white/30" />
+      <div className="hero-particle hero-particle-3 bg-sanca-gold-light/25" />
+      <div className="hero-particle hero-particle-4 bg-sanca-emerald/30" />
+      <div className="hero-particle hero-particle-5 bg-white/20" />
+      <div className="hero-particle hero-particle-6 bg-sanca-gold/35" />
+
       {/* Content with parallax */}
       <motion.div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-40 w-full" style={{ y: textY, opacity }}>
         <div className="max-w-4xl">

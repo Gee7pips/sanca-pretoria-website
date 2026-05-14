@@ -43,7 +43,7 @@ export default function CrisisBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed left-0 right-0 bottom-20 sm:bottom-24 z-40"
+          className="fixed left-0 right-0 bottom-24 sm:bottom-28 z-40"
           role="alert"
           aria-label="Crisis intervention banner"
         >
@@ -62,19 +62,19 @@ export default function CrisisBanner() {
               <div className="flex items-center gap-2 flex-shrink-0">
                 <a
                   href="tel:0125421121"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-sanca-green rounded-full text-xs sm:text-sm font-semibold hover:bg-white/90 transition-colors duration-200 min-h-[36px]"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-sanca-green rounded-lg text-xs sm:text-sm font-semibold hover:bg-white/90 transition-all duration-200 min-h-[40px] shadow-sm hover:shadow-md"
                 >
-                  <Phone className="h-3.5 w-3.5" />
-                  <span className="hidden xs:inline sm:inline">Call </span>
+                  <Phone className="h-4 w-4" />
+                  <span className="hidden sm:inline">Call </span>
                   <span>012 542 1121</span>
                 </a>
                 <a
                   href="https://wa.me/27813181511"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-sanca-gold text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-sanca-gold-dark transition-colors duration-200 min-h-[36px]"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-sanca-gold text-white rounded-lg text-xs sm:text-sm font-semibold hover:bg-sanca-gold-dark transition-all duration-200 min-h-[40px] shadow-sm hover:shadow-md"
                 >
-                  <MessageCircle className="h-3.5 w-3.5" />
+                  <MessageCircle className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </a>
               </div>
