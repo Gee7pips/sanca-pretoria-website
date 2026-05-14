@@ -19,12 +19,14 @@ import TeamSection from '@/components/sanca/TeamSection';
 import FAQSection from '@/components/sanca/FAQSection';
 import TestimonialsSection from '@/components/sanca/TestimonialsSection';
 import SuccessStories from '@/components/sanca/SuccessStories';
+import SobrietyCalculator from '@/components/sanca/SobrietyCalculator';
 import VolunteerSection from '@/components/sanca/VolunteerSection';
 import NewsletterSection from '@/components/sanca/NewsletterSection';
 import EmergencyCTA from '@/components/sanca/EmergencyCTA';
 import FloatingActions from '@/components/sanca/FloatingActions';
 import ChatBot from '@/components/sanca/ChatBot';
 import ResourceLibrary from '@/components/sanca/ResourceLibrary';
+import EventsSection from '@/components/sanca/EventsSection';
 import PageLoader from '@/components/sanca/PageLoader';
 import ScrollProgress from '@/components/sanca/ScrollProgress';
 import Footer from '@/components/sanca/Footer';
@@ -58,10 +60,12 @@ export default function Home() {
         <div className="section-divider-thin" />
         <FamiliesSection />
         <ResourceLibrary />
+        <EventsSection />
         <div className="section-divider-thin" />
         <FAQSection />
         <TestimonialsSection />
         <SuccessStories />
+        <SobrietyCalculator />
         <div className="section-divider-thin" />
         <VolunteerSection />
         <NewsletterSection />

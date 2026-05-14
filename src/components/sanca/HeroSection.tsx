@@ -59,7 +59,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm mb-8 badge-pulse"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-sanca-gold/40 text-white text-sm mb-8 badge-pulse shadow-lg shadow-black/10"
           >
             <Shield className="h-4 w-4 text-sanca-gold" />
             <span>Established 1957 — 68 Years of Healing</span>
@@ -107,7 +107,7 @@ export default function HeroSection() {
               onClick={() => document.getElementById('admissions')?.scrollIntoView({ behavior: 'smooth' })}
               size="lg"
               variant="outline"
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 font-semibold text-base px-8 py-6 bg-white/5 backdrop-blur-sm transition-all duration-300 rounded-xl group"
+              className="border-2 border-white/40 text-white hover:bg-white/15 hover:border-white/70 font-semibold text-base px-8 py-6 bg-white/10 backdrop-blur-md transition-all duration-300 rounded-xl group shadow-lg shadow-black/10"
             >
               <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               Admissions Process
