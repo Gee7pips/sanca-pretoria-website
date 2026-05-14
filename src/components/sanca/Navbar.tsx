@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Menu, X, MessageCircle, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
+import ThemeToggle from '@/components/sanca/ThemeToggle';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -155,6 +156,7 @@ export default function Navbar() {
 
           {/* CTA + Mobile Menu */}
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Button
               onClick={() => scrollTo('#admissions')}
               className="hidden md:flex bg-sanca-gold hover:bg-sanca-gold-dark text-white font-semibold shadow-gold transition-all duration-300 hover:shadow-lg"

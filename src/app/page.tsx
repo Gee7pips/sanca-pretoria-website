@@ -14,10 +14,12 @@ import DrugSeverityMeter from '@/components/sanca/DrugSeverityMeter';
 import DrugInfoSection from '@/components/sanca/DrugInfoSection';
 import DrugStatsSection from '@/components/sanca/DrugStatsSection';
 import FamiliesSection from '@/components/sanca/FamiliesSection';
+import RecoveryJourney from '@/components/sanca/RecoveryJourney';
 import FAQSection from '@/components/sanca/FAQSection';
 import TestimonialsSection from '@/components/sanca/TestimonialsSection';
 import EmergencyCTA from '@/components/sanca/EmergencyCTA';
 import FloatingActions from '@/components/sanca/FloatingActions';
+import ChatBot from '@/components/sanca/ChatBot';
 import ScrollProgress from '@/components/sanca/ScrollProgress';
 import Footer from '@/components/sanca/Footer';
 
@@ -32,6 +34,7 @@ export default function Home() {
         <DiagnosisTips />
         <MedicalAidSection />
         <AboutSection />
+        <RecoveryJourney />
         <ProgrammesSection />
         <FacilitiesSection />
         <AdmissionsSection />
@@ -46,6 +49,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingActions />
+      <ChatBot />
     </div>
   );
 }

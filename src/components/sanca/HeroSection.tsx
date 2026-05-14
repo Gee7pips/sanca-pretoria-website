@@ -2,11 +2,12 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Phone, MessageCircle, ChevronDown, Shield, Heart, Clock, Star, Award, Users } from 'lucide-react';
+import { Phone, MessageCircle, ChevronDown, Shield, Heart, Star, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
   const ref = useRef<HTMLElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],

@@ -118,6 +118,7 @@ export default function SelfAssessment() {
   const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [showTip, setShowTip] = useState(false);
+  const [showCelebration, setShowCelebration] = useState(false);
 
   const question = questions[currentQ];
   const progress = ((currentQ + (showResult ? 1 : 0)) / questions.length) * 100;
@@ -140,6 +141,8 @@ export default function SelfAssessment() {
       setShowTip(false);
     } else {
       setShowResult(true);
+      setShowCelebration(true);
+      setTimeout(() => setShowCelebration(false), 3000);
     }
   };
 
@@ -334,7 +337,37 @@ export default function SelfAssessment() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
+                    className="relative"
                   >
+                    {showCelebration && (
+                      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                        {Array.from({ length: 8 }).map((_, i) => (
+                          <motion.div
+                            key={i}
+                            initial={{
+                              opacity: 1,
+                              y: 0,
+                              x: 0,
+                              scale: 1
+                            }}
+                            animate={{
+                              opacity: 0,
+                              y: -200 - Math.random() * 200,
+                              x: (Math.random() - 0.5) * 300,
+                              scale: 0.5,
+                              rotate: Math.random() * 360
+                            }}
+                            transition={{ duration: 2 + Math.random(), ease: 'easeOut' }}
+                            className="absolute w-3 h-3 rounded-full"
+                            style={{
+                              left: `${20 + Math.random() * 60}%`,
+                              bottom: '30%',
+                              backgroundColor: ['#1B5E3B', '#C5963A', '#059669', '#E8C877', '#2D8B57'][i % 5],
+                            }}
+                          />
+                        ))}
+                      </div>
+                    )}
                     <div className="text-center mb-8">
                       <motion.div
                         initial={{ scale: 0 }}

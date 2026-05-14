@@ -616,3 +616,97 @@
   background: rgba(197, 150, 58, 0.3);
   border-radius: 3px;
 }
+
+/* ==========================================
+   SECTION TRANSITIONS & EFFECTS — Task 4+5+6
+   ========================================== */
+
+/* Section wave divider */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0 40V20C200 0 400 40 600 20C800 0 1000 40 1200 20V40H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+}
+
+/* Hover glow card */
+.hover-glow {
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(27, 94, 59, 0.15), 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Pulse dot animation for live indicators */
+.live-dot {
+  position: relative;
+}
+
+.live-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: live-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  background: inherit;
+}
+
+@keyframes live-ping {
+  75%, 100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Premium gradient border animation */
+.animated-border {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(
+    var(--border-angle, 0deg),
+    #1B5E3B,
+    #C5963A,
+    #059669,
+    #E8C877,
+    #1B5E3B
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 4s linear infinite;
+}
+
+@keyframes border-rotate {
+  to { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}

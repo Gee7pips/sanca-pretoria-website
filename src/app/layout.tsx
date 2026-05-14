@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -58,7 +59,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased bg-background text-foreground`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          {children}
+        </ThemeProvider>
         <Toaster />
       </body>
     </html>
