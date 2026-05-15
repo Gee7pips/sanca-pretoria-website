@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, ChevronRight, Heart, Shield } from 'lucide-react';
+import { Phone, MessageCircle, Heart, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HERO_IMAGES = [
@@ -24,46 +24,35 @@ const HERO_IMAGES = [
   },
 ];
 
+const AUTOPLAY_INTERVAL = 5000;
+
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAutoplay, setIsAutoplay] = useState(true);
+
+  const advance = useCallback(() => {
+    setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+  }, []);
 
   useEffect(() => {
-    if (!isAutoplay) return;
-
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isAutoplay]);
-
-  const handleNextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    setIsAutoplay(false);
-  };
-
-  const handlePrevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
-    setIsAutoplay(false);
-  };
-
-  const handleDotClick = (index: number) => {
-    setCurrentImageIndex(index);
-    setIsAutoplay(false);
-  };
+    const timer = setInterval(advance, AUTOPLAY_INTERVAL);
+    return () => clearInterval(timer);
+  }, [advance]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-sanca-green-dark">
-      {/* Image Carousel Background */}
-      <div className="absolute inset-0">
+    <section
+      id="hero"
+      aria-label="Hero"
+      className="relative min-h-screen flex items-center overflow-hidden bg-sanca-green-dark"
+    >
+      {/* ── Image Carousel Background ── */}
+      <div className="absolute inset-0" aria-hidden="true">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImageIndex}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            transition={{ duration: 1.1, ease: 'easeInOut' }}
             className="absolute inset-0"
           >
             <img
@@ -71,64 +60,66 @@ export default function HeroSection() {
               alt={HERO_IMAGES[currentImageIndex].alt}
               className="w-full h-full object-cover"
               loading={currentImageIndex === 0 ? 'eager' : 'lazy'}
+              decoding="async"
             />
           </motion.div>
         </AnimatePresence>
 
-        {/* Multi-layer overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-sanca-green-dark/75 via-sanca-green-dark/60 to-sanca-green-dark/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-sanca-green-dark/50 via-transparent to-sanca-green-dark/40" />
+        {/* Overlays for legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-sanca-green-dark/70 via-sanca-green-dark/55 to-sanca-green-dark/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sanca-green-dark/55 via-transparent to-sanca-green-dark/30" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 w-full">
+      {/* ── Main Content ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 w-full">
         <div className="max-w-3xl">
+
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-sanca-gold/40 text-white text-sm mb-8"
+            transition={{ duration: 0.55, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/12 backdrop-blur-md border border-sanca-gold/40 text-white text-sm mb-8"
           >
-            <Shield className="h-4 w-4 text-sanca-gold" />
-            <span>Est. 1957 — Nearly 70 Years of Restoring Lives</span>
+            <Shield className="h-4 w-4 text-sanca-gold flex-shrink-0" />
+            <span className="font-medium">Est. 1957 — Nearly 70 Years of Restoring Lives</span>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.65, delay: 0.2 }}
             className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight"
           >
             Your Journey to{' '}
             <motion.span
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+              transition={{ duration: 0.65, delay: 0.38 }}
               className="text-gradient-animated block"
             >
               Healing Starts
             </motion.span>
-            <span>Now</span>
+            Now
           </motion.h1>
 
-          {/* Subtitle with staggered animation */}
+          {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
+            transition={{ duration: 0.65, delay: 0.32 }}
             className="text-lg sm:text-xl text-white/90 max-w-2xl mb-12 leading-relaxed font-light"
           >
-            Compassionate clinical care meets accessible recovery. Our serene facilities in Pretoria, Soshanguve, and
-            Hammanskraal welcome you to a sanctuary where healing begins the moment you arrive.
+            Compassionate clinical care meets accessible recovery. Our serene facilities in Pretoria,
+            Soshanguve, and Hammanskraal welcome you to a sanctuary where healing begins the moment you arrive.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+            transition={{ duration: 0.65, delay: 0.46 }}
             className="flex flex-col sm:flex-row gap-4 mb-12"
           >
             <Button
@@ -150,98 +141,75 @@ export default function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Trust Indicators */}
+          {/* Trust pills */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="flex flex-wrap gap-x-6 gap-y-2 text-white/80 text-sm"
+            transition={{ duration: 0.65, delay: 0.56 }}
+            className="flex flex-wrap gap-x-6 gap-y-2 text-white/75 text-sm"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-sanca-emerald" />
-              <span>DSD Registered</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-sanca-gold" />
-              <span>Medical Aid Accepted</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-sanca-emerald" />
-              <span>Confidential Care</span>
-            </div>
+            {[
+              { color: 'bg-sanca-emerald', label: 'DSD Registered' },
+              { color: 'bg-sanca-gold',    label: 'Medical Aid Accepted' },
+              { color: 'bg-sanca-emerald', label: 'Confidential Care' },
+            ].map(({ color, label }) => (
+              <div key={label} className="flex items-center gap-2">
+                <div className={`w-2 h-2 rounded-full ${color}`} />
+                <span>{label}</span>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Carousel Controls */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-20">
-        {/* Dots */}
-        <div className="flex gap-2">
-          {HERO_IMAGES.map((_, index) => (
-            <motion.button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentImageIndex ? 'bg-sanca-gold w-8' : 'bg-white/40 w-2 hover:bg-white/60'
-              }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={`Go to image ${index + 1}`}
-            />
-          ))}
-        </div>
+      {/* ── Dot Indicators (autoplay only, no arrows) ── */}
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20"
+        aria-label="Carousel position"
+      >
+        {HERO_IMAGES.map((_, index) => (
+          <div
+            key={index}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              index === currentImageIndex
+                ? 'bg-sanca-gold w-8'
+                : 'bg-white/35 w-1.5'
+            }`}
+          />
+        ))}
       </div>
 
-      {/* Navigation Arrows */}
-      <motion.button
-        onClick={handlePrevImage}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group"
-        aria-label="Previous image"
-      >
-        <ChevronRight className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform rotate-180" />
-      </motion.button>
-
-      <motion.button
-        onClick={handleNextImage}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group"
-        aria-label="Next image"
-      >
-        <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
-      </motion.button>
-
-      {/* Emergency Contact Buttons */}
+      {/* ── Floating Emergency Contacts (icons only) ── */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.9 }}
-        className="fixed bottom-8 right-8 flex flex-col gap-3 z-50"
+        initial={{ opacity: 0, scale: 0.85 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+        className="fixed bottom-8 right-6 flex flex-col gap-3 z-50"
+        aria-label="Emergency contact shortcuts"
       >
         <a
           href="tel:0125421121"
-          className="group relative flex items-center gap-2 bg-sanca-green hover:bg-sanca-green-dark text-white px-5 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          aria-label="Call SANCA Pretoria"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-sanca-green hover:bg-sanca-green-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         >
-          <Phone className="h-4 w-4" />
-          <span className="text-sm font-medium">Call Now</span>
+          <Phone className="h-5 w-5" />
         </a>
         <a
           href="https://wa.me/27813181511"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center gap-2 bg-sanca-emerald hover:bg-sanca-green text-white px-5 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          aria-label="WhatsApp SANCA Pretoria"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-sanca-emerald hover:bg-sanca-green text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         >
-          <MessageCircle className="h-4 w-4" />
-          <span className="text-sm font-medium">WhatsApp</span>
+          <MessageCircle className="h-5 w-5" />
         </a>
       </motion.div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sanca-cream to-transparent z-10 pointer-events-none" />
+      {/* ── Bottom Fade into next section ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-sanca-cream dark:from-background to-transparent z-10 pointer-events-none"
+        aria-hidden="true"
+      />
     </section>
   );
 }
