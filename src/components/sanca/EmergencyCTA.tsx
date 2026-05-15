@@ -24,7 +24,7 @@ function AnimatedStat({ value, suffix, label }: { value: number; suffix: string;
 
   return (
     <div ref={ref} className="text-center">
-      <span className="text-4xl sm:text-5xl font-bold font-serif text-sanca-gold-light animate-count-glow">
+      <span className="text-4xl sm:text-5xl stat-premium text-sanca-gold-light animate-count-glow">
         {count.toLocaleString('en-ZA')}{suffix}
       </span>
       <p className="text-white/60 text-sm mt-2 font-medium">{label}</p>
@@ -78,7 +78,7 @@ export default function EmergencyCTA() {
             <Heart className="h-10 w-10 text-sanca-gold-light" />
           </motion.div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight tracking-tight heading-gradient">
+          <h2 className="heading-premium text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-6 leading-tight heading-gradient">
             We&apos;re Right Here<br />
             <span className="text-gradient-gold">Whenever You&apos;re Ready</span>
           </h2>
@@ -114,7 +114,7 @@ export default function EmergencyCTA() {
                 <div className="absolute -top-[1.5px] left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
                 <Phone className="h-7 w-7 text-sanca-gold-light" />
               </div>
-              <p className="font-serif font-bold text-lg tracking-tight">Call Us</p>
+              <p className="heading-lora text-lg">Call Us</p>
               <p className="text-white/70 text-sm mt-1">012 542 1121</p>
               <p className="text-white/50 text-xs mt-1">A caring voice, any time of day</p>
             </motion.a>
@@ -131,7 +131,7 @@ export default function EmergencyCTA() {
                 <div className="absolute -top-[1.5px] left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
                 <MessageCircle className="h-7 w-7 text-sanca-emerald" />
               </div>
-              <p className="font-serif font-bold text-lg tracking-tight">WhatsApp</p>
+              <p className="heading-lora text-lg">WhatsApp</p>
               <p className="text-white/70 text-sm mt-1">081 318 1511</p>
               <p className="text-white/50 text-xs mt-1">Send a message, we&apos;ll reply soon</p>
             </motion.a>
@@ -146,7 +146,7 @@ export default function EmergencyCTA() {
                 <div className="absolute -top-[1.5px] left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
                 <Shield className="h-7 w-7 text-sanca-gold" />
               </div>
-              <p className="font-serif font-bold text-lg tracking-tight">Email Us</p>
+              <p className="heading-lora text-lg">Email Us</p>
               <p className="text-white/70 text-sm mt-1">info@sancapta.co.za</p>
               <p className="text-white/50 text-xs mt-1">We&apos;ll respond within one business day</p>
             </motion.a>

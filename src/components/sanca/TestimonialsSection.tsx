@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
             <Users className="h-4 w-4" />
             Stories of Hope
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-sanca-green-dark dark:text-white mb-4 tracking-tight heading-gradient">
+          <h2 className="heading-premium text-3xl sm:text-4xl lg:text-6xl font-bold text-sanca-green-dark dark:text-white mb-4 tracking-tight heading-gradient">
             Voices of <span className="text-gradient-gold">Recovery</span>
           </h2>
           <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
             >
               <Card className="p-5 text-center shadow-premium-md hover:shadow-premium-lg transition-all duration-300 border-0 group hover:-translate-y-1">
                 <span className="text-2xl mb-2 block">{stat.icon}</span>
-                <p className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark group-hover:text-sanca-green transition-colors tracking-tight">
+                <p className="stat-premium text-2xl sm:text-3xl text-sanca-green-dark group-hover:text-sanca-green transition-colors">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2000} />
                 </p>
                 <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
@@ -186,7 +186,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Quote */}
-                  <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl font-medium text-sanca-green-dark leading-relaxed mb-6">
+                  <blockquote className="quote-premium text-xl sm:text-2xl lg:text-3xl text-sanca-green-dark mb-6">
                     &ldquo;{testimonials[current].quote}&rdquo;
                   </blockquote>
 

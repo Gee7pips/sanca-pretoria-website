@@ -44,12 +44,12 @@ export default function CEOWelcomeSection() {
                   />
 
                   {/* Decorative quote mark */}
-                  <span className="absolute top-4 left-6 sm:top-6 sm:left-8 text-7xl sm:text-8xl font-serif text-sanca-gold/10 leading-none select-none">
+                  <span className="absolute top-4 left-6 sm:top-6 sm:left-8 text-7xl sm:text-8xl font-cormorant text-sanca-gold/10 leading-none select-none">
                     &ldquo;
                   </span>
 
                   <div className="relative">
-                    <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-sanca-green-dark dark:text-white mb-8 leading-snug tracking-tight section-heading">
+                    <h2 className="heading-premium text-4xl sm:text-5xl lg:text-6xl font-bold text-sanca-green-dark dark:text-white mb-8 leading-snug tracking-tight section-heading">
                       Welcome to <span className="text-gradient-gold">SANCA Pretoria</span>{' '}
                       <span className="block sm:inline">Castle Carey Clinic</span>
                     </h2>
@@ -114,7 +114,7 @@ export default function CEOWelcomeSection() {
                           </div>
                         </div>
                         <div className="pt-1">
-                          <p className="font-serif text-xl sm:text-2xl font-bold text-sanca-green-dark dark:text-white tracking-tight">
+                          <p className="signature-premium text-xl sm:text-2xl text-sanca-green-dark dark:text-white">
                             Celeste Du Preez
                           </p>
                           <p className="text-sm sm:text-base text-sanca-gold-dark dark:text-sanca-gold font-semibold mt-1">
@@ -218,11 +218,11 @@ export default function CEOWelcomeSection() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
                     <Quote className="h-7 w-7 text-sanca-gold-light" />
                   </div>
-                  <blockquote className="text-white/95 text-lg sm:text-xl leading-relaxed italic font-serif mb-5">
+                  <blockquote className="text-white/95 text-lg sm:text-xl leading-relaxed quote-premium mb-5">
                     &ldquo;Everyone deserves a chance at a healthy and fulfilling life, free from the
                     chains of addiction.&rdquo;
                   </blockquote>
-                  <p className="text-sanca-gold-light text-sm font-semibold tracking-wide">— SANCA Pretoria Mission</p>
+                  <p className="text-sanca-gold-light text-sm font-semibold label-premium">— SANCA Pretoria Mission</p>
                 </div>
               </Card>
             </motion.div>
@@ -267,15 +267,15 @@ export default function CEOWelcomeSection() {
               <Card className="p-7 shadow-premium-md border-0 bg-sanca-cream dark:bg-[#0D3B22]">
                 <div className="grid grid-cols-3 gap-5 text-center">
                   <div>
-                    <p className="text-3xl sm:text-4xl font-bold font-serif text-sanca-green-dark dark:text-white tracking-tight">68+</p>
+                    <p className="text-3xl sm:text-4xl stat-premium text-sanca-green-dark dark:text-white">68+</p>
                     <p className="text-xs sm:text-sm text-muted-foreground dark:text-white/70 mt-2 font-medium">Years of Service</p>
                   </div>
                   <div>
-                    <p className="text-3xl sm:text-4xl font-bold font-serif text-sanca-green-dark dark:text-white tracking-tight">1000+</p>
+                    <p className="text-3xl sm:text-4xl stat-premium text-sanca-green-dark dark:text-white">1000+</p>
                     <p className="text-xs sm:text-sm text-muted-foreground dark:text-white/70 mt-2 font-medium">Patients/Year</p>
                   </div>
                   <div>
-                    <p className="text-3xl sm:text-4xl font-bold font-serif text-sanca-green-dark dark:text-white tracking-tight">3</p>
+                    <p className="text-3xl sm:text-4xl stat-premium text-sanca-green-dark dark:text-white">3</p>
                     <p className="text-xs sm:text-sm text-muted-foreground dark:text-white/70 mt-2 font-medium">Clinic Locations</p>
                   </div>
                 </div>

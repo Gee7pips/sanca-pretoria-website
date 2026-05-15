@@ -143,11 +143,11 @@ export default function AdmissionsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 dark:bg-sanca-gold/15 text-sanca-green dark:text-sanca-gold text-sm font-medium mb-4 border border-sanca-gold/20 shadow-[inset_0_1px_2px_rgba(197,150,58,0.1)]">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 dark:bg-sanca-gold/15 text-sanca-green dark:text-sanca-gold text-sm label-premium mb-4 border border-sanca-gold/20 shadow-[inset_0_1px_2px_rgba(197,150,58,0.1)]">
             <CalendarCheck className="h-4 w-4" />
             Getting Started
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-sanca-green-dark dark:text-white mb-4 heading-gradient section-heading-lg">
+          <h2 className="heading-premium text-4xl sm:text-5xl lg:text-7xl text-sanca-green-dark dark:text-white mb-4 heading-gradient section-heading-lg">
             Your Pathway to <span className="text-gradient-gold">Recovery</span>
           </h2>
           <p className="text-muted-foreground dark:text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -187,7 +187,7 @@ export default function AdmissionsSection() {
           {/* Text overlay — left side */}
           <div className="absolute inset-0 flex items-center z-10 pl-6 sm:pl-10 md:pl-14">
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight drop-shadow-lg">
+              <h3 className="heading-lora text-xl sm:text-2xl md:text-3xl text-white drop-shadow-lg">
                 Your Journey Starts at Our Door
               </h3>
               <p className="text-white/80 text-sm sm:text-base mt-1.5 drop-shadow-md">
@@ -262,7 +262,7 @@ export default function AdmissionsSection() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white/70">Step {steps[activeStep].step} of {steps.length}</p>
-                        <h3 className="font-serif text-2xl font-bold tracking-tight">{steps[activeStep].title}</h3>
+                        <h3 className="heading-lora text-2xl">{steps[activeStep].title}</h3>
                       </div>
                     </div>
                     <p className="text-white/90 leading-relaxed">
@@ -329,7 +329,7 @@ export default function AdmissionsSection() {
             transition={{ duration: 0.5 }}
           >
             <Card className="p-6 shadow-premium-md border-0 h-full">
-              <h4 className="font-serif text-xl font-bold tracking-tight text-sanca-green-dark mb-4 flex items-center gap-2">
+              <h4 className="heading-lora text-xl text-sanca-green-dark mb-4 flex items-center gap-2">
                 <Shield className="h-5 w-5 text-sanca-gold" />
                 Visiting Rules
               </h4>
@@ -358,7 +358,7 @@ export default function AdmissionsSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <Card className="p-6 shadow-premium-md border-0 h-full bg-gradient-to-br from-sanca-green-dark to-sanca-green text-white">
-              <h4 className="font-serif text-xl font-bold tracking-tight mb-4 flex items-center gap-2">
+              <h4 className="heading-lora text-xl mb-4 flex items-center gap-2">
                 <Clock className="h-5 w-5 text-sanca-gold-light" />
                 Admission Times
               </h4>
@@ -407,7 +407,7 @@ export default function AdmissionsSection() {
           className="mt-12"
         >
           <div className="text-center mb-8">
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark dark:text-white tracking-tight flex items-center gap-3 justify-center">
+            <h3 className="heading-lora text-2xl sm:text-3xl text-sanca-green-dark dark:text-white flex items-center gap-3 justify-center">
               Why These <span className="text-gradient-gold">Rules</span> Exist
               <img
                 src="/images/sanca/lotus-healing-abstract.png"
@@ -443,7 +443,7 @@ export default function AdmissionsSection() {
                       <div className="w-9 h-9 rounded-lg bg-sanca-green/10 flex items-center justify-center flex-shrink-0">
                         <Icon className="h-4 w-4 text-sanca-green" />
                       </div>
-                      <h5 className="font-serif font-bold text-sanca-green-dark dark:text-white text-sm tracking-tight leading-snug">{item.rule}</h5>
+                      <h5 className="heading-lora text-sanca-green-dark dark:text-white text-sm leading-snug">{item.rule}</h5>
                     </div>
                     <p className="text-xs text-muted-foreground dark:text-white/60 leading-relaxed">{item.rationale}</p>
                   </Card>

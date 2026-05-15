@@ -178,11 +178,11 @@ export default function RecoveryJourney() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 text-sanca-green text-sm font-medium mb-4 border border-sanca-gold/20 shadow-[inset_0_1px_2px_rgba(197,150,58,0.1)]">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 text-sanca-green text-sm label-premium mb-4 border border-sanca-gold/20 shadow-[inset_0_1px_2px_rgba(197,150,58,0.1)]">
             <Compass className="h-4 w-4" />
             Your Path Forward
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-sanca-green-dark dark:text-white mb-4 tracking-tight heading-gradient">
+          <h2 className="heading-premium text-3xl sm:text-4xl lg:text-6xl text-sanca-green-dark dark:text-white mb-4 heading-gradient">
             Your Recovery <span className="text-gradient-gold">Journey</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
@@ -387,7 +387,7 @@ export default function RecoveryJourney() {
                         </span>
                       </div>
 
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark mb-3 tracking-tight">
+                      <h3 className="heading-lora text-2xl sm:text-3xl text-sanca-green-dark mb-3">
                         {currentPhase.title}
                       </h3>
 
@@ -396,7 +396,7 @@ export default function RecoveryJourney() {
                       </p>
 
                       <div className="p-4 sm:p-5 rounded-xl bg-sanca-cream/60 border border-sanca-cream">
-                        <h4 className="text-sm font-bold text-sanca-green-dark uppercase tracking-wider mb-2">
+                        <h4 className="text-sm uppercase label-premium text-sanca-green-dark mb-2">
                           What to expect
                         </h4>
                         <p className="text-muted-foreground leading-relaxed">
@@ -429,7 +429,7 @@ export default function RecoveryJourney() {
 
                           <Quote className="h-5 w-5 text-sanca-gold-light mb-2 opacity-70" />
 
-                          <p className="text-sm italic text-white/90 leading-relaxed mb-4">
+                          <p className="text-sm quote-premium text-white/90 leading-relaxed mb-4">
                             {currentPhase.quote}
                           </p>
 
@@ -492,7 +492,7 @@ export default function RecoveryJourney() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mt-16"
         >
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-sanca-green-dark mb-4 tracking-tight">
+          <h3 className="heading-lora text-2xl sm:text-3xl text-sanca-green-dark mb-4">
             Your Journey Can <span className="text-gradient-gold">Begin</span>{' '}
             Today
           </h3>

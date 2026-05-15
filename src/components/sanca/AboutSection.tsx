@@ -37,7 +37,7 @@ function MissionCard() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
               <Target className="h-6 w-6 text-sanca-gold-light" />
             </div>
-            <h3 className="font-serif text-2xl font-bold tracking-tight">Our Mission</h3>
+            <h3 className="heading-lora text-2xl">Our Mission</h3>
           </div>
           <p className="text-white/90 leading-relaxed">
             To prevent and treat substance misuse by empowering individuals with the knowledge,
@@ -72,7 +72,7 @@ function VisionCard() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
               <Eye className="h-6 w-6 text-sanca-green-light" />
             </div>
-            <h3 className="font-serif text-2xl font-bold tracking-tight">Our Vision</h3>
+            <h3 className="heading-lora text-2xl">Our Vision</h3>
           </div>
           <p className="text-white/90 leading-relaxed">
             To lead and guide SANCA member organisations in providing exceptional, compassionate
@@ -101,7 +101,7 @@ function ValuesGrid() {
   return (
     <div ref={ref} className={isVisible ? 'animate-reveal-scale' : 'opacity-0'}>
       <div className="text-center mb-10">
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-sanca-green-dark dark:text-white mb-2">
+        <h3 className="heading-lora text-2xl sm:text-3xl text-sanca-green-dark dark:text-white mb-2">
           Our Values: <span className="text-shimmer">C.A.I.R.U.P.</span>
         </h3>
         <p className="text-muted-foreground dark:text-white/70 leading-relaxed">
@@ -123,9 +123,9 @@ function ValuesGrid() {
             <Card className={`p-5 text-center shadow-premium-sm hover:shadow-premium-lg transition-all duration-300 border dark:bg-[#0D3B22] ${value.color.split(' ').pop()} cursor-default h-full`}>
               <div className="relative w-14 h-14 rounded-full border-[1.5px] border-sanca-gold/25 bg-gradient-to-br from-sanca-green/8 to-sanca-cream/5 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 hover:shadow-[0_4px_12px_rgba(27,94,59,0.12)] transition-all duration-300">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] h-[3px] rounded-full bg-sanca-gold" />
-                <span className="font-serif text-2xl font-bold text-sanca-green">{value.letter}</span>
+                <span className="font-display text-2xl text-sanca-green">{value.letter}</span>
               </div>
-              <h4 className="font-serif font-bold tracking-tight text-foreground mb-1">{value.word}</h4>
+              <h4 className="heading-premium tracking-tight text-foreground mb-1">{value.word}</h4>
               <p className="text-xs text-muted-foreground leading-relaxed">{value.desc}</p>
             </Card>
           </motion.div>
@@ -140,7 +140,7 @@ function HeritageTimeline() {
   return (
     <div ref={ref} className={isVisible ? 'animate-slide-up-bounce' : 'opacity-0'}>
       <div className="text-center mb-10">
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-sanca-green-dark dark:text-white mb-2">
+        <h3 className="heading-lora text-2xl sm:text-3xl text-sanca-green-dark dark:text-white mb-2">
           Our <span className="text-gradient-gold">Heritage</span>
         </h3>
         <p className="text-muted-foreground dark:text-white/70 leading-relaxed">
@@ -168,7 +168,7 @@ function HeritageTimeline() {
                 <span className="text-xs font-bold text-sanca-gold uppercase tracking-wider">
                   {item.year}
                 </span>
-                <h4 className="font-serif text-lg font-bold tracking-tight text-sanca-green-dark mt-1">
+                <h4 className="heading-lora text-lg text-sanca-green-dark mt-1">
                   {item.title}
                 </h4>
                 <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
@@ -240,7 +240,7 @@ function PosterShowcase() {
               />
               {/* Bottom overlay with tagline */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pt-12 pb-3 px-3">
-                <p className="text-white text-xs font-serif font-semibold leading-snug">
+                <p className="text-white text-xs heading-premium leading-snug">
                   SANCA Pretoria
                 </p>
                 <p className="text-white/80 text-[10px] mt-0.5">
@@ -272,7 +272,7 @@ function PosterShowcase() {
               />
               {/* Bottom overlay with tagline */}
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent pt-12 pb-3 px-3">
-                <p className="text-white text-xs font-serif font-semibold leading-snug">
+                <p className="text-white text-xs heading-premium leading-snug">
                   Healing Gardens
                 </p>
                 <p className="text-white/80 text-[10px] mt-0.5">
@@ -342,7 +342,7 @@ export default function AboutSection() {
             <Heart className="h-4 w-4" />
             Who We Are — A Family of Care
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-sanca-green-dark dark:text-white mb-4 heading-gradient section-heading-lg">
+          <h2 className="heading-premium text-4xl sm:text-5xl lg:text-7xl text-sanca-green-dark dark:text-white mb-4 heading-gradient section-heading-lg">
             A Legacy of <span className="text-gradient-gold">Healing</span>, Hope, and Humanity
           </h2>
           <p className="text-muted-foreground dark:text-white/70 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -390,7 +390,7 @@ export default function AboutSection() {
 
             {/* Centered text overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-              <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight drop-shadow-lg text-center px-4">
+              <h3 className="heading-premium text-xl sm:text-2xl md:text-3xl text-white drop-shadow-lg text-center px-4">
                 Rooted in Africa, Reaching for Tomorrow
               </h3>
               <p className="text-white/80 text-sm sm:text-base mt-2 drop-shadow-md">

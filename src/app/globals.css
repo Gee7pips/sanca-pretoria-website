@@ -10,6 +10,8 @@
   --font-serif: var(--font-playfair);
   --font-mono: var(--font-geist-mono);
   --font-cormorant: var(--font-cormorant);
+  --font-display: var(--font-dm-serif);
+  --font-lora: var(--font-lora);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -132,36 +134,62 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "pnum" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    font-variant-numeric: proportional-nums;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), Georgia, serif;
     font-weight: 700;
     letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
   }
   h1 {
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    font-weight: 700;
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  }
+  h2 {
     letter-spacing: -0.025em;
     line-height: 1.1;
     font-weight: 700;
-  }
-  h2 {
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    font-weight: 700;
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   }
   h3 {
-    letter-spacing: -0.015em;
-    line-height: 1.25;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
     font-weight: 700;
+  }
+  h4 {
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    font-weight: 600;
   }
   p {
     font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
     hyphens: auto;
+    line-height: 1.7;
+    hanging-punctuation: first;
+  }
+  blockquote {
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-style: italic;
     line-height: 1.6;
+  }
+  /* Premium drop cap for first paragraph in article-style content */
+  .drop-cap::first-letter {
+    font-family: var(--font-dm-serif), Georgia, serif;
+    float: left;
+    font-size: 3.5em;
+    line-height: 0.8;
+    padding-right: 0.1em;
+    margin-top: 0.05em;
+    color: #1B5E3B;
+    font-weight: 400;
   }
 }
 
@@ -2813,3 +2841,185 @@ nav {
 }
 
 
+
+/* ==========================================
+   PREMIUM TYPOGRAPHY SYSTEM
+   Enhanced font hierarchy & typographic utilities
+   ========================================== */
+
+/* Font family utilities via CSS variables */
+.font-display {
+  font-family: var(--font-dm-serif), Georgia, serif;
+}
+
+.font-lora {
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* Premium Heading Styles */
+.heading-hero {
+  font-family: var(--font-dm-serif), var(--font-playfair), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.heading-premium {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.heading-elegant {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+.heading-lora {
+  font-family: var(--font-lora), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/* Premium Body Text Styles */
+.body-elegant {
+  font-family: var(--font-lora), var(--font-inter), sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  letter-spacing: 0.005em;
+}
+
+.body-refined {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1, "ss01" 1;
+  letter-spacing: 0.01em;
+}
+
+/* Premium Quote/Blockquote Style */
+.quote-premium {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Premium Label/Caption Style */
+.label-premium {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-feature-settings: "kern" 1, "liga" 1, "tnum" 1;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Premium Stat/Number Style */
+.stat-premium {
+  font-family: var(--font-dm-serif), var(--font-playfair), Georgia, serif;
+  font-weight: 400;
+  font-feature-settings: "kern" 1, "liga" 1, "tnum" 1;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Premium Signature Style */
+.signature-premium {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+/* Ornamental divider between text sections */
+.text-ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #C5963A;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+}
+
+.text-ornament::before,
+.text-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C5963A40, transparent);
+}
+
+/* Premium text shadow for legibility on images */
+.text-shadow-premium {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.text-shadow-subtle {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Gold text highlight for emphasis */
+.text-highlight-gold {
+  background: linear-gradient(180deg, transparent 55%, rgba(197, 150, 58, 0.15) 55%);
+  display: inline;
+  padding: 0 2px;
+}
+
+/* Elegant text balance for wider screens */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Prevent orphans in text blocks */
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Premium paragraph spacing */
+.prose-premium p + p {
+  margin-top: 1.25em;
+}
+
+.prose-premium p:first-of-type {
+  font-size: 1.1em;
+}
+
+/* Dark mode typography enhancements */
+.dark .heading-hero {
+  text-shadow: 0 0 40px rgba(197, 150, 58, 0.08);
+}
+
+.dark .heading-premium {
+  text-shadow: 0 0 30px rgba(197, 150, 58, 0.05);
+}
+
+.dark .text-highlight-gold {
+  background: linear-gradient(180deg, transparent 55%, rgba(232, 200, 119, 0.12) 55%);
+}
+
+.dark .stat-premium {
+  text-shadow: 0 0 20px rgba(197, 150, 58, 0.15);
+}

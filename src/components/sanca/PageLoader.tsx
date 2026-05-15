@@ -93,7 +93,7 @@ export default function PageLoader() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="absolute bottom-[30%] sm:bottom-[35%] text-center"
           >
-            <p className="text-sanca-gold-light text-sm font-medium tracking-widest uppercase">
+            <p className="text-sanca-gold-light text-sm label-premium">
               SANCA Pretoria
             </p>
           </motion.div>

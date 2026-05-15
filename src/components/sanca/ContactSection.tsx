@@ -194,7 +194,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 border border-sanca-green/20 text-sanca-green text-sm font-medium mb-5"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sanca-green/10 border border-sanca-green/20 text-sanca-green text-sm label-premium mb-5"
           >
             <Mail className="h-4 w-4" />
             Contact Us
@@ -206,7 +206,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-sanca-green-dark leading-tight"
+            className="heading-premium text-3xl sm:text-4xl lg:text-5xl text-sanca-green-dark leading-tight"
           >
             Get in{' '}
             <span className="text-gradient-gold">Touch</span>
@@ -263,7 +263,7 @@ export default function ContactSection() {
                         <CheckCircle2 className="h-10 w-10 text-sanca-green" />
                       </motion.div>
                     </motion.div>
-                    <h3 className="font-serif text-2xl font-bold text-sanca-green-dark mb-3">
+                    <h3 className="heading-lora text-2xl text-sanca-green-dark mb-3">
                       Message Sent!
                     </h3>
                     <p className="text-gray-600 text-lg max-w-sm">
@@ -521,7 +521,7 @@ export default function ContactSection() {
 
                   {/* Text */}
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-0.5">
+                    <p className="text-xs uppercase label-premium text-gray-400 mb-0.5">
                       {card.label}
                     </p>
                     <p className="font-semibold text-sanca-green-dark text-sm sm:text-base leading-snug break-words">
@@ -606,7 +606,7 @@ export default function ContactSection() {
 
                 {/* Gradient overlay at bottom with text */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-sanca-green-dark/80 via-sanca-green-dark/40 to-transparent pt-12 pb-4 px-5">
-                  <p className="text-white font-serif text-sm sm:text-base italic leading-snug drop-shadow-md">
+                  <p className="text-white quote-premium text-sm sm:text-base leading-snug drop-shadow-md">
                     &ldquo;A safe space to share your story&rdquo;
                   </p>
                 </div>
@@ -627,7 +627,7 @@ export default function ContactSection() {
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <div className="flex items-center gap-2 text-sanca-green">
               <MapPin className="h-5 w-5" />
-              <span className="font-semibold text-sm uppercase tracking-wider">Find Us</span>
+              <span className="text-sm label-premium">Find Us</span>
             </div>
             <span className="text-gray-500 text-sm hidden sm:inline">•</span>
             <span className="text-gray-600 dark:text-gray-400 text-sm">

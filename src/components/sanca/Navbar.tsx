@@ -115,14 +115,14 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <p
-                className={`font-serif font-bold leading-tight transition-colors ${
+                className={`heading-premium leading-tight transition-colors ${
                   scrolled ? 'text-sanca-green-dark dark:text-white' : 'text-white'
                 }`}
               >
                 SANCA
               </p>
               <p
-                className={`text-[10px] tracking-wider uppercase transition-colors ${
+                className={`text-[10px] label-premium transition-colors ${
                   scrolled ? 'text-sanca-green/70 dark:text-white/60' : 'text-white/70'
                 }`}
               >
@@ -210,8 +210,8 @@ export default function Navbar() {
                         <img src="/images/sanca/sanca-logo-official.png" alt="SANCA Pretoria Logo" className="w-full h-full object-contain p-1.5" />
                       </div>
                       <div>
-                        <p className="font-serif font-bold text-lg leading-tight text-sanca-green-dark dark:text-white">SANCA</p>
-                        <p className="text-xs tracking-[0.2em] uppercase text-sanca-green/70 dark:text-sanca-gold-light/80 font-medium">Pretoria</p>
+                        <p className="heading-premium text-lg leading-tight text-sanca-green-dark dark:text-white">SANCA</p>
+                        <p className="text-xs label-premium text-sanca-green/70 dark:text-sanca-gold-light/80">Pretoria</p>
                         <p className="text-[10px] text-sanca-sage dark:text-white/40 mt-0.5 italic font-serif">C.A.I.R.U.P. Programme</p>
                       </div>
                     </div>

@@ -70,7 +70,7 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <p className="font-serif font-bold text-xl tracking-tight">SANCA Pretoria</p>
+                <p className="heading-lora text-xl tracking-tight">SANCA Pretoria</p>
                 <p className="text-xs text-white/50 tracking-wider">Est. 1957 — 68 Years of Service</p>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="font-serif font-bold text-sm mb-4 text-sanca-gold-light uppercase tracking-wider tracking-tight">
+            <h4 className="heading-lora text-sm mb-4 text-sanca-gold-light uppercase tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-2.5">
@@ -142,7 +142,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="font-serif font-bold text-sm mb-4 text-sanca-gold-light uppercase tracking-wider tracking-tight">
+            <h4 className="heading-lora text-sm mb-4 text-sanca-gold-light uppercase tracking-wider">
               Programmes
             </h4>
             <ul className="space-y-2.5">
@@ -166,7 +166,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h4 className="font-serif font-bold text-sm mb-4 text-sanca-gold-light uppercase tracking-wider tracking-tight">
+            <h4 className="heading-lora text-sm mb-4 text-sanca-gold-light uppercase tracking-wider">
               Contact Us
             </h4>
             <div className="space-y-3">
@@ -242,7 +242,7 @@ export default function Footer() {
 
         {/* Partners Row */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-white/30 mb-5 text-center sm:text-left">
+          <p className="text-[10px] label-premium text-white/30 mb-5 text-center sm:text-left">
             In Collaboration With
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-8 sm:gap-12">

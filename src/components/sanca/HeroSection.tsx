@@ -98,7 +98,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/12 backdrop-blur-md border border-sanca-gold/40 text-white text-sm mb-8"
           >
             <Shield className="h-4 w-4 text-sanca-gold flex-shrink-0" />
-            <span className="font-medium">Est. 1957 — Nearly 70 Years of Restoring Lives</span>
+            <span className="font-medium label-premium">Est. 1957 — Nearly 70 Years of Restoring Lives</span>
           </motion.div>
 
           {/* Heading */}
@@ -106,14 +106,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2 }}
-            className="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight"
+            className="heading-hero text-5xl sm:text-6xl md:text-7xl text-white leading-[1.1] mb-6 tracking-tight"
           >
             Your Journey to{' '}
             <motion.span
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.38 }}
-              className="text-gradient-animated block"
+              className="text-gradient-animated font-display block"
             >
               Healing Starts
             </motion.span>
@@ -125,7 +125,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.32 }}
-            className="text-lg sm:text-xl text-white/90 max-w-2xl mb-12 leading-relaxed font-light"
+            className="text-lg sm:text-xl text-white/90 max-w-2xl mb-12 leading-relaxed body-elegant"
           >
             Compassionate clinical care meets accessible recovery. Our serene facilities in Pretoria,
             Soshanguve, and Hammanskraal welcome you to a sanctuary where healing begins the moment you arrive.
