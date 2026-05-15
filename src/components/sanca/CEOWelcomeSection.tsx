@@ -80,15 +80,15 @@ export default function CEOWelcomeSection() {
                       <div className="flex items-start gap-5">
                         <div className="flex-shrink-0">
                           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-sanca-gold to-sanca-gold-dark flex items-center justify-center shadow-premium-md border border-sanca-gold/30">
-                            <span className="text-white font-serif font-bold text-2xl sm:text-3xl">L.M.</span>
+                            <span className="text-white font-serif font-bold text-2xl sm:text-3xl">C.D.</span>
                           </div>
                         </div>
                         <div className="pt-1">
                           <p className="font-serif text-xl sm:text-2xl font-bold text-sanca-green-dark dark:text-white tracking-tight">
-                            Advocate L. Mathebula
+                            Celeste Du Preez
                           </p>
                           <p className="text-sm sm:text-base text-sanca-gold-dark dark:text-sanca-gold font-semibold mt-1">
-                            Chief Executive Officer
+                            Centre Manager, Castle Carey Clinic
                           </p>
                           <p className="text-xs sm:text-sm text-muted-foreground dark:text-white/70 mt-2 font-medium">
                             SANCA Pretoria &mdash; Est. 1957
