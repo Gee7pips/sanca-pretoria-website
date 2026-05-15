@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "SANCA Pretoria" }],
   icons: {
-    icon: "/logo.svg",
+    icon: "/images/sanca/sanca-logo-favicon.png",
   },
   openGraph: {
     title: "SANCA Pretoria — Your Path to Healing Begins Here",
