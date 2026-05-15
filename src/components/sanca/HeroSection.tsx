@@ -2,21 +2,37 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, Heart, Shield } from 'lucide-react';
+import { Phone, MessageCircle, Heart, Shield, ArrowRight, Sparkles, CalendarCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HERO_IMAGES = [
   {
+    url: '/images/sanca/uploads/hero-community.jpeg',
+    alt: 'SANCA Pretoria — Community of care and support',
+  },
+  {
     url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%2817%29-mw6UyPbYV3HfLiyQQYZhENhYtI9jSh.jpeg',
     alt: 'SANCA Pretoria welcome sign with community member',
+  },
+  {
+    url: '/images/sanca/uploads/hero-facility-exterior.jpg',
+    alt: 'SANCA Castle Carey Clinic — Serene healing environment',
   },
   {
     url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20240516-WA0027-scaled-kmUcsTfZqZQoXyJt6ANGvs5WUPIFqC.jpg',
     alt: 'SANCA clinic exterior with modern architecture and landscaping',
   },
   {
+    url: '/images/sanca/uploads/hero-building-scaled.jpg',
+    alt: 'Castle Carey Clinic — Professional rehabilitation facility',
+  },
+  {
     url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20240516-WA0114-K98FL6aprFFHE5NpqYPQfLyJmuIk1b.jpg',
     alt: 'Castle Carey Clinic entrance with welcoming vegetation',
+  },
+  {
+    url: '/images/sanca/uploads/hero-logo-modern.jpeg',
+    alt: 'SANCA Pretoria — A legacy of healing and hope',
   },
   {
     url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20240516-WA0059-nVNI5IEj4SGML8AelsLzQ9D5cGt1hu.jpg',
@@ -24,7 +40,7 @@ const HERO_IMAGES = [
   },
 ];
 
-const AUTOPLAY_INTERVAL = 5000;
+const AUTOPLAY_INTERVAL = 8000;
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -122,23 +138,84 @@ export default function HeroSection() {
             transition={{ duration: 0.65, delay: 0.46 }}
             className="flex flex-col sm:flex-row gap-4 mb-12"
           >
-            <Button
-              onClick={() => document.getElementById('assessment')?.scrollIntoView({ behavior: 'smooth' })}
-              size="lg"
-              className="bg-sanca-gold hover:bg-sanca-gold-dark text-white font-semibold text-base px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl group"
+            {/* Primary CTA — Start Your Recovery */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="relative group"
             >
-              <Heart className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Start Your Recovery
-            </Button>
-            <Button
+              {/* Glow ring behind button */}
+              <div className="absolute -inset-1 bg-sanca-gold/30 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Button
+                onClick={() => document.getElementById('assessment')?.scrollIntoView({ behavior: 'smooth' })}
+                size="lg"
+                className="relative bg-gradient-to-r from-sanca-gold via-sanca-gold to-sanca-gold-dark hover:from-sanca-gold-dark hover:via-sanca-gold hover:to-sanca-gold text-white font-bold text-base px-8 py-6 shadow-[0_8px_32px_rgba(197,150,58,0.35)] hover:shadow-[0_12px_40px_rgba(197,150,58,0.5)] transition-all duration-500 rounded-2xl group/btn border border-sanca-gold-light/30"
+              >
+                <span className="flex items-center gap-2.5">
+                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 group-hover/btn:bg-white/30 transition-all duration-300">
+                    <Heart className="h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+                  </span>
+                  <span>Start Your Recovery</span>
+                  <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all duration-300" />
+                </span>
+              </Button>
+            </motion.div>
+
+            {/* Secondary CTA — Call Admissions */}
+            <motion.div
+              whileHover={{ scale: 1.03, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="relative group"
+            >
+              {/* Subtle glow */}
+              <div className="absolute -inset-1 bg-white/10 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Button
+                onClick={() => document.getElementById('admissions')?.scrollIntoView({ behavior: 'smooth' })}
+                size="lg"
+                variant="outline"
+                className="relative border-2 border-white/30 text-white hover:bg-white/15 hover:border-white/60 font-bold text-base px-8 py-6 bg-white/[0.08] backdrop-blur-xl transition-all duration-500 rounded-2xl group/btn shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+              >
+                <span className="flex items-center gap-2.5">
+                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-sanca-emerald/30 backdrop-blur-sm border border-sanca-emerald/30 group-hover/btn:bg-sanca-emerald/50 transition-all duration-300">
+                    <Phone className="h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+                  </span>
+                  <span>Call Admissions</span>
+                  <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all duration-300" />
+                </span>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Quick Action Chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.55 }}
+            className="flex flex-wrap gap-3 mb-8"
+          >
+            <a
+              href="https://wa.me/27813181511"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sanca-emerald/20 backdrop-blur-sm border border-sanca-emerald/30 text-white text-sm font-medium hover:bg-sanca-emerald/30 hover:border-sanca-emerald/50 transition-all duration-300 group/chip"
+            >
+              <MessageCircle className="h-4 w-4 group-hover/chip:scale-110 transition-transform" />
+              WhatsApp Us
+            </a>
+            <a
+              href="tel:0125421121"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium hover:bg-white/20 hover:border-white/40 transition-all duration-300 group/chip"
+            >
+              <Phone className="h-4 w-4 group-hover/chip:scale-110 transition-transform" />
+              012 542 1121
+            </a>
+            <button
               onClick={() => document.getElementById('admissions')?.scrollIntoView({ behavior: 'smooth' })}
-              size="lg"
-              variant="outline"
-              className="border-2 border-white/40 text-white hover:bg-white/15 hover:border-white/70 font-semibold text-base px-8 py-6 bg-white/10 backdrop-blur-md transition-all duration-300 rounded-xl group"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sanca-gold/15 backdrop-blur-sm border border-sanca-gold/30 text-sanca-gold-light text-sm font-medium hover:bg-sanca-gold/25 hover:border-sanca-gold/50 transition-all duration-300 group/chip"
             >
-              <Phone className="mr-2 h-5 w-5" />
-              Call Admissions
-            </Button>
+              <CalendarCheck className="h-4 w-4 group-hover/chip:scale-110 transition-transform" />
+              Book Assessment
+            </button>
           </motion.div>
 
           {/* Trust pills */}
