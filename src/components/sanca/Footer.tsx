@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Heart, Shield, ExternalLink, ArrowUp, MessageCircle, Navigation } from 'lucide-react';
 
 const quickLinks = [
@@ -236,8 +237,49 @@ export default function Footer() {
           </motion.div>
         </div>
 
+        {/* Partners Row */}
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="text-[10px] font-semibold tracking-[0.18em] uppercase text-white/30 mb-5 text-center sm:text-left">
+            In Collaboration With
+          </p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-8 sm:gap-12">
+            <a
+              href="https://www.up.ac.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="University of Pretoria — Academic Research & Training Partner"
+              className="opacity-40 hover:opacity-70 transition-opacity duration-300"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/UP_edit_18542722435737-WhoBDgielGj1QzPnz6jTvc2AZVdTF9.png"
+                alt="University of Pretoria"
+                width={160}
+                height={50}
+                className="h-9 w-auto object-contain brightness-0 invert"
+                sizes="160px"
+              />
+            </a>
+            <a
+              href="https://www.dsd.gov.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Department of Social Development — Republic of South Africa"
+              className="opacity-40 hover:opacity-70 transition-opacity duration-300"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29-52F4zYYrJj6QmQi1Wlo1F41ZmQeWcl.png"
+                alt="Department of Social Development — Republic of South Africa"
+                width={180}
+                height={50}
+                className="h-9 w-auto object-contain brightness-0 invert"
+                sizes="180px"
+              />
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} SANCA Pretoria / Soshanguve / Hammanskraal. All rights reserved.
           </p>
