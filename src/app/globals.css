@@ -1,0 +1,2645 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+  --font-cormorant: var(--font-cormorant);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* SANCA Brand Colors */
+  --color-sanca-green: #1B5E3B;
+  --color-sanca-green-light: #2D8B57;
+  --color-sanca-green-dark: #0D3B22;
+  --color-sanca-gold: #C5963A;
+  --color-sanca-gold-light: #E8C877;
+  --color-sanca-gold-dark: #9B7429;
+  --color-sanca-cream: #FAF6ED;
+  --color-sanca-warm: #F5EDE0;
+  --color-sanca-sage: #E8F0E8;
+  --color-sanca-emerald: #059669;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.99 0.003 100);
+  --foreground: oklch(0.18 0.02 150);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 150);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 150);
+  --primary: oklch(0.38 0.12 155);
+  --primary-foreground: oklch(0.98 0.005 100);
+  --secondary: oklch(0.96 0.01 100);
+  --secondary-foreground: oklch(0.22 0.02 150);
+  --muted: oklch(0.96 0.008 100);
+  --muted-foreground: oklch(0.52 0.02 150);
+  --accent: oklch(0.75 0.12 85);
+  --accent-foreground: oklch(0.18 0.02 150);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.01 100);
+  --input: oklch(0.92 0.01 100);
+  --ring: oklch(0.38 0.12 155);
+  --chart-1: oklch(0.38 0.12 155);
+  --chart-2: oklch(0.75 0.12 85);
+  --chart-3: oklch(0.65 0.18 150);
+  --chart-4: oklch(0.82 0.08 100);
+  --chart-5: oklch(0.55 0.15 35);
+  --sidebar: oklch(0.985 0.005 100);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.38 0.12 155);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0.01 100);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0.01 155);
+  --foreground: oklch(0.96 0.005 100);
+  --card: oklch(0.16 0.015 155);
+  --card-foreground: oklch(0.96 0.005 100);
+  --popover: oklch(0.16 0.015 155);
+  --popover-foreground: oklch(0.96 0.005 100);
+  --primary: oklch(0.65 0.15 155);
+  --primary-foreground: oklch(0.12 0.01 155);
+  --secondary: oklch(0.22 0.02 155);
+  --secondary-foreground: oklch(0.96 0.005 100);
+  --muted: oklch(0.22 0.02 155);
+  --muted-foreground: oklch(0.65 0.02 100);
+  --accent: oklch(0.75 0.12 85);
+  --accent-foreground: oklch(0.12 0.01 155);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.65 0.15 155);
+  --chart-1: oklch(0.65 0.15 155);
+  --chart-2: oklch(0.75 0.12 85);
+  --chart-3: oklch(0.55 0.18 150);
+  --chart-4: oklch(0.82 0.08 100);
+  --chart-5: oklch(0.55 0.15 35);
+  --sidebar: oklch(0.16 0.015 155);
+  --sidebar-foreground: oklch(0.96 0.005 100);
+  --sidebar-primary: oklch(0.65 0.15 155);
+  --sidebar-primary-foreground: oklch(0.96 0.005 100);
+  --sidebar-accent: oklch(0.22 0.02 155);
+  --sidebar-accent-foreground: oklch(0.96 0.005 100);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.65 0.15 155);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  h2 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    font-weight: 700;
+  }
+  h3 {
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+  p {
+    font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+    hyphens: auto;
+    line-height: 1.6;
+  }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B5E3B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2D8B57;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(27, 94, 59, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(27, 94, 59, 0.4); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
+
+/* Premium Shadow System */
+.shadow-premium-xs {
+  box-shadow: 0 1px 2px rgba(27, 94, 59, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-premium-sm {
+  box-shadow: 0 2px 4px rgba(27, 94, 59, 0.06), 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.shadow-premium-md {
+  box-shadow: 0 4px 6px rgba(27, 94, 59, 0.06), 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-premium-lg {
+  box-shadow: 0 10px 15px rgba(27, 94, 59, 0.08), 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-premium-xl {
+  box-shadow: 0 20px 25px rgba(27, 94, 59, 0.1), 0 40px 50px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-premium-2xl {
+  box-shadow: 0 25px 35px rgba(27, 94, 59, 0.12), 0 50px 70px rgba(0, 0, 0, 0.15);
+}
+
+.shadow-gold {
+  box-shadow: 0 4px 14px rgba(197, 150, 58, 0.25);
+}
+
+.shadow-green-glow {
+  box-shadow: 0 0 30px rgba(27, 94, 59, 0.15), 0 0 60px rgba(27, 94, 59, 0.08);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(13, 59, 34, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text Gradient */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C5963A 0%, #E8C877 50%, #C5963A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #1B5E3B 0%, #2D8B57 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(27, 94, 59, 0.2);
+  color: #0D3B22;
+}
+
+/* Section Divider */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, #1B5E3B 20%, #C5963A 50%, #1B5E3B 80%, transparent 100%);
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-divider-thin {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #1B5E3B40 30%, #C5963A40 50%, #1B5E3B40 70%, transparent 100%);
+  border: none;
+}
+
+/* Premium Button Hover Ripple */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Subtle texture overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231B5E3B' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Premium focus ring */
+.premium-focus:focus-visible {
+  outline: 2px solid #C5963A;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Custom scrollbar for inner containers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #1B5E3B40;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #1B5E3B80;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(27, 94, 59, 0.12), 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Gold accent underline animation */
+.gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #C5963A, #E8C877);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.gold-underline:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   NEW ANIMATIONS — Task 6 Styling Enhancement
+   ========================================== */
+
+/* Parallax background */
+@keyframes parallax-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+/* Reveal from bottom with blur */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Count up glow */
+@keyframes count-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(197, 150, 58, 0.3); }
+  50% { text-shadow: 0 0 25px rgba(197, 150, 58, 0.6); }
+}
+
+/* Rotate subtle */
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Bounce gentle */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-parallax-float {
+  animation: parallax-float 8s ease-in-out infinite;
+}
+
+.animate-reveal-up {
+  animation: reveal-up 0.8s ease-out forwards;
+}
+
+.animate-count-glow {
+  animation: count-glow 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 30s linear infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* ==========================================
+   PREMIUM EFFECTS — Task 6 Styling Enhancement
+   ========================================== */
+
+/* Premium card border gradient */
+.premium-border {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+}
+
+.premium-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #1B5E3B, #C5963A, #059669, #E8C877);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.premium-border:hover::before {
+  opacity: 1;
+}
+
+/* Deep shadow on scroll */
+.shadow-deep {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 12px 24px -8px rgba(27, 94, 59, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Gold shimmer effect */
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(232, 200, 119, 0.15), transparent);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Section enter animation helper */
+.section-enter {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-enter.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badge pulse */
+.badge-pulse {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(27, 94, 59, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(27, 94, 59, 0); }
+}
+
+/* Gradient text with animation */
+.text-gradient-animated {
+  background: linear-gradient(135deg, #C5963A 0%, #E8C877 25%, #C5963A 50%, #E8C877 75%, #C5963A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Premium divider with diamond */
+.divider-diamond {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1B5E3B40, transparent);
+  margin: 2rem 0;
+}
+
+.divider-diamond::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #C5963A;
+  font-size: 10px;
+  background: inherit;
+  padding: 0 8px;
+}
+
+/* Glowing focus ring for inputs */
+.glow-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.15), 0 0 15px rgba(27, 94, 59, 0.1);
+  border-color: #1B5E3B;
+}
+
+/* ==========================================
+   DARK SECTION SCROLLBAR — Task 6 Styling Enhancement
+   ========================================== */
+
+/* Dark section scrollbar */
+.dark-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dark-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-section::-webkit-scrollbar-thumb {
+  background: rgba(197, 150, 58, 0.3);
+  border-radius: 3px;
+}
+
+/* ==========================================
+   SECTION TRANSITIONS & EFFECTS — Task 4+5+6
+   ========================================== */
+
+/* Section wave divider */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0 40V20C200 0 400 40 600 20C800 0 1000 40 1200 20V40H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+}
+
+/* Hover glow card */
+.hover-glow {
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(27, 94, 59, 0.15), 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Pulse dot animation for live indicators */
+.live-dot {
+  position: relative;
+}
+
+.live-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: live-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  background: inherit;
+}
+
+@keyframes live-ping {
+  75%, 100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Premium gradient border animation */
+.animated-border {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(
+    var(--border-angle, 0deg),
+    #1B5E3B,
+    #C5963A,
+    #059669,
+    #E8C877,
+    #1B5E3B
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 4s linear infinite;
+}
+
+@keyframes border-rotate {
+  to { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ==========================================
+   PREMIUM ANIMATIONS — Task 10 CSS Enhancement
+   ========================================== */
+
+/* Magnetic hover effect */
+@keyframes magnetic-pull {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Staggered fade in for lists */
+@keyframes stagger-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spotlight sweep */
+@keyframes spotlight-sweep {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Morph blob */
+@keyframes morph-blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 40% 50% 60% 50%; }
+  75% { border-radius: 40% 60% 50% 40% / 60% 40% 50% 60%; }
+}
+
+/* Typewriter cursor */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================
+   PREMIUM UTILITY CLASSES — Task 10 CSS Enhancement
+   ========================================== */
+
+.animate-magnetic-pull { animation: magnetic-pull 0.4s ease-out; }
+.animate-morph-blob { animation: morph-blob 8s ease-in-out infinite; }
+.animate-blink-cursor { animation: blink-cursor 1s step-end infinite; }
+
+/* Card spotlight hover effect */
+.card-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.card-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: none;
+  pointer-events: none;
+}
+.card-spotlight:hover::before {
+  animation: spotlight-sweep 0.8s ease-out forwards;
+}
+
+/* Premium gradient text - Green variant */
+.text-gradient-green-animated {
+  background: linear-gradient(135deg, #1B5E3B 0%, #2D8B57 25%, #059669 50%, #2D8B57 75%, #1B5E3B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Noise texture overlay for premium feel */
+.noise-texture {
+  position: relative;
+}
+.noise-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Frosted glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Section gradient top border */
+.section-top-gradient {
+  position: relative;
+}
+.section-top-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1B5E3B, #C5963A, #059669);
+}
+
+/* Premium input styling */
+.premium-input {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+}
+.premium-input:focus {
+  border-color: #C5963A;
+  box-shadow: 0 0 0 3px rgba(197, 150, 58, 0.15);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Staggered children animation helper */
+.stagger-children > * {
+  opacity: 0;
+  animation: stagger-fade 0.5s ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.4s; }
+
+/* ==========================================
+   ENHANCED DARK MODE — Task 10 CSS Enhancement
+   ========================================== */
+
+.dark {
+  /* SANCA-specific dark mode variables */
+  --sanca-cream: #1a2e1f;
+  --sanca-warm: #1e2a20;
+  --sanca-sage: #1a3020;
+}
+
+/* Dark mode premium scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #0D3B22;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2D8B57;
+}
+
+/* Dark mode glass effect */
+.dark .glass {
+  background: rgba(13, 59, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode card adjustments */
+.dark .glass-card {
+  background: rgba(13, 59, 34, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode premium input */
+.dark .premium-input {
+  background: rgba(255, 255, 255, 0.05);
+}
+.dark .premium-input:focus {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode shadow adjustments */
+.dark .shadow-premium-xs { box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.3); }
+.dark .shadow-premium-sm { box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.3); }
+.dark .shadow-premium-md { box-shadow: 0 4px 6px rgba(0,0,0,0.2), 0 10px 15px rgba(0,0,0,0.3); }
+.dark .shadow-premium-lg { box-shadow: 0 10px 15px rgba(0,0,0,0.2), 0 20px 25px rgba(0,0,0,0.3); }
+.dark .shadow-premium-xl { box-shadow: 0 20px 25px rgba(0,0,0,0.2), 0 40px 50px rgba(0,0,0,0.3); }
+
+/* Dark mode section backgrounds */
+.dark .bg-sanca-cream { background-color: #0D3B22; }
+.dark .bg-white { background-color: #0a2a18; }
+
+/* Dark mode gold shimmer adjustment */
+.dark .gold-shimmer::after {
+  background: linear-gradient(90deg, transparent, rgba(232, 200, 119, 0.08), transparent);
+}
+
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS — Task 13
+   ========================================== */
+
+/* Fade in from left */
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade in from right */
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Scale up reveal */
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Slide up with bounce */
+@keyframes slide-up-bounce {
+  0% { opacity: 0; transform: translateY(40px); }
+  60% { opacity: 1; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Shimmer text */
+@keyframes text-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-reveal-left { animation: reveal-left 0.7s ease-out forwards; }
+.animate-reveal-right { animation: reveal-right 0.7s ease-out forwards; }
+.animate-reveal-scale { animation: reveal-scale 0.6s ease-out forwards; }
+.animate-slide-up-bounce { animation: slide-up-bounce 0.8s ease-out forwards; }
+
+/* Shimmer text effect */
+.text-shimmer {
+  background: linear-gradient(90deg, #1B5E3B 0%, #C5963A 25%, #E8C877 50%, #C5963A 75%, #1B5E3B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shimmer 6s linear infinite;
+}
+
+/* Parallax section divider */
+.parallax-divider {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+.parallax-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath d='M0 80V40C240 0 480 80 720 40C960 0 1200 80 1440 40V80H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.parallax-divider-green::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath d='M0 80V40C240 0 480 80 720 40C960 0 1200 80 1440 40V80H0Z' fill='%231B5E3B'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 100% 100%;
+}
+
+/* Premium card with animated gradient border */
+.card-animated-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-animated-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1B5E3B, #C5963A, #059669, #E8C877, #1B5E3B);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Floating label style */
+.floating-label {
+  position: relative;
+}
+
+.floating-label::after {
+  content: attr(data-label);
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: #1B5E3B;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Premium stat counter */
+.stat-counter {
+  position: relative;
+  display: inline-block;
+}
+
+.stat-counter::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C5963A, #E8C877);
+  border-radius: 2px;
+}
+
+/* Icon container with gradient bg */
+.icon-gradient {
+  background: linear-gradient(135deg, #1B5E3B, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(27, 94, 59, 0.3);
+}
+
+.icon-gradient-gold {
+  background: linear-gradient(135deg, #C5963A, #E8C877);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(197, 150, 58, 0.3);
+}
+
+/* Scroll indicator pulse */
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}
+
+.scroll-indicator-pulse {
+  animation: scroll-pulse 2s ease-in-out infinite;
+}
+
+/* Dark mode parallax dividers */
+.dark .parallax-divider::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath d='M0 80V40C240 0 480 80 720 40C960 0 1200 80 1440 40V80H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.dark .card-animated-border::before {
+  background: linear-gradient(90deg, #2D8B57, #E8C877, #059669, #C5963A, #2D8B57);
+  background-size: 200% auto;
+}
+
+/* ==========================================
+   PREMIUM SECTION TRANSITIONS — Task 4-a
+   ========================================== */
+
+/* SVG wave shape at top of section (cream colored, organic curve) */
+.section-wave-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C180 0 360 50 540 25C720 0 900 50 1080 25C1260 0 1440 50 1440 25V50H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* SVG wave shape at bottom of section (white colored, organic curve) */
+.section-wave-bottom {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0Z' fill='%23FFFFFF'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* CSS clip-path angled section divider (3 degrees) */
+.section-angled {
+  clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+}
+
+/* ==========================================
+   PREMIUM CARD EFFECTS — Task 4-a
+   ========================================== */
+
+/* White card with subtle green tint shadow, 16px radius, top-left gold accent dot */
+.card-premium {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(27, 94, 59, 0.06), 0 10px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.card-premium:hover {
+  box-shadow: 0 8px 16px rgba(27, 94, 59, 0.1), 0 20px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Small gold circle accent (8px) at top-left corner */
+.card-premium::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C5963A, #E8C877);
+  z-index: 2;
+}
+
+/* Green-tinted frosted glass card */
+.card-glass-green {
+  background: rgba(27, 94, 59, 0.05);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(27, 94, 59, 0.15);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.card-glass-green:hover {
+  background: rgba(27, 94, 59, 0.08);
+  border-color: rgba(27, 94, 59, 0.25);
+  box-shadow: 0 8px 24px rgba(27, 94, 59, 0.1);
+}
+
+/* Gold-tinted frosted glass card */
+.card-glass-gold {
+  background: rgba(197, 150, 58, 0.05);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(197, 150, 58, 0.15);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.card-glass-gold:hover {
+  background: rgba(197, 150, 58, 0.08);
+  border-color: rgba(197, 150, 58, 0.25);
+  box-shadow: 0 8px 24px rgba(197, 150, 58, 0.1);
+}
+
+/* ==========================================
+   INTERACTIVE INPUT STYLES — Task 4-a
+   ========================================== */
+
+/* Premium input with cream bg, green border on focus, gold glow */
+.input-sanca {
+  width: 100%;
+  padding: 12px 16px;
+  background: #FAF6ED;
+  border: 2px solid #E8F0E8;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0D3B22;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-sanca::placeholder {
+  color: #9CA3AF;
+}
+
+.input-sanca:focus {
+  border-color: #1B5E3B;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.1), 0 0 12px rgba(197, 150, 58, 0.1);
+  background: white;
+}
+
+/* Same as input-sanca but for textarea with resize-y */
+.textarea-sanca {
+  width: 100%;
+  padding: 12px 16px;
+  background: #FAF6ED;
+  border: 2px solid #E8F0E8;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0D3B22;
+  transition: all 0.3s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.textarea-sanca::placeholder {
+  color: #9CA3AF;
+}
+
+.textarea-sanca:focus {
+  border-color: #1B5E3B;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.1), 0 0 12px rgba(197, 150, 58, 0.1);
+  background: white;
+}
+
+/* Same as input-sanca but for select with custom dropdown arrow */
+.select-sanca {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  background: #FAF6ED;
+  border: 2px solid #E8F0E8;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #0D3B22;
+  transition: all 0.3s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231B5E3B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.select-sanca:focus {
+  border-color: #1B5E3B;
+  box-shadow: 0 0 0 3px rgba(27, 94, 59, 0.1), 0 0 12px rgba(197, 150, 58, 0.1);
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231B5E3B' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* ==========================================
+   MICRO-INTERACTION UTILITIES — Task 4-a
+   ========================================== */
+
+/* Scale to 1.05 on hover with smooth transition */
+.hover-scale-105 {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Brightness to 1.1 on hover */
+.hover-brightness-110 {
+  transition: filter 0.3s ease;
+}
+
+.hover-brightness-110:hover {
+  filter: brightness(1.1);
+}
+
+/* Scale to 0.95 on active */
+.tap-scale-95 {
+  transition: transform 0.15s ease;
+}
+
+.tap-scale-95:active {
+  transform: scale(0.95);
+}
+
+/* Transition with cubic-bezier bounce effect */
+.transition-bounce {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================
+   PREMIUM BADGE STYLES — Task 4-a
+   ========================================== */
+
+/* Green badge (pill shape, small) */
+.badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(27, 94, 59, 0.1);
+  color: #1B5E3B;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Gold badge (pill shape, small) */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(197, 150, 58, 0.1);
+  color: #9B7429;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Emerald badge (pill shape, small) */
+.badge-emerald {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: rgba(5, 150, 105, 0.1);
+  color: #059669;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* Outline badge (border-2 border-sanca-green, transparent bg) */
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: transparent;
+  color: #1B5E3B;
+  border: 2px solid #1B5E3B;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   COMPREHENSIVE DARK MODE — Task 4-a
+   ========================================== */
+
+/* Dark mode card-premium */
+.dark .card-premium {
+  background: #0D3B22;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dark .card-premium:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode card-glass-green */
+.dark .card-glass-green {
+  background: rgba(27, 94, 59, 0.15);
+  border: 1px solid rgba(27, 94, 59, 0.25);
+}
+
+.dark .card-glass-green:hover {
+  background: rgba(27, 94, 59, 0.2);
+  border-color: rgba(27, 94, 59, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode card-glass-gold */
+.dark .card-glass-gold {
+  background: rgba(197, 150, 58, 0.1);
+  border: 1px solid rgba(197, 150, 58, 0.2);
+}
+
+.dark .card-glass-gold:hover {
+  background: rgba(197, 150, 58, 0.15);
+  border-color: rgba(197, 150, 58, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode input-sanca */
+.dark .input-sanca {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E8F0E8;
+}
+
+.dark .input-sanca::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .input-sanca:focus {
+  border-color: #2D8B57;
+  box-shadow: 0 0 0 3px rgba(45, 139, 87, 0.2), 0 0 12px rgba(197, 150, 58, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode textarea-sanca */
+.dark .textarea-sanca {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E8F0E8;
+}
+
+.dark .textarea-sanca::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dark .textarea-sanca:focus {
+  border-color: #2D8B57;
+  box-shadow: 0 0 0 3px rgba(45, 139, 87, 0.2), 0 0 12px rgba(197, 150, 58, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Dark mode select-sanca */
+.dark .select-sanca {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #E8F0E8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232D8B57' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.dark .select-sanca:focus {
+  border-color: #2D8B57;
+  box-shadow: 0 0 0 3px rgba(45, 139, 87, 0.2), 0 0 12px rgba(197, 150, 58, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232D8B57' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Dark mode badge-green (brighter colors) */
+.dark .badge-green {
+  background: rgba(45, 139, 87, 0.2);
+  color: #5BDBA0;
+}
+
+/* Dark mode badge-gold (brighter colors) */
+.dark .badge-gold {
+  background: rgba(232, 200, 119, 0.15);
+  color: #E8C877;
+}
+
+/* Dark mode badge-emerald (brighter colors) */
+.dark .badge-emerald {
+  background: rgba(5, 150, 105, 0.2);
+  color: #34D399;
+}
+
+/* Dark mode badge-outline */
+.dark .badge-outline {
+  color: #2D8B57;
+  border-color: #2D8B57;
+}
+
+/* Dark mode section-wave-top (darker green fill) */
+.dark .section-wave-top::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C180 0 360 50 540 25C720 0 900 50 1080 25C1260 0 1440 50 1440 25V50H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+}
+
+/* Dark mode section-wave-bottom (darker green fill) */
+.dark .section-wave-bottom::after {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C240 50 480 0 720 25C960 50 1200 0 1440 25V50H0Z' fill='%230a2a18'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+}
+
+/* Dark mode hover-lift (adjusted shadow for dark bg) */
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode text-gradient-gold (brighter) */
+.dark .text-gradient-gold {
+  background: linear-gradient(135deg, #E8C877 0%, #FAE6A0 50%, #E8C877 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark mode text-gradient-green (brighter) */
+.dark .text-gradient-green {
+  background: linear-gradient(135deg, #2D8B57 0%, #34D399 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================
+   PREMIUM DARK MODE SCROLLBAR — Task 4-a
+   ========================================== */
+
+/* Gold-tinted scrollbar thumb for dark mode custom containers */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 150, 58, 0.3);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 150, 58, 0.5);
+}
+
+/* ==========================================
+   SAFE AREA UTILITIES — Task 4-a
+   ========================================== */
+
+/* iOS safe area bottom padding */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Shorthand for safe-bottom */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ==========================================
+   PREMIUM GLOW EFFECTS — Task 7-c
+   ========================================== */
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(27, 94, 59, 0.3), 0 0 40px rgba(27, 94, 59, 0.15);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(197, 150, 58, 0.3), 0 0 40px rgba(197, 150, 58, 0.15);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(197, 150, 58, 0.4), 0 0 20px rgba(197, 150, 58, 0.2);
+}
+
+/* ==========================================
+   PREMIUM TRANSITIONS — Task 7-c
+   ========================================== */
+
+.transition-premium {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-spring {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ==========================================
+   SCROLL INDICATOR DOTS — Task 7-c
+   ========================================== */
+
+.scroll-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(27, 94, 59, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.scroll-dot:hover {
+  background: rgba(27, 94, 59, 0.6);
+  transform: scale(1.2);
+}
+
+.scroll-dot-active {
+  background: #C5963A;
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(197, 150, 58, 0.4);
+}
+
+/* ==========================================
+   DARK MODE — CRISIS BANNER — Task 7-c
+   ========================================== */
+
+.dark .crisis-banner {
+  background: linear-gradient(135deg, #0a2a18, #0D3B22);
+  border-color: rgba(197, 150, 58, 0.3);
+}
+
+/* ==========================================
+   ENHANCED PRINT STYLES — Task 7-c
+   ========================================== */
+
+@media print {
+  /* Hide non-essential elements */
+  nav,
+  [data-floating-actions],
+  [data-chat-widget],
+  [data-page-loader],
+  [data-scroll-progress],
+  .scroll-dot,
+  button[aria-label*="scroll"],
+  button[aria-label*="back to top"],
+  .floating-actions,
+  .chat-widget,
+  .page-loader,
+  .scroll-progress-bar {
+    display: none !important;
+  }
+
+  /* Reset backgrounds for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Ensure text is readable */
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    background: white !important;
+    color: black !important;
+    padding: 1rem 0 !important;
+  }
+
+  /* Remove decorative elements */
+  .section-top-gradient::before,
+  .card-animated-border::before,
+  .premium-border::before,
+  .animated-border::before,
+  .gold-shimmer::after,
+  .noise-texture::after,
+  .texture-overlay::before,
+  [class*="bg-gradient"],
+  [class*="blur-"] {
+    display: none !important;
+  }
+
+  /* Cards should have simple borders */
+  .card, [class*="shadow-premium"] {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    background: white !important;
+  }
+
+  /* Links show URL in print */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Typography for print */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+    color: black !important;
+  }
+
+  /* Margins */
+  @page {
+    margin: 2cm;
+  }
+}
+
+/* ==========================================
+   PREMIUM SECTION WAVE DIVIDERS — Task 3+4
+   ========================================== */
+
+/* Green wave at top of cream sections */
+.section-wave-green-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-green-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C120 10 240 50 360 30C480 10 600 50 720 30C840 10 960 50 1080 30C1200 10 1320 50 1440 30V60H0Z' fill='%231B5E3B'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Cream wave at top of white sections */
+.section-wave-cream-top {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-cream-top::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C160 0 320 60 480 30C640 0 800 60 960 30C1120 0 1280 60 1440 30V60H0Z' fill='%23FAF6ED'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Gold accent wave at bottom of dark sections */
+.section-wave-gold-bottom {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-wave-gold-bottom::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 50'%3E%3Cpath d='M0 50V25C180 50 360 0 540 25C720 50 900 0 1080 25C1260 50 1440 0 1440 25V50H0Z' fill='%23C5963A'/%3E%3C/svg%3E") no-repeat center bottom;
+  background-size: 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==========================================
+   ENHANCED HERO PARTICLE EFFECT — Task 3+4
+   ========================================== */
+
+/* Hero particle base class */
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: particle-drift ease-in-out infinite;
+}
+
+@keyframes particle-drift {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) translateX(20px);
+  }
+}
+
+/* Particle 1 — 2px, top-left area */
+.hero-particle-1 {
+  width: 2px;
+  height: 2px;
+  background: rgba(197, 150, 58, 0.7);
+  top: 20%;
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+/* Particle 2 — 4px, center area */
+.hero-particle-2 {
+  width: 4px;
+  height: 4px;
+  background: rgba(27, 94, 59, 0.6);
+  top: 40%;
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+/* Particle 3 — 3px, right area */
+.hero-particle-3 {
+  width: 3px;
+  height: 3px;
+  background: rgba(232, 200, 119, 0.7);
+  top: 60%;
+  left: 75%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+/* Particle 4 — 6px, bottom-left */
+.hero-particle-4 {
+  width: 6px;
+  height: 6px;
+  background: rgba(5, 150, 105, 0.5);
+  top: 70%;
+  left: 15%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+
+/* Particle 5 — 2px, top-right */
+.hero-particle-5 {
+  width: 2px;
+  height: 2px;
+  background: rgba(197, 150, 58, 0.8);
+  top: 15%;
+  left: 85%;
+  animation-duration: 9s;
+  animation-delay: 4s;
+}
+
+/* Particle 6 — 5px, center-right */
+.hero-particle-6 {
+  width: 5px;
+  height: 5px;
+  background: rgba(45, 139, 87, 0.5);
+  top: 50%;
+  left: 65%;
+  animation-duration: 11s;
+  animation-delay: 5s;
+}
+
+/* ==========================================
+   PREMIUM TOOLTIP STYLING — Task 3+4
+   ========================================== */
+
+.sanca-tooltip {
+  position: relative;
+  display: inline-block;
+  background: #FAF6ED;
+  color: #1B5E3B;
+  border-left: 3px solid #C5963A;
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 8px;
+  box-shadow: 0 2px 4px rgba(27, 94, 59, 0.06), 0 4px 6px rgba(0, 0, 0, 0.07);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 280px;
+  z-index: 50;
+}
+
+.sanca-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 16px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #FAF6ED;
+}
+
+/* ==========================================
+   ANIMATED GRADIENT BORDER CARDS — Task 3+4
+   ========================================== */
+
+@property --card-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes card-angle-rotate {
+  to { --card-angle: 360deg; }
+}
+
+.card-gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--card-angle, 0deg),
+    #1B5E3B,
+    #C5963A,
+    #059669,
+    #E8C877,
+    #1B5E3B
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: card-angle-rotate 4s linear infinite;
+  pointer-events: none;
+}
+
+/* ==========================================
+   SECTION DECORATIVE CORNER ORNAMENTS — Task 3+4
+   ========================================== */
+
+/* Base corner ornament */
+.corner-ornament {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.corner-ornament::before,
+.corner-ornament::after {
+  content: '';
+  position: absolute;
+  background: rgba(197, 150, 58, 0.3);
+}
+
+/* Top-left corner ornament */
+.corner-ornament-tl {
+  top: 16px;
+  left: 16px;
+}
+
+.corner-ornament-tl::before {
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 1.5px;
+}
+
+.corner-ornament-tl::after {
+  top: 0;
+  left: 0;
+  width: 1.5px;
+  height: 40px;
+}
+
+/* Top-right corner ornament */
+.corner-ornament-tr {
+  top: 16px;
+  right: 16px;
+}
+
+.corner-ornament-tr::before {
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 1.5px;
+}
+
+.corner-ornament-tr::after {
+  top: 0;
+  right: 0;
+  width: 1.5px;
+  height: 40px;
+}
+
+/* ==========================================
+   ENHANCED FOCUS STATES FOR ACCESSIBILITY — Task 3+4
+   ========================================== */
+
+.a11y-focus:focus-visible {
+  outline: 3px solid #1B5E3B;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(197, 150, 58, 0.25);
+  border-radius: 4px;
+}
+
+/* Global focus-visible for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #1B5E3B;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(197, 150, 58, 0.2);
+  border-radius: 4px;
+}
+
+/* ==========================================
+   PRINT STYLES — Task 3+4
+   ========================================== */
+
+@media print {
+  /* Hide navbar */
+  nav,
+  [data-nav],
+  .navbar,
+  header nav {
+    display: none !important;
+  }
+
+  /* Hide floating actions */
+  .floating-actions,
+  [data-floating-actions],
+  [class*="FloatingActions"] {
+    display: none !important;
+  }
+
+  /* Hide chatbot */
+  [data-chat-widget],
+  .chat-widget,
+  [class*="ChatBot"] {
+    display: none !important;
+  }
+
+  /* Hide crisis banner */
+  .crisis-banner,
+  [data-crisis-banner] {
+    display: none !important;
+  }
+
+  /* Hide scroll progress */
+  [data-scroll-progress],
+  .scroll-progress-bar,
+  [class*="ScrollProgress"] {
+    display: none !important;
+  }
+
+  /* Hide page loader */
+  [data-page-loader],
+  [class*="PageLoader"] {
+    display: none !important;
+  }
+
+  /* Body reset for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Remove shadows and animations */
+  * {
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Sections: break inside avoid */
+  section,
+  article,
+  [class*="Section"] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Remove decorative pseudo-elements */
+  .section-wave-green-top::before,
+  .section-wave-cream-top::before,
+  .section-wave-gold-bottom::before,
+  .section-top-gradient::before,
+  .card-animated-border::before,
+  .card-gradient-border::before,
+  .premium-border::before,
+  .animated-border::before,
+  .gold-shimmer::after,
+  .noise-texture::after,
+  .texture-overlay::before,
+  .card-spotlight::before,
+  .corner-ornament::before,
+  .corner-ornament::after,
+  .hero-particle {
+    display: none !important;
+  }
+
+  /* Links show URL */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  /* Margins */
+  @page {
+    margin: 1.5cm;
+  }
+}
+
+/* ==========================================
+   DARK MODE ENHANCEMENTS — Task 3+4
+   ========================================== */
+
+/* Dark mode section-wave-green-top — darker green fill */
+.dark .section-wave-green-top::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C120 10 240 50 360 30C480 10 600 50 720 30C840 10 960 50 1080 30C1200 10 1320 50 1440 30V60H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+}
+
+/* Dark mode section-wave-cream-top — dark green fill */
+.dark .section-wave-cream-top::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath d='M0 60V30C160 0 320 60 480 30C640 0 800 60 960 30C1120 0 1280 60 1440 30V60H0Z' fill='%230D3B22'/%3E%3C/svg%3E") no-repeat center top;
+  background-size: 100% 100%;
+}
+
+/* Dark mode corner ornament — adjusted opacity */
+.dark .corner-ornament::before,
+.dark .corner-ornament::after {
+  background: rgba(197, 150, 58, 0.15);
+}
+
+/* Dark mode card-gradient-border — dark background */
+.dark .card-gradient-border {
+  background: #0D3B22;
+}
+
+.dark .card-gradient-border::before {
+  background: conic-gradient(
+    from var(--card-angle, 0deg),
+    #2D8B57,
+    #E8C877,
+    #059669,
+    #C5963A,
+    #2D8B57
+  );
+}
+
+/* Dark mode sanca-tooltip — dark background, light text, adjusted border */
+.dark .sanca-tooltip {
+  background: #0D3B22;
+  color: #E8F0E8;
+  border-left-color: #C5963A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .sanca-tooltip::after {
+  border-top-color: #0D3B22;
+}
+
+/* ==========================================
+   ENHANCED PAGE TRANSITION — Task 3+4
+   ========================================== */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: linear-gradient(180deg, #1B5E3B 0%, rgba(27, 94, 59, 0) 100%);
+  pointer-events: none;
+}
+
+@keyframes page-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-page-in {
+  animation: page-slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================
+   ENHANCED DARK MODE STYLING — Task 3-b
+   ========================================== */
+
+/* Dark mode for inline bg-[#FAF6ED] cream backgrounds */
+.dark [style*="background-color: rgb(250, 246, 237)"],
+.dark [style*="background-color: #FAF6ED"],
+.dark [style*="background-color:#FAF6ED"] {
+  background-color: #0D3B22 !important;
+}
+
+/* Dark mode text-sanca-green-dark → lighter green for readability */
+.dark .text-sanca-green-dark {
+  color: #4CAF7D;
+}
+
+/* Dark mode border adjustments for sanca-green opacity borders */
+.dark .border-sanca-green\/5 { border-color: rgba(45, 139, 87, 0.15) !important; }
+.dark .border-sanca-green\/10 { border-color: rgba(45, 139, 87, 0.2) !important; }
+.dark .border-sanca-green\/15 { border-color: rgba(45, 139, 87, 0.25) !important; }
+.dark .border-sanca-green\/20 { border-color: rgba(45, 139, 87, 0.3) !important; }
+
+/* Dark mode for inline white bg cards — more specific overrides */
+.dark [style*="background-color: rgb(255, 255, 255)"],
+.dark [style*="background-color: white"],
+.dark [style*="background-color:#FFFFFF"],
+.dark [style*="background-color:#fff"] {
+  background-color: #0D3B22 !important;
+}
+
+/* Dark mode subtle background override for sections with inline bg colors */
+.dark section {
+  background-color: var(--background);
+}
+
+/* Dark mode hover-lift adjusted shadow */
+.dark .hover-lift:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark mode select-sanca — light-colored dropdown arrow SVG for visibility */
+.dark .select-sanca {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23E8F0E8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.dark .select-sanca:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23E8F0E8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* ==========================================
+   SMOOTH THEME SWITCHING — Task 3-b
+   ========================================== */
+
+/* Smooth transitions for theme toggle */
+body,
+main,
+section,
+header,
+footer,
+nav {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================
+   GOVERNMENT-WORTHY ICON CONTAINERS — Phase 6
+   ========================================== */
+
+/* Ornamental circular icon container - Green variant */
+.icon-ornamental {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(197, 150, 58, 0.25);
+  background: linear-gradient(135deg, rgba(27, 94, 59, 0.08), rgba(250, 246, 237, 0.5));
+  transition: box-shadow 0.3s ease;
+  overflow: visible;
+}
+
+.icon-ornamental:hover {
+  box-shadow: 0 4px 12px rgba(27, 94, 59, 0.12);
+}
+
+/* Gold accent dot at top of ornamental container */
+.icon-ornamental::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #C5963A, #E8C877);
+  z-index: 2;
+}
+
+/* Subtle inner ring for depth */
+.icon-ornamental::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 9999px;
+  border: 0.5px solid rgba(27, 94, 59, 0.08);
+  pointer-events: none;
+}
+
+/* Ornamental icon container - Gold variant */
+.icon-ornamental-gold {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(197, 150, 58, 0.35);
+  background: linear-gradient(135deg, rgba(197, 150, 58, 0.08), rgba(250, 246, 237, 0.5));
+  transition: box-shadow 0.3s ease;
+  overflow: visible;
+}
+
+.icon-ornamental-gold:hover {
+  box-shadow: 0 4px 12px rgba(197, 150, 58, 0.12);
+}
+
+.icon-ornamental-gold::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #1B5E3B, #059669);
+  z-index: 2;
+}
+
+.icon-ornamental-gold::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 9999px;
+  border: 0.5px solid rgba(197, 150, 58, 0.1);
+  pointer-events: none;
+}
+
+/* Ornamental icon container - Dark (for dark backgrounds) */
+.icon-ornamental-dark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(232, 200, 119, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  overflow: visible;
+}
+
+.icon-ornamental-dark:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(232, 200, 119, 0.15);
+}
+
+.icon-ornamental-dark::before {
+  content: "";
+  position: absolute;
+  top: -1.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #E8C877, #C5963A);
+  z-index: 2;
+}
+
+/* ==========================================
+   PREMIUM SECTION HEADING ORNAMENTS — Phase 6
+   ========================================== */
+
+/* Decorative line with center diamond for section headings */
+.heading-ornament {
+  position: relative;
+  display: inline-block;
+}
+
+.heading-ornament::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: 12px auto 0;
+  background: linear-gradient(90deg, transparent, #C5963A, transparent);
+  border-radius: 1px;
+}
+
+/* Decorative flourish line - wider */
+.heading-flourish {
+  position: relative;
+}
+
+.heading-flourish::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(90deg, transparent, #1B5E3B 30%, #C5963A 50%, #1B5E3B 70%, transparent);
+  border-radius: 1px;
+}
+
+/* Section badge with government seal feel */
+.badge-government {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(197, 150, 58, 0.2);
+  box-shadow: inset 0 1px 2px rgba(197, 150, 58, 0.1);
+  background: rgba(27, 94, 59, 0.08);
+  color: #1B5E3B;
+  transition: all 0.3s ease;
+}
+
+.badge-government:hover {
+  border-color: rgba(197, 150, 58, 0.35);
+  box-shadow: inset 0 1px 3px rgba(197, 150, 58, 0.15), 0 2px 8px rgba(27, 94, 59, 0.06);
+}
+
+.dark .badge-government {
+  background: rgba(197, 150, 58, 0.12);
+  color: #E8C877;
+  border-color: rgba(197, 150, 58, 0.25);
+}
+
+/* ==========================================
+   PREMIUM QUOTE/CALLOUT STYLES — Phase 6
+   ========================================== */
+
+/* Elegant quote block with serif italic */
+.quote-elegant {
+  position: relative;
+  padding: 16px 20px 16px 24px;
+  border-left: 3px solid #C5963A;
+  background: linear-gradient(135deg, rgba(27, 94, 59, 0.03), rgba(197, 150, 58, 0.03));
+  border-radius: 0 12px 12px 0;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-style: italic;
+  color: #0D3B22;
+}
+
+.quote-elegant::before {
+  content: "\201C";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 28px;
+  color: #C5963A;
+  opacity: 0.3;
+  font-style: normal;
+  line-height: 1;
+}
+
+/* ==========================================
+   PREMIUM BODY TEXT ENHANCEMENTS — Phase 6
+   ========================================== */
+
+/* Warm body text for descriptions */
+.text-warm {
+  color: #3d4a3f;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
+}
+
+.dark .text-warm {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Accent label (small uppercase label before headings) */
+.label-accent {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C5963A;
+  margin-bottom: 8px;
+}
+
+/* Drop cap for first paragraph in sections */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 3.2em;
+  line-height: 0.8;
+  padding-right: 8px;
+  padding-top: 4px;
+  color: #1B5E3B;
+  font-weight: 700;
+}
+
+/* ==========================================
+   PREMIUM HEADING STYLES — Heading Upgrade
+   ========================================== */
+
+/* Section heading gradient with subtle text shadow */
+.heading-gradient {
+  text-shadow: 0 2px 4px rgba(27, 94, 59, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark mode heading shadow */
+.dark .heading-gradient {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Premium card enhanced shadow - deeper, more luxurious */
+.shadow-premium-2xl {
+  box-shadow:
+    0 25px 50px -12px rgba(27, 94, 59, 0.12),
+    0 12px 24px -8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .shadow-premium-2xl {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 12px 24px -8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced gold shadow for premium elements */
+.shadow-gold-enhanced {
+  box-shadow: 0 8px 24px rgba(197, 150, 58, 0.2), 0 4px 8px rgba(197, 150, 58, 0.1);
+}
+
+.dark .shadow-gold-enhanced {
+  box-shadow: 0 8px 24px rgba(197, 150, 58, 0.15), 0 4px 8px rgba(197, 150, 58, 0.08);
+}
+
+/* Emerald accent shadow */
+.shadow-emerald {
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.2);
+}
+
+.dark .shadow-emerald {
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15);
+}
+
+/* Premium section card wrapper */
+.section-card-premium {
+  background: white;
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px rgba(27, 94, 59, 0.04),
+    0 10px 20px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(27, 94, 59, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-card-premium:hover {
+  box-shadow:
+    0 8px 16px rgba(27, 94, 59, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(27, 94, 59, 0.06);
+}
+
+.dark .section-card-premium {
+  background: #0D3B22;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .section-card-premium:hover {
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Heading underline decoration */
+.heading-underline {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #1B5E3B, #C5963A, #059669);
+  border-radius: 2px;
+}
+
+/* ── Hero Ticker ── */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 55s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* ── Premium Section Headings ── */
+.section-heading {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(27, 94, 59, 0.12), 0 4px 16px rgba(197, 150, 58, 0.08);
+}
+
+.section-heading-lg {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  text-shadow: 0 4px 12px rgba(27, 94, 59, 0.15), 0 8px 24px rgba(197, 150, 58, 0.1);
+}
+
+
