@@ -146,7 +146,7 @@ export default function RecoveryJourney() {
   return (
     <section
       id="recovery-journey"
-      className="py-20 sm:py-28 bg-white relative overflow-hidden"
+      className="py-20 sm:py-28 bg-white relative overflow-hidden pattern-river gradient-sunset"
     >
       {/* Top gradient line */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sanca-green via-sanca-gold to-sanca-green-dark" />
@@ -155,7 +155,7 @@ export default function RecoveryJourney() {
       <div className="absolute top-20 -right-40 w-80 h-80 bg-sanca-cream/50 rounded-full blur-3xl" />
       <div className="absolute bottom-20 -left-40 w-80 h-80 bg-sanca-sage/30 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

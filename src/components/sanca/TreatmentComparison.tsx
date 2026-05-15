@@ -151,7 +151,7 @@ export default function TreatmentComparison() {
   return (
     <section
       id="treatment-compare"
-      className="py-20 sm:py-28 bg-white dark:bg-[#0a2a18] relative overflow-hidden"
+      className="py-20 sm:py-28 bg-white dark:bg-[#0a2a18] relative overflow-hidden pattern-diamonds gradient-emerald-mist"
     >
       {/* Decorative gradient top border */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sanca-green via-sanca-gold to-sanca-emerald" />
@@ -160,7 +160,7 @@ export default function TreatmentComparison() {
       <div className="absolute top-20 right-0 w-72 h-72 bg-sanca-green/5 rounded-full translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-20 left-0 w-72 h-72 bg-sanca-gold/5 rounded-full -translate-x-1/2 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

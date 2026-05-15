@@ -172,7 +172,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-20 sm:py-28 bg-sanca-cream dark:bg-[#0a2a18] overflow-hidden section-top-gradient"
+      className="relative py-20 sm:py-28 bg-sanca-cream dark:bg-[#0a2a18] overflow-hidden section-top-gradient gradient-emerald-mist"
     >
       {/* Decorative gradient orbs */}
       <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-sanca-green/5 blur-3xl pointer-events-none" />

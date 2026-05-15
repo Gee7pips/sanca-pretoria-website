@@ -1394,6 +1394,176 @@
 }
 
 /* ==========================================
+   HEALING & REHABILITATION PATTERNS
+   Ultra-premium subtle background textures
+   ========================================== */
+
+/* 1. Leaf Scatter — organic leaves scattered diagonally (green, 3% opacity) */
+.pattern-leaves {
+  position: relative;
+}
+.pattern-leaves::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231B5E3B' fill-opacity='1'%3E%3Cpath d='M15 35c5-10 15-15 20-10s5 15-5 20c-5 2.5-10 0-12-5-1-2 0-4 2-5z'/%3E%3Cpath d='M45 15c-3 6-9 9-13 6s-3-9 3-12c3-1.5 6 0 8 3 .5 1 0 2.5-1 3z' opacity='.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 2. Flowing Waves — gentle organic wave lines (gold, 2.5% opacity) */
+.pattern-waves {
+  position: relative;
+}
+.pattern-waves::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10c20-8 30 8 50 0s30-8 50 0' fill='none' stroke='%23C5963A' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3. Circle Community — soft overlapping circles (green, 2% opacity) */
+.pattern-circles {
+  position: relative;
+}
+.pattern-circles::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='16' fill='none' stroke='%231B5E3B' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='16' fill='none' stroke='%232D8B57' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 4. Heart & Hands — caring hands/heart motif (gold, 2% opacity) */
+.pattern-hearts {
+  position: relative;
+}
+.pattern-hearts::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 22c-4-8-14-8-14 0s14 16 14 16 14-8 14-16-10-8-14 0z' fill='%23C5963A'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 5. Diamond Lattice — interlocking diamond grid (green-gold, 2% opacity) */
+.pattern-diamonds {
+  position: relative;
+}
+.pattern-diamonds::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 4L44 24 24 44 4 24z' fill='none' stroke='%231B5E3B' stroke-width='1'/%3E%3Cpath d='M24 12L36 24 24 36 12 24z' fill='none' stroke='%23C5963A' stroke-width='.5' opacity='.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 6. Lotus Bloom — gentle lotus flower scatter (emerald, 2% opacity) */
+.pattern-lotus {
+  position: relative;
+}
+.pattern-lotus::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23059669' stroke-width='1'%3E%3Cellipse cx='32' cy='28' rx='6' ry='14'/%3E%3Cellipse cx='32' cy='28' rx='6' ry='14' transform='rotate(60 32 28)'/%3E%3Cellipse cx='32' cy='28' rx='6' ry='14' transform='rotate(120 32 28)'/%3E%3Ccircle cx='32' cy='28' r='4' fill='%23C5963A' opacity='.3'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 7. River Flow — flowing river/stream pattern (sage-green, 2.5% opacity) */
+.pattern-river {
+  position: relative;
+}
+.pattern-river::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='40' viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20c15-10 30 10 45 0s30-10 45 0 30 10 45 0' fill='none' stroke='%232D8B57' stroke-width='2'/%3E%3Cpath d='M0 30c15-8 30 8 45 0s30-8 45 0 30 8 45 0' fill='none' stroke='%23E8F0E8' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 120px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark mode pattern adjustments */
+.dark .pattern-leaves::after { opacity: 0.025; }
+.dark .pattern-waves::after { opacity: 0.02; }
+.dark .pattern-circles::after { opacity: 0.018; }
+.dark .pattern-hearts::after { opacity: 0.015; }
+.dark .pattern-diamonds::after { opacity: 0.018; }
+.dark .pattern-lotus::after { opacity: 0.02; }
+.dark .pattern-river::after { opacity: 0.02; }
+
+/* ==========================================
+   ELEGANT WARM GRADIENT OVERLAYS
+   ========================================== */
+
+/* Warm cream gradient — top-to-bottom subtle warmth */
+.gradient-warm {
+  background-image:
+    linear-gradient(180deg, rgba(250,246,237,0.6) 0%, transparent 30%),
+    linear-gradient(0deg, rgba(250,246,237,0.4) 0%, transparent 20%);
+}
+
+/* Gold-wash gradient — side-entering warm gold glow */
+.gradient-gold-wash {
+  background-image:
+    radial-gradient(ellipse at 0% 50%, rgba(197,150,58,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 80%, rgba(5,150,105,0.04) 0%, transparent 50%);
+}
+
+/* Green-wash gradient — side-entering fresh green glow */
+.gradient-green-wash {
+  background-image:
+    radial-gradient(ellipse at 100% 20%, rgba(27,94,59,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 80%, rgba(232,200,119,0.04) 0%, transparent 40%);
+}
+
+/* Emerald mist — subtle emerald center glow */
+.gradient-emerald-mist {
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(5,150,105,0.04) 0%, transparent 70%);
+}
+
+/* Dual accent — gold from left, green from right */
+.gradient-dual-accent {
+  background-image:
+    radial-gradient(ellipse at -10% 50%, rgba(197,150,58,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 110% 50%, rgba(27,94,59,0.05) 0%, transparent 50%);
+}
+
+/* Warm sunset — bottom warm glow */
+.gradient-sunset {
+  background-image:
+    linear-gradient(0deg, rgba(245,237,224,0.5) 0%, transparent 40%);
+}
+
+/* ==========================================
    COMPREHENSIVE DARK MODE — Task 4-a
    ========================================== */
 

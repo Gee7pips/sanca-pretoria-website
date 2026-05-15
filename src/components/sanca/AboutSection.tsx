@@ -325,11 +325,11 @@ function PosterShowcase() {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-white dark:bg-[#0a2a18] relative overflow-hidden section-top-gradient">
+    <section id="about" className="py-20 sm:py-28 bg-white dark:bg-[#0a2a18] relative overflow-hidden section-top-gradient pattern-lotus gradient-gold-wash">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sanca-green via-sanca-gold to-sanca-emerald" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

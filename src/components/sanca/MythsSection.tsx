@@ -88,13 +88,13 @@ export default function MythsSection() {
   };
 
   return (
-    <section id="myths" className="py-20 sm:py-28 bg-white relative overflow-hidden section-top-gradient">
+    <section id="myths" className="py-20 sm:py-28 bg-white relative overflow-hidden section-top-gradient pattern-waves gradient-dual-accent">
       {/* Decorative sage gradient orbs */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-sanca-sage/30 rounded-full translate-x-1/2 blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 left-0 w-72 h-72 bg-sanca-sage/20 rounded-full -translate-x-1/3 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-sanca-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

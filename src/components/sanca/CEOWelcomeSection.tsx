@@ -7,12 +7,12 @@ import { Card } from '@/components/ui/card';
 
 export default function CEOWelcomeSection() {
   return (
-    <section id="welcome" className="py-20 sm:py-28 bg-white dark:bg-[#0a2a18] relative overflow-hidden">
+    <section id="welcome" className="py-20 sm:py-28 bg-white dark:bg-[#0a2a18] relative overflow-hidden pattern-leaves gradient-warm">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-sanca-gold/5 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-sanca-green/5 rounded-full translate-y-1/3 -translate-x-1/3 blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left: Message Card */}
           <div className="lg:col-span-3">
