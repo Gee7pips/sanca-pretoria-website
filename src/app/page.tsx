@@ -8,7 +8,7 @@ const PageLoader = dynamic(() => import('@/components/sanca/PageLoader'), { ssr:
 const ScrollProgress = dynamic(() => import('@/components/sanca/ScrollProgress'), { ssr: false });
 const Footer = dynamic(() => import('@/components/sanca/Footer'), { ssr: false });
 const FloatingActions = dynamic(() => import('@/components/sanca/FloatingActions'), { ssr: false });
-const ChatBot = dynamic(() => import('@/components/sanca/ChatBot'), { ssr: false });
+const DonateButton = dynamic(() => import('@/components/sanca/DonateButton'), { ssr: false });
 
 // ── Storytelling Framework ──
 const StoryNavigation = dynamic(() => import('@/components/sanca/StoryNavigation'), { ssr: false });
@@ -238,7 +238,7 @@ export default function Home() {
 
       <Footer />
       <FloatingActions />
-      <ChatBot />
+      <DonateButton />
       <StoryNavigation />
     </div>
   );
