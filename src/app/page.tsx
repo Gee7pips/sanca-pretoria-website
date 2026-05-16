@@ -127,10 +127,12 @@ export default function Home() {
             ═══════════════════════════════════════════════════════════ */}
         <div id="chapter-2">
           <AboutSection />
+          <PreventionProgrammesSection />
 
           <NarrativeBridge text="Behind every programme is a person — dedicated professionals who bring both clinical expertise and genuine heart to the work they do." icon="feather" emphasis="genuine heart" />
 
           <TeamSection />
+          <RecoveryVisualizer />
           <NationalFootprintSection />
         </div>
 
@@ -152,7 +154,6 @@ export default function Home() {
 
           <NarrativeBridge text="Your answers are just the beginning. Let us show you what the path forward looks like." icon="arrow" emphasis="path forward" />
 
-          <RecoveryVisualizer />
           <DiagnosisTips />
           <MythsSection />
 
@@ -206,7 +207,6 @@ export default function Home() {
           <TestimonialsSection />
           <FamiliesSection />
           <VideoSection />
-          <PreventionProgrammesSection />
         </div>
 
         {/* ── Chapter Transition ── */}
