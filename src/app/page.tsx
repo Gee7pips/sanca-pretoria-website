@@ -107,7 +107,7 @@ export default function Home() {
           <PartnersStrip />
           <ImpactStatsBar />
 
-          <NarrativeBridge text="You are not alone. Nearly 70 years of hope, healing, and humanity stand behind every word on this page." />
+          <NarrativeBridge text="You are not alone. Nearly 70 years of hope, healing, and humanity stand behind every word on this page." icon="heart" emphasis="not alone" />
 
           <CEOWelcomeSection />
         </div>
@@ -128,7 +128,7 @@ export default function Home() {
         <div id="chapter-2">
           <AboutSection />
 
-          <NarrativeBridge text="Behind every programme is a person — dedicated professionals who bring both clinical expertise and genuine heart to the work they do." />
+          <NarrativeBridge text="Behind every programme is a person — dedicated professionals who bring both clinical expertise and genuine heart to the work they do." icon="feather" emphasis="genuine heart" />
 
           <TeamSection />
           <NationalFootprintSection />
@@ -150,13 +150,13 @@ export default function Home() {
         <div id="chapter-3">
           <SelfAssessment />
 
-          <NarrativeBridge text="Your answers are just the beginning. Let us show you what the path forward looks like." />
+          <NarrativeBridge text="Your answers are just the beginning. Let us show you what the path forward looks like." icon="arrow" emphasis="path forward" />
 
           <RecoveryVisualizer />
           <DiagnosisTips />
           <MythsSection />
 
-          <NarrativeBridge text="Understanding the substances themselves is not about fear — it is about empowerment. When you know what you are facing, you can face it with confidence." />
+          <NarrativeBridge text="Understanding the substances themselves is not about fear — it is about empowerment. When you know what you are facing, you can face it with confidence." icon="sparkles" emphasis="empowerment" />
 
           <DrugInfoSection />
           <DrugSeverityMeter />
@@ -182,7 +182,7 @@ export default function Home() {
           <ProgrammesSection />
           <TreatmentComparison />
 
-          <NarrativeBridge text="Quality care should never be out of reach. We have made it our mission to ensure that financial concerns never stand between you and recovery." />
+          <NarrativeBridge text="Quality care should never be out of reach. We have made it our mission to ensure that financial concerns never stand between you and recovery." icon="heart" emphasis="never stand between you and recovery" />
 
           <MedicalAidSection />
           <FacilitiesSection />
@@ -227,7 +227,7 @@ export default function Home() {
           <ContactSection />
           <FAQSection />
 
-          <NarrativeBridge text="Recovery is not just about treatment — it is about community. Join the movement of hope that is transforming lives across South Africa." />
+          <NarrativeBridge text="Recovery is not just about treatment — it is about community. Join the movement of hope that is transforming lives across South Africa." icon="feather" emphasis="community" />
 
           <VolunteerSection />
           <NewsletterSection />

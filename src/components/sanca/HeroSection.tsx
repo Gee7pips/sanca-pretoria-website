@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, Heart, Shield, ArrowRight, Sparkles, CalendarCheck } from 'lucide-react';
+import { Phone, MessageCircle, Heart, Shield, ArrowRight, Sparkles, CalendarCheck, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HERO_IMAGES = [
@@ -113,9 +113,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.38 }}
-              className="text-gradient-animated font-display block"
+              className="relative font-display block"
             >
-              Healing Starts
+              <span className="text-gradient-animated">Healing Starts</span>
+              {/* Subtle shimmer overlay */}
+              <span className="absolute inset-0 text-gradient-animated bg-gradient-to-r from-transparent via-white/15 to-transparent bg-[length:200%_100%] animate-[shimmer_5s_ease-in-out_infinite] bg-clip-text text-transparent" aria-hidden="true">
+                Healing Starts
+              </span>
             </motion.span>
             Now
           </motion.h1>
@@ -239,6 +243,33 @@ export default function HeroSection() {
         </div>
       </div>
 
+      {/* ── Floating ambient particles ── */}
+      <div className="absolute inset-0 pointer-events-none z-[5]" aria-hidden="true">
+        {[...Array(12)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-sanca-gold/[0.12]"
+            style={{
+              width: 2 + (i % 3),
+              height: 2 + (i % 3),
+              left: `${5 + i * 8}%`,
+              top: `${10 + (i % 5) * 18}%`,
+            }}
+            animate={{
+              y: [-15, 15, -15],
+              x: [-5, 5, -5],
+              opacity: [0.1, 0.35, 0.1],
+            }}
+            transition={{
+              duration: 5 + i * 0.7,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.4,
+            }}
+          />
+        ))}
+      </div>
+
       {/* ── Dot Indicators (autoplay only, no arrows) ── */}
       <div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-20"
@@ -255,6 +286,25 @@ export default function HeroSection() {
           />
         ))}
       </div>
+
+      {/* ── Scroll Down Indicator ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-medium">
+          Discover Our Story
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm"
+        >
+          <ChevronDown className="h-4 w-4 text-white/50" />
+        </motion.div>
+      </motion.div>
 
       {/* ── Floating Emergency Contacts (icons only) ── */}
       <motion.div
@@ -287,6 +337,13 @@ export default function HeroSection() {
         className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-sanca-cream dark:from-background to-transparent z-10 pointer-events-none"
         aria-hidden="true"
       />
+
+      <style jsx>{`
+        @keyframes shimmer {
+          0% { background-position: 200% center; }
+          100% { background-position: -200% center; }
+        }
+      `}</style>
     </section>
   );
 }
