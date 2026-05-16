@@ -24,7 +24,7 @@ function AnimatedNumber({ value, suffix = '', color }: { value: number; suffix?:
 
   return (
     <div ref={ref}>
-      <span className={`text-2xl sm:text-3xl lg:text-4xl font-serif font-bold stat-premium ${color}`}>
+      <span className={`text-2xl sm:text-3xl lg:text-4xl font-serif font-bold ${color} drop-shadow-[0_2px_8px_rgba(255,255,255,0.15)]`}>
         {count.toLocaleString('en-ZA')}{suffix}
       </span>
     </div>
@@ -38,16 +38,16 @@ const stats = [
     suffix: '+',
     label: 'Years of Service',
     sublabel: 'Est. 1957',
-    // Warm amber-orange with blue accent
-    cardGradient: 'from-amber-500/20 via-orange-400/15 to-blue-500/10',
-    borderGradient: 'from-amber-400/40 via-orange-400/30 to-blue-400/30',
+    // Warm amber → blue
+    cardBg: 'linear-gradient(135deg, rgba(251,191,36,0.25) 0%, rgba(245,158,11,0.15) 40%, rgba(59,130,246,0.12) 100%)',
+    borderGlow: 'rgba(251,191,36,0.3)',
     topBar: 'from-amber-400 via-orange-400 to-blue-400',
-    iconBg: 'bg-amber-500/20',
+    iconBg: 'bg-amber-400/20',
     iconColor: 'text-amber-300',
-    numberColor: 'text-white',
-    glowColor: 'shadow-amber-500/20',
-    hoverGlow: 'group-hover:shadow-amber-500/30',
+    numberColor: 'text-amber-100',
+    hoverShadow: '0 8px 40px rgba(251,191,36,0.2), 0 0 60px rgba(59,130,246,0.1)',
     orbColor: 'bg-amber-400',
+    reflectionGradient: 'from-amber-300/10 via-orange-300/5 to-transparent',
   },
   {
     icon: Users,
@@ -55,16 +55,16 @@ const stats = [
     suffix: '+',
     label: 'Patients/Year',
     sublabel: 'Across all facilities',
-    // Warm rose-gold with blue
-    cardGradient: 'from-rose-400/20 via-pink-400/15 to-blue-500/10',
-    borderGradient: 'from-rose-400/40 via-pink-400/30 to-blue-400/30',
+    // Warm rose → blue
+    cardBg: 'linear-gradient(135deg, rgba(251,113,133,0.25) 0%, rgba(244,63,94,0.15) 40%, rgba(59,130,246,0.12) 100%)',
+    borderGlow: 'rgba(251,113,133,0.3)',
     topBar: 'from-rose-400 via-pink-400 to-blue-400',
     iconBg: 'bg-rose-400/20',
     iconColor: 'text-rose-300',
-    numberColor: 'text-white',
-    glowColor: 'shadow-rose-400/20',
-    hoverGlow: 'group-hover:shadow-rose-400/30',
+    numberColor: 'text-rose-100',
+    hoverShadow: '0 8px 40px rgba(251,113,133,0.2), 0 0 60px rgba(59,130,246,0.1)',
     orbColor: 'bg-rose-400',
+    reflectionGradient: 'from-rose-300/10 via-pink-300/5 to-transparent',
   },
   {
     icon: Building2,
@@ -72,16 +72,16 @@ const stats = [
     suffix: '',
     label: 'Facilities',
     sublabel: 'Pretoria region',
-    // Warm teal with blue
-    cardGradient: 'from-teal-400/20 via-emerald-400/15 to-blue-500/10',
-    borderGradient: 'from-teal-400/40 via-emerald-400/30 to-blue-400/30',
+    // Warm teal → blue
+    cardBg: 'linear-gradient(135deg, rgba(45,212,191,0.25) 0%, rgba(20,184,166,0.15) 40%, rgba(59,130,246,0.12) 100%)',
+    borderGlow: 'rgba(45,212,191,0.3)',
     topBar: 'from-teal-400 via-emerald-400 to-blue-400',
     iconBg: 'bg-teal-400/20',
     iconColor: 'text-teal-300',
-    numberColor: 'text-white',
-    glowColor: 'shadow-teal-400/20',
-    hoverGlow: 'group-hover:shadow-teal-400/30',
+    numberColor: 'text-teal-100',
+    hoverShadow: '0 8px 40px rgba(45,212,191,0.2), 0 0 60px rgba(59,130,246,0.1)',
     orbColor: 'bg-teal-400',
+    reflectionGradient: 'from-teal-300/10 via-emerald-300/5 to-transparent',
   },
   {
     icon: Award,
@@ -89,16 +89,16 @@ const stats = [
     suffix: '+',
     label: 'National Service Points',
     sublabel: 'SANCA network',
-    // Warm gold with blue
-    cardGradient: 'from-yellow-400/20 via-amber-400/15 to-blue-500/10',
-    borderGradient: 'from-yellow-400/40 via-amber-400/30 to-blue-400/30',
+    // Warm gold → blue
+    cardBg: 'linear-gradient(135deg, rgba(250,204,21,0.25) 0%, rgba(234,179,8,0.15) 40%, rgba(59,130,246,0.12) 100%)',
+    borderGlow: 'rgba(250,204,21,0.3)',
     topBar: 'from-yellow-400 via-amber-400 to-blue-400',
     iconBg: 'bg-yellow-400/20',
     iconColor: 'text-yellow-300',
-    numberColor: 'text-white',
-    glowColor: 'shadow-yellow-400/20',
-    hoverGlow: 'group-hover:shadow-yellow-400/30',
+    numberColor: 'text-yellow-100',
+    hoverShadow: '0 8px 40px rgba(250,204,21,0.2), 0 0 60px rgba(59,130,246,0.1)',
     orbColor: 'bg-yellow-400',
+    reflectionGradient: 'from-yellow-300/10 via-amber-300/5 to-transparent',
   },
   {
     icon: Clock,
@@ -106,16 +106,16 @@ const stats = [
     suffix: '',
     label: 'Days/Week Admissions',
     sublabel: 'Always open',
-    // Warm coral with blue
-    cardGradient: 'from-orange-400/20 via-red-400/15 to-blue-500/10',
-    borderGradient: 'from-orange-400/40 via-red-400/30 to-blue-400/30',
+    // Warm coral → blue
+    cardBg: 'linear-gradient(135deg, rgba(251,146,60,0.25) 0%, rgba(249,115,22,0.15) 40%, rgba(59,130,246,0.12) 100%)',
+    borderGlow: 'rgba(251,146,60,0.3)',
     topBar: 'from-orange-400 via-red-400 to-blue-400',
     iconBg: 'bg-orange-400/20',
     iconColor: 'text-orange-300',
-    numberColor: 'text-white',
-    glowColor: 'shadow-orange-400/20',
-    hoverGlow: 'group-hover:shadow-orange-400/30',
+    numberColor: 'text-orange-100',
+    hoverShadow: '0 8px 40px rgba(251,146,60,0.2), 0 0 60px rgba(59,130,246,0.1)',
     orbColor: 'bg-orange-400',
+    reflectionGradient: 'from-orange-300/10 via-red-300/5 to-transparent',
   },
   {
     icon: Heart,
@@ -123,16 +123,16 @@ const stats = [
     suffix: 'M+',
     label: 'Lives Touched',
     sublabel: 'Since 1956',
-    // Warm pink with blue
-    cardGradient: 'from-pink-400/20 via-fuchsia-400/15 to-blue-500/10',
-    borderGradient: 'from-pink-400/40 via-fuchsia-400/30 to-blue-400/30',
-    topBar: 'from-pink-400 via-fuchsia-400 to-blue-400',
-    iconBg: 'bg-pink-400/20',
-    iconColor: 'text-pink-300',
-    numberColor: 'text-white',
-    glowColor: 'shadow-pink-400/20',
-    hoverGlow: 'group-hover:shadow-pink-400/30',
-    orbColor: 'bg-pink-400',
+    // Warm pink/fuchsia → blue
+    cardBg: 'linear-gradient(135deg, rgba(232,121,249,0.25) 0%, rgba(217,70,239,0.15) 40%, rgba(59,130,246,0.12) 100%)',
+    borderGlow: 'rgba(232,121,249,0.3)',
+    topBar: 'from-fuchsia-400 via-pink-400 to-blue-400',
+    iconBg: 'bg-fuchsia-400/20',
+    iconColor: 'text-fuchsia-300',
+    numberColor: 'text-fuchsia-100',
+    hoverShadow: '0 8px 40px rgba(232,121,249,0.2), 0 0 60px rgba(59,130,246,0.1)',
+    orbColor: 'bg-fuchsia-400',
+    reflectionGradient: 'from-fuchsia-300/10 via-pink-300/5 to-transparent',
   },
 ];
 
@@ -145,50 +145,62 @@ export default function ImpactStatsBar() {
   const bgY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   return (
-    <section ref={sectionRef} className="relative py-12 sm:py-16 overflow-hidden">
-      {/* Rich warm gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a2e] via-[#16213e] to-[#0f3460]" />
+    <section ref={sectionRef} className="relative py-14 sm:py-20 overflow-hidden">
+      {/* Deep blue-to-purple gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0c1445] via-[#141e5e] to-[#1a0a3e]" />
 
-      {/* Animated mesh background */}
+      {/* Warm radial glow overlays */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-[20%] w-[500px] h-[500px] bg-amber-500/[0.06] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-[20%] w-[400px] h-[400px] bg-rose-500/[0.06] rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/[0.05] rounded-full blur-[150px]" />
+      </div>
+
+      {/* Animated mesh pattern */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 50%, rgba(255,180,100,0.2) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(100,150,255,0.15) 0%, transparent 50%),
-            radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 1px)
+            radial-gradient(circle at 30% 40%, rgba(251,191,36,0.2) 0%, transparent 40%),
+            radial-gradient(circle at 70% 60%, rgba(59,130,246,0.2) 0%, transparent 40%),
+            radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)
           `,
-          backgroundSize: '100% 100%, 100% 100%, 24px 24px',
+          backgroundSize: '100% 100%, 100% 100%, 22px 22px',
         }}
       />
 
-      {/* Top accent line — warm to blue gradient */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-amber-400 via-rose-400 to-blue-400" />
+      {/* Top accent line — warm to blue sweep */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-amber-400 via-rose-400 to-blue-500" />
 
       {/* Parallax background orbs */}
       <motion.div
         style={{ y: bgY }}
         className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute -top-32 right-[10%] w-80 h-80 bg-amber-500/[0.07] rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 left-[15%] w-64 h-64 bg-blue-500/[0.07] rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-rose-400/[0.04] rounded-full blur-3xl" />
+        <div className="absolute -top-24 right-[8%] w-72 h-72 bg-amber-400/[0.08] rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 left-[12%] w-56 h-56 bg-blue-400/[0.08] rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-rose-400/[0.05] rounded-full blur-3xl" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section label with live indicator */}
+        {/* Section label */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/[0.12]">
+          <div
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full backdrop-blur-xl border border-white/[0.12]"
+            style={{
+              background: 'linear-gradient(135deg, rgba(251,191,36,0.1) 0%, rgba(59,130,246,0.1) 100%)',
+            }}
+          >
             <motion.div
-              animate={{ scale: [1, 1.4, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-2 h-2 rounded-full bg-amber-400"
+              animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+              className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]"
             />
             <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] font-semibold text-white/70">
               Trusted Since 1957 — SANCA Pretoria by the Numbers
@@ -203,50 +215,63 @@ export default function ImpactStatsBar() {
             return (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                initial={{ opacity: 0, y: 40, scale: 0.85 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.6,
+                  duration: 0.7,
                   delay: i * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{ y: -6, scale: 1.04 }}
+                whileHover={{ y: -8, scale: 1.06 }}
                 className="group"
               >
-                <div className={`relative rounded-2xl p-4 sm:p-5 text-center overflow-hidden transition-all duration-500 ${stat.hoverGlow}`}
+                <div
+                  className="relative rounded-2xl p-4 sm:p-5 text-center overflow-hidden transition-all duration-500 cursor-default"
                   style={{
-                    background: 'rgba(255, 255, 255, 0.06)',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(20px)',
-                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    background: stat.cardBg,
+                    backdropFilter: 'blur(24px) saturate(1.5)',
+                    WebkitBackdropFilter: 'blur(24px) saturate(1.5)',
+                    border: `1px solid ${stat.borderGlow}`,
+                    boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.1)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.boxShadow = stat.hoverShadow + ', inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+                    e.currentTarget.style.borderColor = stat.borderGlow.replace('0.3', '0.6');
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.1)';
+                    e.currentTarget.style.borderColor = stat.borderGlow;
                   }}
                 >
-                  {/* Glassmorphism inner gradient overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.cardGradient} opacity-60 group-hover:opacity-90 transition-opacity duration-500`} />
+                  {/* Top gradient accent bar — expands on hover */}
+                  <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${stat.topBar} group-hover:h-2 transition-all duration-500 rounded-t-2xl`} />
 
-                  {/* Top gradient accent bar — thicker on hover */}
-                  <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${stat.topBar} group-hover:h-1.5 transition-all duration-500`} />
-
-                  {/* Hover glow ring */}
-                  <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                    style={{
-                      boxShadow: `inset 0 0 30px rgba(255, 255, 255, 0.05), 0 0 40px rgba(100, 150, 255, 0.1)`,
-                    }}
-                  />
+                  {/* Glassmorphism top reflection */}
+                  <div className={`absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b ${stat.reflectionGradient} pointer-events-none rounded-t-2xl`} />
 
                   {/* Shimmer sweep on hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden rounded-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.08] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200 ease-in-out" />
                   </div>
 
-                  {/* Icon with glow */}
+                  {/* Hover outer glow */}
+                  <div className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(ellipse at center, ${stat.borderGlow.replace('0.3', '0.08')}, transparent 70%)`,
+                    }}
+                  />
+
+                  {/* Icon with animated glow ring */}
                   <div className="relative mx-auto mb-3 z-10">
-                    <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl ${stat.iconBg} backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative border border-white/10`}>
-                      {/* Animated glow pulse on hover */}
-                      <div className={`absolute inset-[-6px] rounded-xl ${stat.orbColor} opacity-0 group-hover:opacity-15 blur-lg transition-opacity duration-500`} />
-                      <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${stat.iconColor} relative z-10`} />
+                    <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${stat.iconBg} backdrop-blur-md flex items-center justify-center group-hover:scale-115 transition-all duration-300 relative border border-white/10`}
+                      style={{
+                        boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.1)',
+                      }}
+                    >
+                      {/* Animated glow pulse behind icon */}
+                      <div className={`absolute inset-[-8px] rounded-xl ${stat.orbColor} opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500`} />
+                      <Icon className={`h-5 w-5 sm:h-5.5 sm:w-5.5 ${stat.iconColor} relative z-10 drop-shadow-[0_0_6px_currentColor]`} />
                     </div>
                   </div>
 
@@ -256,17 +281,25 @@ export default function ImpactStatsBar() {
                   </div>
 
                   {/* Label */}
-                  <p className="text-xs sm:text-sm font-semibold text-white/80 mt-1.5 relative z-10">
+                  <p className="text-xs sm:text-sm font-semibold text-white/85 mt-1.5 relative z-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]">
                     {stat.label}
                   </p>
 
                   {/* Sublabel */}
-                  <p className="text-[9px] sm:text-[10px] uppercase tracking-widest font-medium text-blue-300/60 mt-0.5 relative z-10">
+                  <p className="text-[9px] sm:text-[10px] uppercase tracking-widest font-medium text-blue-300/50 mt-0.5 relative z-10">
                     {stat.sublabel}
                   </p>
 
                   {/* Bottom glassmorphism reflection line */}
-                  <div className="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  <div className="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
+                  {/* Bottom accent glow */}
+                  <div className="absolute bottom-0 left-[20%] right-[20%] h-[2px] rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-500"
+                    style={{
+                      background: stat.borderGlow,
+                      filter: 'blur(2px)',
+                    }}
+                  />
                 </div>
               </motion.div>
             );
@@ -275,7 +308,10 @@ export default function ImpactStatsBar() {
       </div>
 
       {/* Bottom accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/25 to-transparent" />
+
+      {/* Bottom warm glow fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none" />
     </section>
   );
 }
